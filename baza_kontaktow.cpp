@@ -35,7 +35,10 @@ void Baza_Kontaktow::on_loginBtn_clicked()
     if(db.open()){ // jesli baza sie otworzyla, to stworz zapytanie
         QSqlQuery query(db);
 
-        if(currentUser) delete currentUser;
+        if(currentUser){
+            delete currentUser;
+            currentUser = nullptr;
+        }
 
         // Przypisanie do zmiennej globalnej danych aktualnie zalogowanego uzytkownika
         currentUser = new User;

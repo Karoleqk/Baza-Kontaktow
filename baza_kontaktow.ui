@@ -13,7 +13,38 @@
   <property name="windowTitle">
    <string>Baza_Kontaktow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">.QWidget{
+	background-color: #181C14;
+}
+
+.QLabel{
+	color: #ECDFCC;
+}
+
+.QLineEdit{
+	color: #ECDFCC;
+	background-color: #3C3D37;
+	border-radius: 6px;
+}
+
+.QPushButton{
+	background-color: #3C3D37;
+	color: #ECDFCC;
+	border: 2px solid #ECDFCC;
+	border-radius: 8px;
+}
+
+.QPushButton:hover{
+	background-color: #ECDFCC;
+	color: #3C3D37;
+	border: 2px solid #3C3D37;
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="3,4,1,0,2">
@@ -116,6 +147,14 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Zaloguj</string>
           </property>
@@ -138,6 +177,9 @@
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4" stretch="4,3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QLabel" name="label_4">
           <property name="sizePolicy">
@@ -162,6 +204,11 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Zarejestruj sie</string>
           </property>
@@ -172,6 +219,16 @@
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>343</width>
+     <height>23</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -1,6 +1,12 @@
 /home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/Baza_Kontaktow_autogen/EWIEGA46WW/moc_logged.cpp: /home/karol/Baza_Kontaktow/logged.h \
   /home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/Baza_Kontaktow_autogen/moc_predefs.h \
+  /home/karol/Baza_Kontaktow/baza_kontaktow.h \
+  /home/karol/Baza_Kontaktow/database_manager.h \
+  /home/karol/Baza_Kontaktow/hash.h \
+  /home/karol/Baza_Kontaktow/logged.h \
+  /home/karol/Baza_Kontaktow/registration.h \
   /home/karol/Baza_Kontaktow/user.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtCore/QCryptographicHash \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/QString \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/q20functional.h \
@@ -34,6 +40,7 @@
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qcontiguouscache.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qcryptographichash.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qdatastream.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qdebug.h \
@@ -61,6 +68,7 @@
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qmargins.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qmath.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qmetacontainer.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qmetaobject.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qmetatype.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qminmax.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtCore/qnamespace.h \
@@ -152,8 +160,19 @@
   /home/karol/Qt/6.9.0/gcc_64/include/QtGui/qtguiglobal.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtGui/qtransform.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/QSqlDatabase \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/QSqlQuery \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/qsqldatabase.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/qsqlquery.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/qtsql-config.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/qtsqlexports.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtSql/qtsqlglobal.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/QMainWindow \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qdialog.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qmainwindow.h \
+  /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/karol/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \

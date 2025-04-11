@@ -14,6 +14,34 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">.QWidget{
+	background-color: #181C14;
+}
+
+.QLabel{
+	color: #ECDFCC;
+}
+
+.QLineEdit{
+	color: #ECDFCC;
+	background-color: #3C3D37;
+	border-radius: 6px;
+}
+
+.QPushButton{
+	background-color: #3C3D37;
+	color: #ECDFCC;
+	border: 2px solid #ECDFCC;
+	border-radius: 8px;
+}
+
+.QPushButton:hover{
+	background-color: #ECDFCC;
+	color: #3C3D37;
+	border: 2px solid #3C3D37;
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="3,4,1,0,2">
@@ -126,6 +154,9 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::EchoMode::Password</enum>
             </property>
            </widget>
           </item>

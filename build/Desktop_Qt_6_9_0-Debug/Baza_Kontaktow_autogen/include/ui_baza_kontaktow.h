@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -43,14 +44,42 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label_4;
     QPushButton *registerBtn;
+    QMenuBar *menuBar;
 
     void setupUi(QMainWindow *Baza_Kontaktow)
     {
         if (Baza_Kontaktow->objectName().isEmpty())
             Baza_Kontaktow->setObjectName("Baza_Kontaktow");
         Baza_Kontaktow->resize(343, 448);
+        Baza_Kontaktow->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(Baza_Kontaktow);
         centralwidget->setObjectName("centralwidget");
+        centralwidget->setStyleSheet(QString::fromUtf8(".QWidget{\n"
+"	background-color: #181C14;\n"
+"}\n"
+"\n"
+".QLabel{\n"
+"	color: #ECDFCC;\n"
+"}\n"
+"\n"
+".QLineEdit{\n"
+"	color: #ECDFCC;\n"
+"	background-color: #3C3D37;\n"
+"	border-radius: 6px;\n"
+"}\n"
+"\n"
+".QPushButton{\n"
+"	background-color: #3C3D37;\n"
+"	color: #ECDFCC;\n"
+"	border: 2px solid #ECDFCC;\n"
+"	border-radius: 8px;\n"
+"}\n"
+"\n"
+".QPushButton:hover{\n"
+"	background-color: #ECDFCC;\n"
+"	color: #3C3D37;\n"
+"	border: 2px solid #3C3D37;\n"
+"}"));
         verticalLayout_6 = new QVBoxLayout(centralwidget);
         verticalLayout_6->setObjectName("verticalLayout_6");
         verticalLayout_5 = new QVBoxLayout();
@@ -130,6 +159,10 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(loginBtn->sizePolicy().hasHeightForWidth());
         loginBtn->setSizePolicy(sizePolicy1);
+        QFont font1;
+        font1.setBold(true);
+        loginBtn->setFont(font1);
+        loginBtn->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_3->addWidget(loginBtn);
 
@@ -141,6 +174,7 @@ public:
         verticalLayout_5->addItem(verticalSpacer);
 
         verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(0);
         verticalLayout_4->setObjectName("verticalLayout_4");
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
@@ -157,6 +191,7 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(registerBtn->sizePolicy().hasHeightForWidth());
         registerBtn->setSizePolicy(sizePolicy2);
+        registerBtn->setFont(font1);
 
         verticalLayout_4->addWidget(registerBtn);
 
@@ -173,6 +208,10 @@ public:
         verticalLayout_6->addLayout(verticalLayout_5);
 
         Baza_Kontaktow->setCentralWidget(centralwidget);
+        menuBar = new QMenuBar(Baza_Kontaktow);
+        menuBar->setObjectName("menuBar");
+        menuBar->setGeometry(QRect(0, 0, 343, 23));
+        Baza_Kontaktow->setMenuBar(menuBar);
 
         retranslateUi(Baza_Kontaktow);
 
