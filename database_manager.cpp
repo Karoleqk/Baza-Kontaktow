@@ -21,7 +21,6 @@ QSqlDatabase Database_Manager::getDatabase(){
     } else {
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
         db.setDatabaseName("contacts.db");
-        db.open();
         return db;
     }
 }

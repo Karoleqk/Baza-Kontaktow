@@ -54,6 +54,32 @@ public:
         Registration->resize(358, 420);
         centralwidget = new QWidget(Registration);
         centralwidget->setObjectName("centralwidget");
+        centralwidget->setStyleSheet(QString::fromUtf8(".QWidget{\n"
+"	background-color: #181C14;\n"
+"}\n"
+"\n"
+".QLabel{\n"
+"	color: #ECDFCC;\n"
+"}\n"
+"\n"
+".QLineEdit{\n"
+"	color: #ECDFCC;\n"
+"	background-color: #3C3D37;\n"
+"	border-radius: 6px;\n"
+"}\n"
+"\n"
+".QPushButton{\n"
+"	background-color: #3C3D37;\n"
+"	color: #ECDFCC;\n"
+"	border: 2px solid #ECDFCC;\n"
+"	border-radius: 8px;\n"
+"}\n"
+"\n"
+".QPushButton:hover{\n"
+"	background-color: #ECDFCC;\n"
+"	color: #3C3D37;\n"
+"	border: 2px solid #3C3D37;\n"
+"}"));
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout_5 = new QVBoxLayout();
@@ -133,6 +159,7 @@ public:
         repeatPasswordInput->setObjectName("repeatPasswordInput");
         sizePolicy.setHeightForWidth(repeatPasswordInput->sizePolicy().hasHeightForWidth());
         repeatPasswordInput->setSizePolicy(sizePolicy);
+        repeatPasswordInput->setEchoMode(QLineEdit::EchoMode::Password);
 
         horizontalLayout->addWidget(repeatPasswordInput);
 
