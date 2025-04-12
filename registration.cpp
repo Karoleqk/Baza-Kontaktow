@@ -32,7 +32,9 @@ void Registration::on_registerBtn_clicked()
     QString password = ui->passwordInput->text();
     QString repeatPassword = ui->repeatPasswordInput->text();
 
-    if(password != repeatPassword){
+    if(login == "" || password == ""){
+        QMessageBox::critical(this, "Blad", "Uzupelnij puste pola!", QMessageBox::Yes);
+    } else if(password != repeatPassword){
         QMessageBox::critical(this, "Blad", "Hasla nie sa takie same!", QMessageBox::Cancel);
     } else {
         if(db.open()){

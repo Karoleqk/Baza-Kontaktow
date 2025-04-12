@@ -14,3 +14,18 @@ Logged::~Logged()
 {
     delete ui;
 }
+
+
+
+void Logged::on_actionWyloguj_triggered()
+{
+    if(currentUser){
+        delete currentUser;
+        currentUser = nullptr;
+    }
+
+    Baza_Kontaktow *baza = new Baza_Kontaktow;
+    this->hide();
+    baza->show();
+}
+
