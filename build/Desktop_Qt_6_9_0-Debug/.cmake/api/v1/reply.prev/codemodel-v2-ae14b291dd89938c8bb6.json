@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7da3a15bb732677a2844.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Baza_Kontaktow",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Baza_Kontaktow::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Baza_Kontaktow-Debug-46e6cff59789a3e99612.json",
+					"name" : "Baza_Kontaktow",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Baza_Kontaktow_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Baza_Kontaktow_autogen-Debug-98cf8c25d0e834965207.json",
+					"name" : "Baza_Kontaktow_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Baza_Kontaktow_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Baza_Kontaktow_autogen_timestamp_deps-Debug-b9d1cfd66b91c7bde894.json",
+					"name" : "Baza_Kontaktow_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug",
+		"source" : "/home/karol/Baza_Kontaktow"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

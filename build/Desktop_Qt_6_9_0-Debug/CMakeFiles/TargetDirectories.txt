@@ -1,0 +1,9 @@
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Baza_Kontaktow.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/edit_cache.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/list_install_components.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/local.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/strip.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Baza_Kontaktow_autogen_timestamp_deps.dir
+/home/karol/Baza_Kontaktow/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Baza_Kontaktow_autogen.dir
