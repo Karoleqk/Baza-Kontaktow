@@ -12,17 +12,26 @@ Dashboard::Dashboard(QWidget *parent)
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
 
-    if(db.open()){
-        QSqlQuery query;
-        query.prepare("SELECT * FROM contacts");
+    if(!db.open()){
+        qDebug() << "Error: Unable to open database..";
+    }
+    else{
+        qDebug() << "Database open successfully..";
 
-        if (query.exec()) {
-            qDebug() << "Success: " << "wczytano dane";
+        QSqlQuery query(db);
+        query.exec("CREATE TABLE IF NOT EXISTS contacts ("
+                   "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "firstName TEXT, "
+                   "lastName TEXT, "
+                   "phone TEXT, "
+                   "email TEXT, "
+                   "address TEXT)");
+
+        if(query.lastError().isValid()) {
+            qDebug() << "Table creation error:" << query.lastError().text();
         } else {
-            qDebug() << "SQL Error: " << "blad danych";
+            qDebug() << "Table verified/created successfully";
         }
-    } else {
-        qDebug() << "SQL Error: " << "Błąd otwarcia bazy danych";
     }
 }
 

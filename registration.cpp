@@ -46,7 +46,7 @@ void Registration::on_registerBtn_clicked()
             query.bindValue(":password", hashedPassword);
 
             if(query.exec()) QMessageBox::information(this, "Zarejestrowano", "Pomyslnie zarejestrowano", QMessageBox::Yes);
-            else QMessageBox::critical(this, "Blad", "Wybrana nazwa jest zajeta!", QMessageBox::No);
+            else {QMessageBox::critical(this, "Blad", "Wybrana nazwa jest zajeta!", QMessageBox::No); qDebug() << "SQL Error: " << query.lastError().text();}
         } else {
             QMessageBox::critical(this, "blad", "Blad otwarcia bazy danych", QMessageBox::No);
         }

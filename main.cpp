@@ -10,15 +10,6 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QFile file("./styles/style.qss");
-    if(file.open(QFile::ReadOnly)){
-        QTextStream stream(&file);
-        QString styleSheet = stream.readAll();
-        app.setStyleSheet(styleSheet);
-    }
-
-    qDebug() << QSqlDatabase::drivers();
-
     // Baza_Kontaktow w;
     Dashboard w;
 

@@ -2,7 +2,12 @@
 #define DATABASE_MANAGER_H
 
 #include <QSqlDatabase>
+#include <QSqlDriver>
+#include <QSqlError>
 #include <QSqlQuery>
+#include <QDebug>
+#include <QSqlTableModel>
+#include <QFile>
 
 class Database_Manager
 {
