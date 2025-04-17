@@ -67,32 +67,81 @@ QLineEdit:focus {
         border-color: black;
 }
 
+/* Basic QTableWidget styling */
 QTableWidget {
-    border: 1px solid #ddd; /* Light border around the table */
+    background-color: #ffffff;
+    alternate-background-color: #f9f9f9;
+    gridline-color: #e0e0e0;
+    selection-background-color: #e7f0fd;
+    selection-color: #202020;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    padding: 0px;
+    font-size: 12px;
 }
 
-QTableWidget::item {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+/* Header styling - lighter color */
+QHeaderView::section {
+    background-color: #f0f0f0;
+    color: #404040;
+    padding: 6px;
+    font-weight: bold;
+    border: 1px solid #d0d0d0;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right: 1px solid #d0d0d0;
 }
 
+QHeaderView::section:checked {
+    background-color: #e8e8e8;
+}
+
+/* Styling for alternating rows */
+QTableWidget::item:alternate {
+    background-color: #f9f9f9;
+}
+
+/* Styling for selected items - improved for better text visibility */
 QTableWidget::item:selected {
-    background-color: #4caf50; /* Green selection for each item */
-    color: white; /* White text when selected */
+    background-color: #e7f0fd;
+    color: #202020;
 }
 
-QTableWidget QHeaderView::section {
-    background-color: #f5f5f5; /* Light gray background for the header */
-    color: #333; /* Dark text for headers */
-    padding: 8px;
-    border: 1px solid #ddd; /* Border around headers */
-    font-weight: bold; /* Bold text in header */
+/* Hover effect - fixed to maintain text visibility */
+QTableWidget::item:hover {
+    background-color: #f0f7ff;
+    color: #202020;
 }
 
-QTableWidget QHeaderView::section:horizontal {
-    border-right: 1px solid #ddd; /* Horizontal border between columns */
+/* Both selected and hovered */
+QTableWidget::item:selected:hover {
+    background-color: #d7e5f7;
+    color: #202020;
 }
-</string>
+
+/* Styling for the scrollbars */
+QScrollBar:horizontal {
+    border: none;
+    background: #f5f5f5;
+    height: 12px;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #f5f5f5;
+    width: 12px;
+}
+
+QScrollBar::handle:horizontal,
+QScrollBar::handle:vertical {
+    background: #cdcdcd;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover,
+QScrollBar::handle:vertical:hover {
+    background: #b0b0b0;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -197,41 +246,6 @@ QTableWidget QHeaderView::section:horizontal {
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
          </attribute>
-         <column>
-          <property name="text">
-           <string>ID</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Imię</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Nazwisko</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Adres</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Telefon</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>E-mail</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Akcje</string>
-          </property>
-         </column>
         </widget>
        </item>
       </layout>

@@ -16,6 +16,8 @@ public:
     explicit Dashboard(QWidget *parent = nullptr);
     ~Dashboard();
 
+    void refreshContactsTable();
+
 private slots:
     void on_btnCreateContact_clicked();
 
