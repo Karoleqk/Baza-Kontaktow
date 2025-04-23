@@ -5,7 +5,7 @@
 #include <QMessageBox>
 
 #include "registration.h"
-#include "logged.h"
+#include "dashboard.h"
 #include "user.h"
 #include "database_manager.h"
 

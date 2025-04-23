@@ -35,6 +35,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         styles/style.qss
 
 
+        contactswidget.h contactswidget.cpp contactswidget.ui
+        groupswidget.h groupswidget.cpp groupswidget.ui
+
+
 
 
 

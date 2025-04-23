@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "database_manager.h"
+#include "user.h"
 
 namespace Ui {
 class CreateContact;
@@ -15,6 +16,9 @@ class CreateContact : public QDialog
 public:
     explicit CreateContact(QWidget *parent = nullptr);
     ~CreateContact();
+
+signals:
+    void contactAdded();
 
 private slots:
     void on_btnCancel_clicked();

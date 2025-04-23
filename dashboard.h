@@ -2,7 +2,12 @@
 #define DASHBOARD_H
 
 #include <QMainWindow>
-#include "createcontact.h"
+#include <QStackedWidget>
+#include <QPushButton>
+#include "contactswidget.h"
+#include "groupswidget.h"
+#include "baza_kontaktow.h"
+#include "user.h"
 
 namespace Ui {
 class Dashboard;
@@ -16,14 +21,15 @@ public:
     explicit Dashboard(QWidget *parent = nullptr);
     ~Dashboard();
 
-    void refreshContactsTable();
-
 private slots:
-    void on_btnCreateContact_clicked();
+    void showGroupsPage();
+    void showContactsPage();
+    void on_btnLogout_clicked();
 
 private:
     Ui::Dashboard *ui;
-    CreateContact *ptrCreateContact;
+    ContactsWidget *contactsWidget;
+    GroupsWidget *groupsWidget;
 };
 
 #endif // DASHBOARD_H

@@ -64,8 +64,8 @@ void Baza_Kontaktow::on_loginBtn_clicked()
             if(query.next()){ // Sprawdza czy znalazlo pasujacy login i haslo
                 QMessageBox::information(this, "Logged in", "Zalogowano pomyslnie", QMessageBox::Yes);
                 this->close();
-                Logged *logged = new Logged(this);
-                logged->show();
+                Dashboard *dashboard = new Dashboard(this);
+                dashboard->show();
             } else {
                 QMessageBox::critical(this, "Blad", "Bledny login lub haslo", QMessageBox::No);
             }
