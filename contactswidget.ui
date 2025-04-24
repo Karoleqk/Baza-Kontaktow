@@ -33,12 +33,8 @@
 	font-size: 20px;
 }
 
-#ContactsWidget {
-	background-color: white;
-}
-
-#header, #mainBody, #sidebar {
-	background-color: #F9F9F9;
+#header, #mainBody {
+	background-color: #F5F6FA;
 }
 
 QPushButton {
@@ -75,14 +71,15 @@ QPushButton:hover {
 }
 
 QLineEdit {
+	border: 1px solid #C4C4C4;
 	background-color: white;
-	border: 1px solid gray;
+	border-radius: 6px;
 	border-radius: 4px;
-        padding: 8px;
+    padding: 8px;
 }
     
 QLineEdit:focus {
-        border-color: black;
+        border-color: #1C2028;
 }
 
 QTableWidget {
@@ -303,6 +300,9 @@ QScrollBar::handle:vertical:hover {
       <widget class="QPushButton" name="btnCreateContact">
        <property name="text">
         <string>Dodaj kontakt</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::ContactNew"/>
        </property>
       </widget>
      </item>

@@ -23,16 +23,19 @@
 }
 
 #title {
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: bold;
 }
 
-QLineEdit, QTextEdit {
-	border: 1px solid gray;
+QLineEdit{
+	border: 1px solid #C4C4C4;
+	background-color: transparent;
+	border-radius: 6px;
+	padding: 4px;
 }
 
-QLineEdit::focus, QTextEdit::focus {
-	border: 2px solid black;
+QLineEdit:focus {
+	border-color: #1C2028;
 }
 
 QWidget {
@@ -42,7 +45,7 @@ QWidget {
 QPushButton {
 	background-color: #007BFF; 
 	color: white;
-	padding: 10px;
+	padding: 8px 20px;
 	border-radius: 4px;
 	text-align: center;
 	text-decoration: none;
@@ -56,15 +59,17 @@ QPushButton:hover {
 	background: transparent;
 	color: black;
 	border: 1px solid #007BFF;
-	padding-top: 9px;
-	padding-bottom: 9px;
+	text-decoration: none;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#btnCancel:hover {
+	background-color: #F5F5F5;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>8</number>
-   </property>
-   <item alignment="Qt::AlignmentFlag::AlignTop">
+   <item>
     <widget class="QLabel" name="title">
      <property name="font">
       <font>
@@ -79,9 +84,9 @@ QPushButton:hover {
    </item>
    <item>
     <widget class="QWidget" name="main" native="true">
-     <layout class="QFormLayout" name="formLayout">
+     <layout class="QFormLayout" name="formLayout_5">
       <property name="verticalSpacing">
-       <number>16</number>
+       <number>14</number>
       </property>
       <item row="0" column="0">
        <widget class="QLabel" name="label_2">
@@ -124,56 +129,84 @@ QPushButton:hover {
        <widget class="QLineEdit" name="inputEmail"/>
       </item>
       <item row="4" column="0" colspan="2">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
         <property name="spacing">
-         <number>10</number>
+         <number>20</number>
         </property>
         <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Ulica</string>
+         <layout class="QFormLayout" name="formLayout_3">
+          <property name="horizontalSpacing">
+           <number>30</number>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="inputAddressStreet"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Numer domu</string>
+          <property name="verticalSpacing">
+           <number>6</number>
           </property>
-         </widget>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="inputAddressStreet"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Ulica</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLineEdit" name="inputAddressNumber"/>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="horizontalSpacing">
+           <number>6</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="inputAddressNumber"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Numer domu</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
       <item row="5" column="0" colspan="2">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <property name="spacing">
-         <number>10</number>
+         <number>20</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Miasto</string>
+         <layout class="QFormLayout" name="formLayout_4">
+          <property name="horizontalSpacing">
+           <number>20</number>
           </property>
-         </widget>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="inputAddressCity"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Miasto</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLineEdit" name="inputAddressCity"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Kod pocztowy</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="inputAddressPostalCode"/>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Kod pocztowy</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="inputAddressPostalCode"/>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -193,7 +226,7 @@ QPushButton:hover {
      </property>
     </spacer>
    </item>
-   <item alignment="Qt::AlignmentFlag::AlignBottom">
+   <item>
     <widget class="QGroupBox" name="footer">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">

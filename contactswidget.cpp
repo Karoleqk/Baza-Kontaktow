@@ -70,6 +70,20 @@ void ContactsWidget::refreshContactsTable()
     int userId = currentUser->getId();
 
     if(db.open()) {
+        QSqlQuery countQuery(db);
+        countQuery.prepare("SELECT COUNT(*) FROM contacts WHERE user_id = :user_id");
+        countQuery.bindValue(":user_id", userId);
+
+        int totalContacts = 0;
+
+        if(countQuery.exec() && countQuery.next()){
+            totalContacts = countQuery.value(0).toInt();
+
+            ui->labelTotal->setText(QString::number(totalContacts));
+        } else {
+            ui->labelTotal->setText("0");
+        }
+
         QSqlQuery query(db);
         query.prepare(R"(
             SELECT id, first_name, last_name, phone, email,
