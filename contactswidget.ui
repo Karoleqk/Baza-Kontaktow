@@ -29,6 +29,11 @@
 	color: black;
 }
 
+.msgBox {
+	background-color: white;
+	color: #0B0B10;
+}
+
 #title {
 	font-size: 20px;
 }
@@ -50,20 +55,18 @@ QPushButton:hover {
 	background-color: #42A5F5;
 }
 
+.editButton, .deleteButton {
+	font-size: 12px;
+	padding: 4px 8px;
+}
+
 #btnContacts, #btnGroups {
 	font-weight: bold;
 	padding: 12px 20px;	
 }
 
-#btnLogout {
-	background: transparent;
-	color: black;
-	border: 1px solid #007BFF;
-}
-
-#btnLogout:hover {
-	background-color:  #007BFF;
-	color: white;
+#btnSearch {
+	padding: 10px;
 }
 
 #labelTotal {

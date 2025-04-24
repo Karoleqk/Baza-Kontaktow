@@ -2,6 +2,9 @@
 #define CONTACTSWIDGET_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QHBoxLayout>
 #include "createcontact.h"
 #include "createcontact.h"
 
@@ -21,6 +24,8 @@ public:
 
 private slots:
     void on_btnCreateContact_clicked();
+    void onEditButtonClicked();
+    void onDeleteButtonClicked();
 
 private:
     Ui::ContactsWidget *ui;
