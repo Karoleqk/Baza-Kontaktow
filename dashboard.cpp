@@ -7,7 +7,7 @@ Dashboard::Dashboard(QWidget *parent)
 {
     ui->setupUi(this);
 
-    qDebug() << "user id: " << currentUser->getId();
+    this->resize(1024, 640);
 
     contactsWidget = new ContactsWidget(this);
     groupsWidget = new GroupsWidget(this);

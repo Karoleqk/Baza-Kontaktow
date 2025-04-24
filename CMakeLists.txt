@@ -37,6 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         contactswidget.h contactswidget.cpp contactswidget.ui
         groupswidget.h groupswidget.cpp groupswidget.ui
+        editcontact.h editcontact.cpp editcontact.ui
 
 
 

@@ -9,6 +9,10 @@ CreateContact::CreateContact(QWidget *parent)
     , ui(new Ui::CreateContact)
 {
     ui->setupUi(this);
+
+    this->setFixedSize(400, 500);
+    this->setWindowTitle("Dodaj kontakt");
+
 }
 
 CreateContact::~CreateContact()

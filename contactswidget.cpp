@@ -7,9 +7,14 @@ ContactsWidget::ContactsWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ptrCreateContact = new CreateContact();
+    ptrCreateContact = new CreateContact(this);
+    ptrEditContact = new EditContact(this);
 
     connect(ptrCreateContact, &CreateContact::contactAdded, this, &ContactsWidget::refreshContactsTable);
+    connect(ptrEditContact, &EditContact::contactUpdated, this, &ContactsWidget::refreshContactsTable);
+    connect(ui->inputSearch, &QLineEdit::textChanged, this, &ContactsWidget::refreshContactsTable);
+
+
 
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
@@ -55,6 +60,7 @@ ContactsWidget::~ContactsWidget()
 
 void ContactsWidget::on_btnCreateContact_clicked()
 {
+    ptrCreateContact->setModal(true);
     ptrCreateContact->show();
 }
 
@@ -69,31 +75,79 @@ void ContactsWidget::refreshContactsTable()
 
     int userId = currentUser->getId();
 
+    QString searchText = ui->inputSearch->text().trimmed();
+    bool isSearching = !searchText.isEmpty();
+
     if(db.open()) {
+        QString countSql = R"(
+            SELECT COUNT(*) FROM contacts
+            WHERE user_id = :user_id
+        )";
+
+        if (isSearching) {
+            searchText = "%" + searchText + "%";
+            countSql += R"(
+                AND (
+                    first_name LIKE :search OR
+                    last_name LIKE :search OR
+                    phone LIKE :search OR
+                    email LIKE :search OR
+                    address_city LIKE :search OR
+                    address_street LIKE :search OR
+                    address_postal_code LIKE :search
+                )
+            )";
+        }
+
         QSqlQuery countQuery(db);
-        countQuery.prepare("SELECT COUNT(*) FROM contacts WHERE user_id = :user_id");
+        countQuery.prepare(countSql);
         countQuery.bindValue(":user_id", userId);
 
+        if (isSearching) {
+            countQuery.bindValue(":search", searchText);
+        }
+
         int totalContacts = 0;
-
-        if(countQuery.exec() && countQuery.next()){
+        if (countQuery.exec() && countQuery.next()) {
             totalContacts = countQuery.value(0).toInt();
-
             ui->labelTotal->setText(QString::number(totalContacts));
         } else {
             ui->labelTotal->setText("0");
         }
 
+
         QSqlQuery query(db);
-        query.prepare(R"(
+
+        QString sql = R"(
             SELECT id, first_name, last_name, phone, email,
                 address_city || ', ' || address_street || ' ' || address_number || ', ' ||
                 address_postal_code AS address
             FROM contacts
             WHERE user_id = :user_id
-        )");
+        )";
 
+        if (isSearching) {
+            searchText = "%" + searchText + "%";
+            sql += R"(
+                AND (
+                    first_name LIKE :search OR
+                    last_name LIKE :search OR
+                    phone LIKE :search OR
+                    email LIKE :search OR
+                    address_city LIKE :search OR
+                    address_street LIKE :search OR
+                    address_postal_code LIKE :search
+                )
+            )";
+        }
+
+
+        query.prepare(sql);
         query.bindValue(":user_id", userId);
+
+        if(isSearching){
+            query.bindValue(":search", searchText);
+        }
 
         if(query.exec()) {
             QStringList headers;
@@ -169,14 +223,12 @@ void ContactsWidget::onEditButtonClicked()
     if (button) {
         int contactId = button->property("contactId").toInt();
 
-        QMessageBox msgBox;
-
-        msgBox.setWindowTitle("Edytuj kontakt");
-        msgBox.setText("Edytowanie kontaktu ID: " + QString::number(contactId));
-        msgBox.setStandardButtons(QMessageBox::StandardButton::Ok);
-        msgBox.setProperty("class", "msgBox");
-
-        msgBox.exec();
+        if (ptrEditContact->loadContactData(contactId)) {
+            ptrEditContact->setModal(true);
+            ptrEditContact->show();
+        } else {
+            QMessageBox::critical(this, "Błąd", "Nie można załadować danych kontaktu");
+        }
     }
 }
 
@@ -186,11 +238,37 @@ void ContactsWidget::onDeleteButtonClicked()
     if (button) {
         int contactId = button->property("contactId").toInt();
 
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("Usuń○ kontakt");
+        QMessageBox msgBox(this);
+        msgBox.setWindowTitle("Usuń kontakt");
         msgBox.setText("Jesteś pewny że chcesz usunąć kontakt?");
+
         msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+
+        msgBox.button(QMessageBox::Yes)->setText("Usuń");
+        msgBox.button(QMessageBox::No)->setText("Anuluj");
+
+        msgBox.setDefaultButton(QMessageBox::No);
+        msgBox.setEscapeButton(QMessageBox::No);
+
+        msgBox.setLayoutDirection(Qt::RightToLeft);
+
         msgBox.setProperty("class", "msgBox");
+
+        msgBox.button(QMessageBox::No)->setStyleSheet(R"(
+            QPushButton#btnCancel {
+                background: transparent;
+                color: black;
+                border: 1px solid #007BFF;
+                text-decoration: none;
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            QPushButton#btnCancel:hover {
+                background-color: #F5F5F5;
+            }
+        )");
+
 
         int reply = msgBox.exec();
 

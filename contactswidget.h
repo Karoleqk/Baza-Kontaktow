@@ -6,7 +6,7 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include "createcontact.h"
-#include "createcontact.h"
+#include "editcontact.h"
 
 namespace Ui {
 class ContactsWidget;
@@ -27,9 +27,11 @@ private slots:
     void onEditButtonClicked();
     void onDeleteButtonClicked();
 
+
 private:
     Ui::ContactsWidget *ui;
     CreateContact *ptrCreateContact;
+    EditContact *ptrEditContact;
 };
 
 #endif // CONTACTSWIDGET_H
