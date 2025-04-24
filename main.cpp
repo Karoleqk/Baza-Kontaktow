@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    // Baza_Kontaktow w;
-    Dashboard w;
+    Baza_Kontaktow w;
+    // Dashboard w;
 
     w.show();
     return app.exec();

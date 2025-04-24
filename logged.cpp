@@ -15,8 +15,6 @@ Logged::~Logged()
     delete ui;
 }
 
-
-
 void Logged::on_actionWyloguj_triggered()
 {
     if(currentUser){
