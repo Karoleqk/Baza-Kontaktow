@@ -1,0 +1,19 @@
+# ninja log v6
+12	1830	7673992190513813	Baza_Kontaktow_autogen/timestamp	d98f4fcd9bf55ef9
+12	1830	7673992190513813	Baza_Kontaktow_autogen/mocs_compilation.cpp	d98f4fcd9bf55ef9
+12	1830	7673992190513813	C:/Users/kalcz/Documents/Projects/Baza-Kontaktow/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/Baza_Kontaktow_autogen/timestamp	d98f4fcd9bf55ef9
+12	1830	7673992190513813	C:/Users/kalcz/Documents/Projects/Baza-Kontaktow/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/Baza_Kontaktow_autogen/mocs_compilation.cpp	d98f4fcd9bf55ef9
+1851	4428	7673992191835423	CMakeFiles/Baza_Kontaktow.dir/user.cpp.obj	efb36540edeb527b
+1864	4431	7673992191964112	CMakeFiles/Baza_Kontaktow.dir/hash.cpp.obj	bb5cfe0e9c38f33b
+1860	5656	7673992191923397	CMakeFiles/Baza_Kontaktow.dir/database_manager.cpp.obj	6f169ba5093f1538
+1883	5745	7673992192151081	CMakeFiles/Baza_Kontaktow.dir/groupswidget.cpp.obj	1f31ff669d6ae8b1
+1840	6098	7673992191718381	CMakeFiles/Baza_Kontaktow.dir/main.cpp.obj	2165f9c9d65f88c7
+1836	6372	7673992191683951	CMakeFiles/Baza_Kontaktow.dir/Baza_Kontaktow_autogen/mocs_compilation.cpp.obj	a197727055ab217c
+1855	6536	7673992191873799	CMakeFiles/Baza_Kontaktow.dir/logged.cpp.obj	6f8faa1d235c5408
+1847	6563	7673992191796947	CMakeFiles/Baza_Kontaktow.dir/registration.cpp.obj	b290b3d530575a5b
+1869	6574	7673992192016340	CMakeFiles/Baza_Kontaktow.dir/dashboard.cpp.obj	190a10254d32f851
+1843	6597	7673992191761514	CMakeFiles/Baza_Kontaktow.dir/baza_kontaktow.cpp.obj	f4f6778672052a9f
+1873	6779	7673992192056231	CMakeFiles/Baza_Kontaktow.dir/createcontact.cpp.obj	7001b515f510f2f9
+1888	6787	7673992192196416	CMakeFiles/Baza_Kontaktow.dir/editcontact.cpp.obj	5fd037e208bdf63c
+1878	7440	7673992192101220	CMakeFiles/Baza_Kontaktow.dir/contactswidget.cpp.obj	11abec51f6df51db
+7440	7979	7673992247728929	Baza_Kontaktow.exe	9952589915452324

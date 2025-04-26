@@ -78,7 +78,7 @@ QPushButton:hover {
       </font>
      </property>
      <property name="text">
-      <string>Dodaj kontakt</string>
+      <string>Edytuj kontakt</string>
      </property>
     </widget>
    </item>
