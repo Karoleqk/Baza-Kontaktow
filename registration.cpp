@@ -32,7 +32,9 @@ void Registration::on_registerBtn_clicked()
     QString password = ui->passwordInput->text();
     QString repeatPassword = ui->repeatPasswordInput->text();
 
-    if(password != repeatPassword){
+    if(login == "" || password == ""){
+        QMessageBox::critical(this, "Blad", "Uzupelnij puste pola!", QMessageBox::Yes);
+    } else if(password != repeatPassword){
         QMessageBox::critical(this, "Blad", "Hasla nie sa takie same!", QMessageBox::Cancel);
     } else {
         if(db.open()){
@@ -44,7 +46,7 @@ void Registration::on_registerBtn_clicked()
             query.bindValue(":password", hashedPassword);
 
             if(query.exec()) QMessageBox::information(this, "Zarejestrowano", "Pomyslnie zarejestrowano", QMessageBox::Yes);
-            else QMessageBox::critical(this, "Blad", "Wybrana nazwa jest zajeta!", QMessageBox::No);
+            else {QMessageBox::critical(this, "Blad", "Wybrana nazwa jest zajeta!", QMessageBox::No); qDebug() << "SQL Error: " << query.lastError().text();}
         } else {
             QMessageBox::critical(this, "blad", "Blad otwarcia bazy danych", QMessageBox::No);
         }
