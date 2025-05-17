@@ -22,7 +22,6 @@ void Baza_Kontaktow::on_registerBtn_clicked()
     reg->show();
 }
 
-
 void Baza_Kontaktow::on_loginBtn_clicked()
 {
     Database_Manager dbManager;
@@ -35,7 +34,10 @@ void Baza_Kontaktow::on_loginBtn_clicked()
     if(db.open()){ // jesli baza sie otworzyla, to stworz zapytanie
         QSqlQuery query(db);
 
-        if(currentUser) delete currentUser;
+        if(currentUser){
+            delete currentUser;
+            currentUser = nullptr;
+        }
 
         // Przypisanie do zmiennej globalnej danych aktualnie zalogowanego uzytkownika
         currentUser = new User;
@@ -60,9 +62,10 @@ void Baza_Kontaktow::on_loginBtn_clicked()
         if(query.exec()){
             if(query.next()){ // Sprawdza czy znalazlo pasujacy login i haslo
                 QMessageBox::information(this, "Logged in", "Zalogowano pomyslnie", QMessageBox::Yes);
-                this->close();
-                Logged *logged = new Logged(this);
-                logged->show();
+                this->hide();
+                Dashboard *dashboard = new Dashboard(nullptr);
+                dashboard->setWindowFlags(Qt::Window);
+                dashboard->show();
             } else {
                 QMessageBox::critical(this, "Blad", "Bledny login lub haslo", QMessageBox::No);
             }
