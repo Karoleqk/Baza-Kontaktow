@@ -2,6 +2,7 @@
 #define CREATEGROUP_H
 
 #include <QWidget>
+#include <QMessageBox>
 #include "database_manager.h"
 #include "user.h"
 
