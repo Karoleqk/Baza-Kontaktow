@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QFont>
+#include <QMessageBox>
 #include "creategroup.h"
 #include "database_manager.h"
 #include "user.h"
@@ -21,12 +23,16 @@ public:
 
 private slots:
     void on_addGroupBtn_clicked();
+    void on_editBtn_clicked();
+    void on_deleteBtn_clicked();
+    void on_showBtn_clicked();
 
 public slots:
     void reloadGroups();
 
 private:
     Ui::GroupsWidget *ui;
+    creategroup *grpPtr;
 };
 
 #endif // GROUPSWIDGET_H

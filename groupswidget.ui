@@ -154,34 +154,41 @@ QScrollBar::handle:vertical:hover {
     background: #b0b0b0;
 }</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="20,2">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <layout class="QGridLayout" name="groupsContainer"/>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="Footer">
-     <property name="rightMargin">
-      <number>10</number>
-     </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="4,3,1">
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      <layout class="QGridLayout" name="groupsContainer"/>
      </item>
      <item>
-      <widget class="QPushButton" name="addGroupBtn">
-       <property name="text">
-        <string>Dodaj grupe</string>
+      <layout class="QVBoxLayout" name="contacts_list"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="Footer">
+       <property name="rightMargin">
+        <number>10</number>
        </property>
-      </widget>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addGroupBtn">
+         <property name="text">
+          <string>Dodaj grupe</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
