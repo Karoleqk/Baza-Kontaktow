@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1022</width>
-    <height>606</height>
+    <height>730</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -156,39 +156,91 @@ QScrollBar::handle:vertical:hover {
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="4,3,1">
+    <layout class="QHBoxLayout" name="Header">
      <item>
-      <layout class="QGridLayout" name="groupsContainer"/>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="contacts_list"/>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="Footer">
-       <property name="rightMargin">
-        <number>10</number>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>28</pointsize>
+        </font>
        </property>
+       <property name="text">
+        <string>Grupy</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="Main">
+     <item>
+      <layout class="QVBoxLayout" name="groupContainer" stretch="0,4">
        <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Wszystkich grup: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelTotal">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="addGroupBtn">
+        <widget class="QTableWidget" name="groupsTable"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="groupsContactsContainer">
+       <item>
+        <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Dodaj grupe</string>
+          <string>Kontakty:</string>
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QTableWidget" name="groupsContactsTable"/>
+       </item>
       </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="Footer">
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addGroupBtn">
+       <property name="text">
+        <string>Dodaj grupe</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

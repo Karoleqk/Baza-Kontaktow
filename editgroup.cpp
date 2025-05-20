@@ -1,33 +1,42 @@
-#include "creategroup.h"
-#include "ui_creategroup.h"
+#include "editgroup.h"
+#include "ui_editgroup.h"
 
-creategroup::creategroup(QWidget *parent)
+editGroup::editGroup(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::creategroup)
+    , ui(new Ui::editGroup)
 {
     ui->setupUi(this);
     this->setFixedSize(400, 500);
-    setWindowTitle("Utworz grupe");
+    setWindowTitle("Edytuj grupe");
 }
 
-creategroup::~creategroup()
-{
-    delete ui;
-}
-
-
-void creategroup::loadData(){
+bool editGroup::loadGroupData(int groupId){
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
 
-    ui->groupList->clear();
-
     if(db.open()){
+        QSqlQuery getGroupName(db);
+        QString groupName;
+
+        getGroupName.prepare("SELECT group_name FROM groups WHERE group_id = :groupId");
+        getGroupName.bindValue(":groupId", groupId);
+        if(getGroupName.exec()){
+            if(getGroupName.next()) {
+                groupName = getGroupName.value(0).toString();
+                ui->groupNameInput->setText(groupName);
+            }
+        } else {
+            qDebug() << "Blad zapytania";
+        }
+
+
         QSqlQuery query(db);
         int userId = currentUser->getId();
 
         query.prepare("SELECT ID, first_name, last_name, phone FROM contacts WHERE user_id = :currentId");
         query.bindValue(":currentId", userId);
+
+        ui->groupList->clear();
 
         if(query.exec()){
             while(query.next()){
@@ -35,32 +44,49 @@ void creategroup::loadData(){
                 QString lastName = query.value(2).toString();
                 QString phoneNumber = query.value(3).toString();
                 QString fullName = firstName + " " + lastName + " " + phoneNumber;
+                int contactId = query.value(0).toInt();
 
                 QListWidgetItem *item = new QListWidgetItem(fullName);
-                item->setCheckState(Qt::Unchecked);
-                item->setData(Qt::UserRole, query.value(0).toInt());
+
+                QSqlQuery getContacts(db);
+
+                getContacts.prepare("SELECT 1 FROM groups_contacts WHERE group_id = :groupId AND contact_id = :contactId");
+                getContacts.bindValue(":groupId", groupId);
+                getContacts.bindValue(":contactId", contactId);
+
+                if(getContacts.exec()){
+                    if(getContacts.next()) item->setCheckState(Qt::Checked);
+                    else item->setCheckState(Qt::Unchecked);
+                } else {
+                    qDebug() << "Blad zapytania";
+                }
+
+                item->setData(Qt::UserRole, contactId);
                 ui->groupList->addItem(item);
             }
             db.close();
         } else {
             qDebug() << "Blad wykonania zapytania" << query.lastError().text();
         }
+        this->currentGroupId = groupId;
         db.close();
+        return true;
     } else {
         qDebug() << "Nie mozna otworzyc bazy danych";
     }
 }
 
-void creategroup::on_closeBtn_clicked()
+editGroup::~editGroup()
 {
-    this->close();
+    delete ui;
 }
 
 
-void creategroup::on_addBtn_clicked()
+void editGroup::on_saveBtn_clicked()
 {
     int currId = currentUser->getId();
-    int groupId;
+    int groupId = this->currentGroupId;
+    qDebug() << groupId;
 
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
@@ -72,12 +98,22 @@ void creategroup::on_addBtn_clicked()
         if(db.open()){
             QSqlQuery checkGroupName(db);
 
-            checkGroupName.prepare("SELECT group_name FROM groups WHERE group_name = :groupName AND user_id = :currId");
+            checkGroupName.prepare("SELECT group_id FROM groups WHERE group_name = :groupName AND user_id = :currId AND group_id != :groupId");
             checkGroupName.bindValue(":groupName", groupName);
             checkGroupName.bindValue(":currId", currId);
+            checkGroupName.bindValue(":groupId", groupId);
 
             if(checkGroupName.exec()){
                 if(!checkGroupName.next()){
+
+                    // Update group name
+                    QSqlQuery updateGroupName(db);
+                    updateGroupName.prepare("UPDATE groups SET group_name = :groupName WHERE group_id = :groupId");
+                    updateGroupName.bindValue(":groupName", groupName);
+                    updateGroupName.bindValue(":groupId", groupId);
+
+                    if(!updateGroupName.exec()) qDebug() << "Blad akutalizacji nazwy grupy";
+
                     bool isChecked = false;
 
                     for(int i = 0; i < ui->groupList->count(); i++){
@@ -85,29 +121,16 @@ void creategroup::on_addBtn_clicked()
                         if(item->checkState() == Qt::Checked) isChecked = true;
                     }
 
+                    // update contacts in group
+
                     if(!isChecked) QMessageBox::warning(this, "Blad", "Nie mozesz stworzyc pustej grupy", QMessageBox::Yes);
                     else {
-                        QSqlQuery insertQuery(db);
+                        QSqlQuery clearContacts(db);
 
-                        insertQuery.prepare("INSERT INTO groups (user_id, group_name) VALUES (:currId, :groupName)");
-                        insertQuery.bindValue(":currId", currId);
-                        insertQuery.bindValue(":groupName", groupName);
-
-                        if(insertQuery.exec()){
-
-                            QSqlQuery query(db);
-                            query.exec("CREATE TABLE IF NOT EXISTS groups_contacts ("
-                                       "groupContacts_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                                       "group_id INTEGER,"
-                                       "contact_id INTEGER)");
-
-
-                            query.prepare("SELECT group_id FROM groups WHERE user_id = :currId AND group_name = :groupName");
-                            query.bindValue(":currId", currId);
-                            query.bindValue(":groupName", groupName);
-
-                            if(query.exec() && query.next()) groupId = query.value(0).toInt();
-
+                        clearContacts.prepare("DELETE FROM groups_contacts WHERE group_id = :groupId");
+                        clearContacts.bindValue(":groupId", groupId);
+                        if(!clearContacts.exec()) qDebug() << "Blad usuwania starych danych";
+                        else {
                             for(int i = 0; i < ui->groupList->count(); i++){
                                 QListWidgetItem *item = ui->groupList->item(i);
                                 if(item->checkState() == Qt::Checked){
@@ -122,14 +145,11 @@ void creategroup::on_addBtn_clicked()
                                     if(!insertContact.exec()) qDebug() << "Blad zapytania";
                                 }
                             }
-
-                            emit groupCreated();
-                        } else {
-                            qDebug() << "Blad zapytania" << insertQuery.lastError().text();
+                            emit groupEdited();
                         }
 
-                        this->close();
                         db.close();
+                        this->close();
                     }
                 } else {
                     QMessageBox::warning(this, "Blad", "Istnieje juz grupa o takiej nazwie", QMessageBox::Yes);
@@ -143,5 +163,12 @@ void creategroup::on_addBtn_clicked()
             qDebug() << "Problem z otwarciem bazy danych";
         }
     }
-
+    this->close();
 }
+
+
+void editGroup::on_closeBtn_clicked()
+{
+    this->close();
+}
+
