@@ -7,15 +7,12 @@ GroupsWidget::GroupsWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    reloadGroups();
-}
+    editGrpPtr = new editGroup(nullptr);
+    grpPtr = new creategroup(nullptr);
 
-GroupsWidget::~GroupsWidget()
-{
-    delete ui;
-}
+    connect(grpPtr, &creategroup::groupCreated, this, &GroupsWidget::reloadGroups);
+    connect(editGrpPtr, &editGroup::groupEdited, this, &GroupsWidget::reloadGroups);
 
-void GroupsWidget::reloadGroups(){
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
 
@@ -38,63 +35,134 @@ void GroupsWidget::reloadGroups(){
         if(!query.exec()) qDebug() << "Blad zapytania";
 
         else {
-            int index = 0;
+            QStringList headers, headers2;
+            headers << "ID" << "Nazwa grupy" << "Akcje";
+            headers2 << "ID" << "Imie" << "Nazwisko" << "Numer telefonu" << "Email" << "Adres";
+
+            ui->groupsTable->setColumnCount(headers.size());
+            ui->groupsTable->setHorizontalHeaderLabels(headers);
+            ui->groupsContactsTable->setColumnCount(headers2.size());
+            ui->groupsContactsTable->setHorizontalHeaderLabels(headers2);
+
+            ui->groupsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            ui->groupsTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->groupsTable->verticalHeader()->setVisible(false);
+            ui->groupsContactsTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            ui->groupsContactsTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->groupsContactsTable->verticalHeader()->setVisible(false);
+
+            reloadGroups();
+        }
+    }
+
+}
+
+GroupsWidget::~GroupsWidget()
+{
+    delete ui;
+}
+
+void GroupsWidget::reloadGroups(){
+    Database_Manager dbManager;
+    QSqlDatabase db = dbManager.getDatabase();
+
+    if(!db.open()){
+        qDebug() << "Error: Unable to open database..";
+    }
+    else{
+        qDebug() << "Database open successfully..";
+        int userId = currentUser->getId();
+
+        QSqlQuery countGroups(db);
+
+        countGroups.prepare("SELECT COUNT(*) FROM groups WHERE user_id = :userId");
+        countGroups.bindValue(":userId", userId);
+
+        int totalGroups = 0;
+        if(countGroups.exec() && countGroups.next()){
+            totalGroups = countGroups.value(0).toInt();
+            ui->labelTotal->setText(QString::number(totalGroups));
+        } else {
+            ui->labelTotal->setText("0");
+        }
+
+
+        QSqlQuery query(db);
+
+        query.prepare("SELECT group_name, group_id FROM groups WHERE user_id = :currentId");
+        query.bindValue(":currentId", userId);
+
+        if(!query.exec()) qDebug() << "Blad zapytania";
+
+        else {
             qDebug() << "Poprawne zapytanie";
 
-            QLayoutItem* child;
-            while ((child = ui->groupsContainer->takeAt(0)) != nullptr) {
-                if (child->widget()) {
-                    delete child->widget();
-                }
-                delete child;
-            }
+            ui->groupsTable->setRowCount(0);
+            int row = 0;
 
             while(query.next()){
                 qDebug() << "Udalo sie";
 
-                int groupId = query.value(1).toInt();
                 QString groupName = query.value(0).toString();
+                int groupId = query.value(1).toInt();
 
                 if(!groupName.isEmpty()) groupName[0] = groupName[0].toUpper();
 
-                QWidget* groupWidget = new QWidget(this);
-                QVBoxLayout* vLayout = new QVBoxLayout(groupWidget);
 
-                QLabel* nameLabel = new QLabel(groupName, groupWidget);
-                nameLabel->setAlignment(Qt::AlignCenter);
-                QFont font;
-                font.setWeight(QFont::Bold);
-                nameLabel->setFont(font);
-                vLayout->addWidget(nameLabel);
+                // Create table
 
-                QPushButton* editButton = new QPushButton("Edytuj", groupWidget); 
-                editButton->setProperty("groupId", groupId);
-                editButton->setProperty("class", "editBtn");
+                ui->groupsTable->insertRow(row);
 
-                QPushButton* deleteButton = new QPushButton("Usuń", groupWidget);
-                deleteButton->setProperty("groupId", groupId);
-                deleteButton->setProperty("class", "deleteBtn");
+                QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(groupId));
+                idItem->setFlags(idItem->flags() & ~Qt::ItemIsEditable);
 
-                QPushButton* showButton = new QPushButton("Wyswietl", groupWidget);
+                ui->groupsTable->setItem(row, 0, idItem);
+                ui->groupsTable->setItem(row, 1, new QTableWidgetItem(groupName));
+
+
+                // create buttons and add properties to them, and combine them into one widget
+
+                QWidget *cellWidget = new QWidget();
+                QPushButton *showButton = new QPushButton("Wyswietl");
+                QPushButton *deleteButton = new QPushButton("Usun");
+                QPushButton *editButton = new QPushButton("Edytuj");
+
                 showButton->setProperty("groupId", groupId);
                 showButton->setProperty("class", "showBtn");
 
+                deleteButton->setProperty("groupId", groupId);
+                deleteButton->setProperty("class", "deleteBtn");
+
+                editButton->setProperty("groupId", groupId);
+                editButton->setProperty("class", "editBtn");
+
+                // Buttons connections
+
+                connect(showButton, &QPushButton::clicked, this, &GroupsWidget::on_showBtn_clicked);
                 connect(deleteButton, &QPushButton::clicked, this, &GroupsWidget::on_deleteBtn_clicked);
                 connect(editButton, &QPushButton::clicked, this, &GroupsWidget::on_editBtn_clicked);
-                connect(showButton, &QPushButton::clicked, this, &GroupsWidget::on_showBtn_clicked);
 
-                vLayout->addWidget(editButton);
-                vLayout->addWidget(deleteButton);
-                vLayout->addWidget(showButton);
 
-                int row = index / 4;
-                int col = index % 4;
+                // Buttons styling
+                showButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px};");
+                deleteButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px;}");
+                editButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px;}");
 
-                ui->groupsContainer->addWidget(groupWidget, row, col);
-                groupWidget->setStyleSheet("border: 1px solid gray; border-radius: 10px; padding: 10px;");
-                groupWidget->setMinimumSize(150, 250);
-                groupWidget->setMaximumSize(200,250);
-                index++;
+
+                // Combine table cell with widget containing our buttons
+
+                QHBoxLayout *layout = new QHBoxLayout(cellWidget);
+                layout->addWidget(showButton);
+                layout->addWidget(deleteButton);
+                layout->addWidget(editButton);
+
+                layout->setContentsMargins(2,2,2,2);
+                layout->setSpacing(5);
+
+
+                ui->groupsTable->setCellWidget(row, 2, cellWidget);
+
+                row++;
             }
             db.close();
         }
@@ -103,8 +171,7 @@ void GroupsWidget::reloadGroups(){
 
 void GroupsWidget::on_addGroupBtn_clicked()
 {
-    grpPtr = new creategroup(nullptr);
-    connect(grpPtr, &creategroup::groupCreated, this, &GroupsWidget::reloadGroups);
+    grpPtr->loadData();
     grpPtr->show();
 }
 
@@ -113,12 +180,6 @@ void GroupsWidget::on_deleteBtn_clicked(){
     QPushButton* button = qobject_cast<QPushButton*>(sender());
 
     if(button){
-        QLayoutItem *child;
-        while ((child = ui->contacts_list->takeAt(0)) != nullptr) {
-            delete child->widget();
-            delete child;
-        }
-
         QMessageBox msgBox(this);
         msgBox.setWindowTitle("Usuń Grupę");
         msgBox.setText("Jesteś pewny, że chcesz usunąć grupę?");
@@ -175,6 +236,7 @@ void GroupsWidget::on_deleteBtn_clicked(){
                     )");
 
                     msgBox2.exec();
+                    ui->groupsContactsTable->setRowCount(0);
                     reloadGroups();
                 }
             } else {
@@ -188,13 +250,22 @@ void GroupsWidget::on_deleteBtn_clicked(){
 
 
 void GroupsWidget::on_editBtn_clicked(){
+    QPushButton* button = qobject_cast<QPushButton*>(sender());
 
+    if(button){
+        int groupId = button->property("groupId").toInt();
+
+        if(editGrpPtr->loadGroupData(groupId)){
+            editGrpPtr->show();
+        } else {
+            QMessageBox::critical(this, "Blad", "Nie mozna zaladowac grupy", QMessageBox::No);
+        }
+    }
 }
 
 
 
 void GroupsWidget::on_showBtn_clicked(){
-    qDebug() << "on_showBtn_clicked() called";
     QPushButton* button = qobject_cast<QPushButton*>(sender());
 
     Database_Manager dbManager;
@@ -207,16 +278,13 @@ void GroupsWidget::on_showBtn_clicked(){
         if(db.open()){
             QSqlQuery query(db);
 
-            QLayoutItem *child;
-            while ((child = ui->contacts_list->takeAt(0)) != nullptr) {
-                delete child->widget();
-                delete child;
-            }
-
             query.prepare("SELECT contact_id FROM groups_contacts WHERE group_id = :groupId");
             query.bindValue(":groupId", groupId);
 
             if(query.exec()){
+
+                ui->groupsContactsTable->setRowCount(0);
+                int row = 0;
                 while(query.next()){
                     contactId = query.value(0).toInt();
 
@@ -237,11 +305,21 @@ void GroupsWidget::on_showBtn_clicked(){
                             QString phoneNumber = getUserData.value(8).toString();
                             QString email = getUserData.value(9).toString();
 
-                            QString userInfo = QString("Imie: %1 | Nazwisko: %2 | Miasto: %3 | Ulica: %4 | Nr domu: %5\nKod Pocztowy: %6 | Nr tel: %7 | Email: %8")
-                                                   .arg(firstName).arg(lastName).arg(city).arg(street).arg(houseNumber).arg(postalCode).arg(phoneNumber).arg(email);
+                            QString fullAddress = city + " ul. " + street + " " + houseNumber + ", " + postalCode;
 
-                            QLabel *userLabel = new QLabel(userInfo);
-                            ui->contacts_list->addWidget(userLabel);
+                            ui->groupsContactsTable->insertRow(row);
+
+                            QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(contactId));
+                            idItem->setFlags(idItem->flags() & ~Qt::ItemIsEditable);
+
+                            ui->groupsContactsTable->setItem(row, 0, idItem);
+                            ui->groupsContactsTable->setItem(row, 1, new QTableWidgetItem(firstName));
+                            ui->groupsContactsTable->setItem(row, 2, new QTableWidgetItem(lastName));
+                            ui->groupsContactsTable->setItem(row, 3, new QTableWidgetItem(phoneNumber));
+                            ui->groupsContactsTable->setItem(row, 4, new QTableWidgetItem(email));
+                            ui->groupsContactsTable->setItem(row, 5, new QTableWidgetItem(fullAddress));
+
+                            row++;
                         }
                     } else {
                         qDebug() << "Blad zapytania";

@@ -18,6 +18,8 @@ public:
     explicit creategroup(QWidget *parent = nullptr);
     ~creategroup();
 
+    void loadData();
+
 signals:
     void groupCreated();
 

@@ -6,6 +6,7 @@
 #include <QFont>
 #include <QMessageBox>
 #include "creategroup.h"
+#include "editgroup.h"
 #include "database_manager.h"
 #include "user.h"
 
@@ -33,6 +34,7 @@ public slots:
 private:
     Ui::GroupsWidget *ui;
     creategroup *grpPtr;
+    editGroup *editGrpPtr;
 };
 
 #endif // GROUPSWIDGET_H
