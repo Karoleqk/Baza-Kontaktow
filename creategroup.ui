@@ -131,7 +131,7 @@ QCheckBox::indicator:checked:hover {
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Utworz grupę</string>
+      <string>Dodaj grupę</string>
      </property>
     </widget>
    </item>

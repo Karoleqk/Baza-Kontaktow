@@ -7,7 +7,7 @@ creategroup::creategroup(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(400, 500);
-    setWindowTitle("Utworz grupe");
+    setWindowTitle("Dodaj grupe");
 }
 
 creategroup::~creategroup()
@@ -26,30 +26,32 @@ void creategroup::loadData(){
         QSqlQuery query(db);
         int userId = currentUser->getId();
 
-        query.prepare("SELECT ID, first_name, last_name, phone FROM contacts WHERE user_id = :currentId");
+        query.prepare("SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId");
         query.bindValue(":currentId", userId);
 
         if(query.exec()){
             while(query.next()){
+                int contactId = query.value(0).toInt();
                 QString firstName = query.value(1).toString();
                 QString lastName = query.value(2).toString();
-                QString phoneNumber = query.value(3).toString();
-                QString fullName = firstName + " " + lastName + " " + phoneNumber;
+
+                QString fullName = firstName + " " + lastName;
 
                 QListWidgetItem *item = new QListWidgetItem(fullName);
                 item->setCheckState(Qt::Unchecked);
-                item->setData(Qt::UserRole, query.value(0).toInt());
+                item->setData(Qt::UserRole, contactId);
                 ui->groupList->addItem(item);
             }
-            db.close();
         } else {
             qDebug() << "Blad wykonania zapytania" << query.lastError().text();
         }
+
         db.close();
     } else {
         qDebug() << "Nie mozna otworzyc bazy danych";
     }
 }
+
 
 void creategroup::on_closeBtn_clicked()
 {
@@ -143,5 +145,11 @@ void creategroup::on_addBtn_clicked()
             qDebug() << "Problem z otwarciem bazy danych";
         }
     }
+}
 
+void creategroup::resetForm()
+{
+    ui->groupNameInput->clear();
+
+    ui->groupList->clear();
 }
