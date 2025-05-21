@@ -19,6 +19,7 @@ public:
     ~creategroup();
 
     void loadData();
+    void resetForm();
 
 signals:
     void groupCreated();

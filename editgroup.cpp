@@ -16,47 +16,46 @@ bool editGroup::loadGroupData(int groupId){
 
     if(db.open()){
         QSqlQuery getGroupName(db);
-        QString groupName;
-
         getGroupName.prepare("SELECT group_name FROM groups WHERE group_id = :groupId");
         getGroupName.bindValue(":groupId", groupId);
+
         if(getGroupName.exec()){
             if(getGroupName.next()) {
-                groupName = getGroupName.value(0).toString();
+                QString groupName = getGroupName.value(0).toString();
                 ui->groupNameInput->setText(groupName);
             }
         } else {
-            qDebug() << "Blad zapytania";
+            qDebug() << "Blad zapytania (getGroupName):" << getGroupName.lastError().text();
         }
-
 
         QSqlQuery query(db);
         int userId = currentUser->getId();
 
-        query.prepare("SELECT ID, first_name, last_name, phone FROM contacts WHERE user_id = :currentId");
+        query.prepare("SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId");
         query.bindValue(":currentId", userId);
 
         ui->groupList->clear();
 
         if(query.exec()){
             while(query.next()){
+                int contactId = query.value(0).toInt();
                 QString firstName = query.value(1).toString();
                 QString lastName = query.value(2).toString();
-                QString phoneNumber = query.value(3).toString();
-                QString fullName = firstName + " " + lastName + " " + phoneNumber;
-                int contactId = query.value(0).toInt();
+
+                QString fullName = firstName + " " + lastName;
 
                 QListWidgetItem *item = new QListWidgetItem(fullName);
 
                 QSqlQuery getContacts(db);
-
                 getContacts.prepare("SELECT 1 FROM groups_contacts WHERE group_id = :groupId AND contact_id = :contactId");
                 getContacts.bindValue(":groupId", groupId);
                 getContacts.bindValue(":contactId", contactId);
 
                 if(getContacts.exec()){
-                    if(getContacts.next()) item->setCheckState(Qt::Checked);
-                    else item->setCheckState(Qt::Unchecked);
+                    if(getContacts.next())
+                        item->setCheckState(Qt::Checked);
+                    else
+                        item->setCheckState(Qt::Unchecked);
                 } else {
                     qDebug() << "Blad zapytania";
                 }
@@ -73,8 +72,10 @@ bool editGroup::loadGroupData(int groupId){
         return true;
     } else {
         qDebug() << "Nie mozna otworzyc bazy danych";
+        return false;
     }
 }
+
 
 editGroup::~editGroup()
 {
@@ -105,9 +106,8 @@ void editGroup::on_saveBtn_clicked()
 
             if(checkGroupName.exec()){
                 if(!checkGroupName.next()){
-
-                    // Update group name
                     QSqlQuery updateGroupName(db);
+
                     updateGroupName.prepare("UPDATE groups SET group_name = :groupName WHERE group_id = :groupId");
                     updateGroupName.bindValue(":groupName", groupName);
                     updateGroupName.bindValue(":groupId", groupId);
@@ -120,8 +120,6 @@ void editGroup::on_saveBtn_clicked()
                         QListWidgetItem *item = ui->groupList->item(i);
                         if(item->checkState() == Qt::Checked) isChecked = true;
                     }
-
-                    // update contacts in group
 
                     if(!isChecked) QMessageBox::warning(this, "Blad", "Nie mozesz stworzyc pustej grupy", QMessageBox::Yes);
                     else {
@@ -149,7 +147,7 @@ void editGroup::on_saveBtn_clicked()
                         }
 
                         db.close();
-                        this->close();
+                        this->hide();
                     }
                 } else {
                     QMessageBox::warning(this, "Blad", "Istnieje juz grupa o takiej nazwie", QMessageBox::Yes);
@@ -163,12 +161,12 @@ void editGroup::on_saveBtn_clicked()
             qDebug() << "Problem z otwarciem bazy danych";
         }
     }
-    this->close();
+    this->hide();
 }
 
 
 void editGroup::on_closeBtn_clicked()
 {
-    this->close();
+    this->hide();
 }
 

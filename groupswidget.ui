@@ -173,7 +173,11 @@ QScrollBar::handle:vertical:hover {
       </layout>
      </item>
      <item>
-      <widget class="QTableWidget" name="groupsTable"/>
+      <widget class="QTableWidget" name="groupsTable">
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -190,7 +194,11 @@ QScrollBar::handle:vertical:hover {
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="groupsContactsTable"/>
+      <widget class="QTableWidget" name="groupsContactsTable">
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

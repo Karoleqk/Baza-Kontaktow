@@ -30,8 +30,6 @@ ContactsWidget::ContactsWidget(QWidget *parent)
                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                    "firstName TEXT, "
                    "lastName TEXT, "
-                   "phone TEXT, "
-                   "email TEXT, "
                    "address TEXT)");
 
         if(query.lastError().isValid()) {
@@ -60,6 +58,7 @@ ContactsWidget::~ContactsWidget()
 
 void ContactsWidget::on_btnCreateContact_clicked()
 {
+    ptrCreateContact->resetForm();
     ptrCreateContact->setModal(true);
     ptrCreateContact->show();
 }
@@ -67,7 +66,6 @@ void ContactsWidget::on_btnCreateContact_clicked()
 void ContactsWidget::refreshContactsTable()
 {
     QTableWidget* tableWidget = ui->tableContacts;
-
     tableWidget->setRowCount(0);
 
     Database_Manager dbManager;
@@ -78,7 +76,7 @@ void ContactsWidget::refreshContactsTable()
     QString searchText = ui->inputSearch->text().trimmed();
     bool isSearching = !searchText.isEmpty();
 
-    if(db.open()) {
+    if (db.open()) {
         QString countSql = R"(
             SELECT COUNT(*) FROM contacts
             WHERE user_id = :user_id
@@ -87,14 +85,18 @@ void ContactsWidget::refreshContactsTable()
         if (isSearching) {
             searchText = "%" + searchText + "%";
             countSql += R"(
-                AND (
-                    first_name LIKE :search OR
-                    last_name LIKE :search OR
-                    phone LIKE :search OR
-                    email LIKE :search OR
-                    address_city LIKE :search OR
-                    address_street LIKE :search OR
-                    address_postal_code LIKE :search
+                AND id IN (
+                    SELECT contacts.id FROM contacts
+                    LEFT JOIN contacts_emails ON contacts.id = contacts_emails.contact_id
+                    LEFT JOIN contacts_phones ON contacts.id = contacts_phones.contact_id
+                    WHERE
+                        first_name LIKE :search OR
+                        last_name LIKE :search OR
+                        contacts_emails.email LIKE :search OR
+                        contacts_phones.phone LIKE :search OR
+                        address_city LIKE :search OR
+                        address_street LIKE :search OR
+                        address_postal_code LIKE :search
                 )
             )";
         }
@@ -115,63 +117,81 @@ void ContactsWidget::refreshContactsTable()
             ui->labelTotal->setText("0");
         }
 
-
         QSqlQuery query(db);
-
         QString sql = R"(
-            SELECT id, first_name, last_name, phone, email,
-                address_city || ', ' || address_street || ' ' || address_number || ', ' ||
-                address_postal_code AS address
+            SELECT id, first_name, last_name,
+                   address_city || ', ' || address_street || ' ' || address_number || ', ' || address_postal_code AS address
             FROM contacts
             WHERE user_id = :user_id
         )";
 
         if (isSearching) {
-            searchText = "%" + searchText + "%";
             sql += R"(
-                AND (
-                    first_name LIKE :search OR
-                    last_name LIKE :search OR
-                    phone LIKE :search OR
-                    email LIKE :search OR
-                    address_city LIKE :search OR
-                    address_street LIKE :search OR
-                    address_postal_code LIKE :search
+                AND id IN (
+                    SELECT contacts.id FROM contacts
+                    LEFT JOIN contacts_emails ON contacts.id = contacts_emails.contact_id
+                    LEFT JOIN contacts_phones ON contacts.id = contacts_phones.contact_id
+                    WHERE
+                        first_name LIKE :search OR
+                        last_name LIKE :search OR
+                        contacts_emails.email LIKE :search OR
+                        contacts_phones.phone LIKE :search OR
+                        address_city LIKE :search OR
+                        address_street LIKE :search OR
+                        address_postal_code LIKE :search
                 )
             )";
         }
 
-
         query.prepare(sql);
         query.bindValue(":user_id", userId);
 
-        if(isSearching){
+        if (isSearching) {
             query.bindValue(":search", searchText);
         }
 
-        if(query.exec()) {
+        if (query.exec()) {
             QStringList headers;
             headers << "ID" << "Imię" << "Nazwisko" << "Telefon" << "Email" << "Adres" << "Akcje";
             tableWidget->setColumnCount(headers.size());
             tableWidget->setHorizontalHeaderLabels(headers);
-
             tableWidget->verticalHeader()->setVisible(false);
 
             int row = 0;
-            while(query.next()) {
+            while (query.next()) {
                 tableWidget->insertRow(row);
 
                 int contactId = query.value(0).toInt();
 
-                QTableWidgetItem *idItem = new QTableWidgetItem(query.value(0).toString());
+                QStringList phones;
+                QSqlQuery phoneQuery(db);
+                phoneQuery.prepare("SELECT phone FROM contacts_phones WHERE contact_id = :id");
+                phoneQuery.bindValue(":id", contactId);
+                if (phoneQuery.exec()) {
+                    while (phoneQuery.next()) {
+                        phones << phoneQuery.value(0).toString();
+                    }
+                }
+
+                QStringList emails;
+                QSqlQuery emailQuery(db);
+                emailQuery.prepare("SELECT email FROM contacts_emails WHERE contact_id = :id");
+                emailQuery.bindValue(":id", contactId);
+                if (emailQuery.exec()) {
+                    while (emailQuery.next()) {
+                        emails << emailQuery.value(0).toString();
+                    }
+                }
+
+                QTableWidgetItem* idItem = new QTableWidgetItem(QString::number(contactId));
                 idItem->setFlags(idItem->flags() & ~Qt::ItemIsEditable);
                 tableWidget->setItem(row, 0, idItem);
 
                 tableWidget->setItem(row, 1, new QTableWidgetItem(query.value(1).toString()));
                 tableWidget->setItem(row, 2, new QTableWidgetItem(query.value(2).toString()));
-                tableWidget->setItem(row, 3, new QTableWidgetItem(query.value(3).toString()));
-                tableWidget->setItem(row, 4, new QTableWidgetItem(query.value(4).toString()));
-                tableWidget->setItem(row, 5, new QTableWidgetItem(query.value(5).toString()));
+                tableWidget->setItem(row, 3, new QTableWidgetItem(phones.join(", ")));
+                tableWidget->setItem(row, 4, new QTableWidgetItem(emails.join(", ")));
+                tableWidget->setItem(row, 5, new QTableWidgetItem(query.value(3).toString()));
 
                 QWidget* buttonsWidget = new QWidget();
                 QHBoxLayout* buttonsLayout = new QHBoxLayout(buttonsWidget);
@@ -190,9 +210,6 @@ void ContactsWidget::refreshContactsTable()
 
                 buttonsLayout->addWidget(editButton);
                 buttonsLayout->addWidget(deleteButton);
-
-                tableWidget->setCellWidget(row, 6, buttonsWidget);
-
                 tableWidget->setCellWidget(row, 6, buttonsWidget);
 
                 row++;
@@ -208,7 +225,6 @@ void ContactsWidget::refreshContactsTable()
 
             tableWidget->resizeColumnsToContents();
             tableWidget->horizontalHeader()->setStretchLastSection(true);
-
         } else {
             qDebug() << "Failed to execute query:" << query.lastError().text();
         }
@@ -216,6 +232,7 @@ void ContactsWidget::refreshContactsTable()
         qDebug() << "Failed to open database";
     }
 }
+
 
 void ContactsWidget::onEditButtonClicked()
 {
@@ -241,34 +258,24 @@ void ContactsWidget::onDeleteButtonClicked()
         QMessageBox msgBox(this);
         msgBox.setWindowTitle("Usuń kontakt");
         msgBox.setText("Jesteś pewny że chcesz usunąć kontakt?");
-
         msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-
         msgBox.button(QMessageBox::Yes)->setText("Usuń");
         msgBox.button(QMessageBox::No)->setText("Anuluj");
 
         msgBox.setDefaultButton(QMessageBox::No);
         msgBox.setEscapeButton(QMessageBox::No);
+        msgBox.setIcon(QMessageBox::Question);
 
-        msgBox.setLayoutDirection(Qt::RightToLeft);
-
-        msgBox.setProperty("class", "msgBox");
-
-        msgBox.button(QMessageBox::No)->setStyleSheet(R"(
-            QPushButton#btnCancel {
-                background: transparent;
-                color: black;
-                border: 1px solid #007BFF;
-                text-decoration: none;
-                padding-top: 7px;
-                padding-bottom: 7px;
+        msgBox.setStyleSheet(R"(
+            QMessageBox {
+                background-color: white;
+                border-radius: 8px;
             }
-
-            QPushButton#btnCancel:hover {
-                background-color: #F5F5F5;
+            QPushButton {
+                min-width: 80px;
+                padding: 5px;
             }
         )");
-
 
         int reply = msgBox.exec();
 
@@ -278,14 +285,47 @@ void ContactsWidget::onDeleteButtonClicked()
 
             if (db.open()) {
                 QSqlQuery query(db);
+
+                db.transaction();
+
+                query.prepare("DELETE FROM contacts_phones WHERE contact_id = :contactId");
+                query.bindValue(":contactId", contactId);
+                if (!query.exec()) {
+                    db.rollback();
+                    QMessageBox::critical(this, "Błąd", "Błąd przy usuwaniu telefonów: " + query.lastError().text());
+                    return;
+                }
+
+                query.prepare("DELETE FROM contacts_emails WHERE contact_id = :contactId");
+                query.bindValue(":contactId", contactId);
+                if (!query.exec()) {
+                    db.rollback();
+                    QMessageBox::critical(this, "Błąd", "Błąd przy usuwaniu emaili: " + query.lastError().text());
+                    return;
+                }
+
                 query.prepare("DELETE FROM contacts WHERE id = :id AND user_id = :user_id");
                 query.bindValue(":id", contactId);
                 query.bindValue(":user_id", currentUser->getId());
 
                 if (query.exec()) {
+                    db.commit();
                     refreshContactsTable();
-                    QMessageBox::information(this, "Sukces", "Kontakt usunięty pomyślnie");
+                    QMessageBox msgBox2(this);
+                    msgBox2.setWindowTitle("Usunieto");
+                    msgBox2.setText("Kontakt usunięty pomyślnie");
+                    msgBox2.setStandardButtons(QMessageBox::Yes);
+
+                    msgBox2.setStyleSheet(R"(
+                    QMessageBox{
+                        background-color: white;
+                        border-radius: 8px;
+                    }
+                    )");
+
+                    msgBox2.exec();
                 } else {
+                    db.rollback();
                     QMessageBox::critical(this, "Błąd", "Błąd przy usuwaniu kontaktu: " + query.lastError().text());
                 }
             } else {

@@ -37,7 +37,7 @@ GroupsWidget::GroupsWidget(QWidget *parent)
         else {
             QStringList headers, headers2;
             headers << "ID" << "Nazwa grupy" << "Akcje";
-            headers2 << "ID" << "Imie" << "Nazwisko" << "Numer telefonu" << "Email" << "Adres";
+            headers2 << "ID" << "Imię" << "Nazwisko" << "Telefon" << "Email" << "Adres";
 
             ui->groupsTable->setColumnCount(headers.size());
             ui->groupsTable->setHorizontalHeaderLabels(headers);
@@ -157,6 +157,7 @@ void GroupsWidget::reloadGroups(){
 
 void GroupsWidget::on_addGroupBtn_clicked()
 {
+    grpPtr->resetForm();
     grpPtr->loadData();
     grpPtr->show();
 }
@@ -249,8 +250,6 @@ void GroupsWidget::on_editBtn_clicked(){
     }
 }
 
-
-
 void GroupsWidget::on_showBtn_clicked(){
     QPushButton* button = qobject_cast<QPushButton*>(sender());
 
@@ -268,11 +267,30 @@ void GroupsWidget::on_showBtn_clicked(){
             query.bindValue(":groupId", groupId);
 
             if(query.exec()){
-
                 ui->groupsContactsTable->setRowCount(0);
                 int row = 0;
                 while(query.next()){
                     contactId = query.value(0).toInt();
+
+                    QStringList phones;
+                    QSqlQuery phoneQuery(db);
+                    phoneQuery.prepare("SELECT phone FROM contacts_phones WHERE contact_id = :id");
+                    phoneQuery.bindValue(":id", contactId);
+                    if (phoneQuery.exec()) {
+                        while (phoneQuery.next()) {
+                            phones << phoneQuery.value(0).toString();
+                        }
+                    }
+
+                    QStringList emails;
+                    QSqlQuery emailQuery(db);
+                    emailQuery.prepare("SELECT email FROM contacts_emails WHERE contact_id = :id");
+                    emailQuery.bindValue(":id", contactId);
+                    if (emailQuery.exec()) {
+                        while (emailQuery.next()) {
+                            emails << emailQuery.value(0).toString();
+                        }
+                    }
 
                     QSqlQuery getUserData(db);
 
@@ -288,8 +306,6 @@ void GroupsWidget::on_showBtn_clicked(){
                             QString street = getUserData.value(5).toString();
                             QString houseNumber = getUserData.value(6).toString();
                             QString postalCode = getUserData.value(7).toString();
-                            QString phoneNumber = getUserData.value(8).toString();
-                            QString email = getUserData.value(9).toString();
 
                             QString fullAddress = city + " ul. " + street + " " + houseNumber + ", " + postalCode;
 
@@ -301,8 +317,8 @@ void GroupsWidget::on_showBtn_clicked(){
                             ui->groupsContactsTable->setItem(row, 0, idItem);
                             ui->groupsContactsTable->setItem(row, 1, new QTableWidgetItem(firstName));
                             ui->groupsContactsTable->setItem(row, 2, new QTableWidgetItem(lastName));
-                            ui->groupsContactsTable->setItem(row, 3, new QTableWidgetItem(phoneNumber));
-                            ui->groupsContactsTable->setItem(row, 4, new QTableWidgetItem(email));
+                            ui->groupsContactsTable->setItem(row, 3, new QTableWidgetItem(phones.join(", ")));
+                            ui->groupsContactsTable->setItem(row, 4, new QTableWidgetItem(emails.join(", ")));
                             ui->groupsContactsTable->setItem(row, 5, new QTableWidgetItem(fullAddress));
 
                             row++;
