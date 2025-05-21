@@ -108,9 +108,6 @@ void GroupsWidget::reloadGroups(){
 
                 if(!groupName.isEmpty()) groupName[0] = groupName[0].toUpper();
 
-
-                // Create table
-
                 ui->groupsTable->insertRow(row);
 
                 QTableWidgetItem *idItem = new QTableWidgetItem(QString::number(groupId));
@@ -118,9 +115,6 @@ void GroupsWidget::reloadGroups(){
 
                 ui->groupsTable->setItem(row, 0, idItem);
                 ui->groupsTable->setItem(row, 1, new QTableWidgetItem(groupName));
-
-
-                // create buttons and add properties to them, and combine them into one widget
 
                 QWidget *cellWidget = new QWidget();
                 QPushButton *showButton = new QPushButton("Wyswietl");
@@ -136,29 +130,21 @@ void GroupsWidget::reloadGroups(){
                 editButton->setProperty("groupId", groupId);
                 editButton->setProperty("class", "editBtn");
 
-                // Buttons connections
-
                 connect(showButton, &QPushButton::clicked, this, &GroupsWidget::on_showBtn_clicked);
-                connect(deleteButton, &QPushButton::clicked, this, &GroupsWidget::on_deleteBtn_clicked);
                 connect(editButton, &QPushButton::clicked, this, &GroupsWidget::on_editBtn_clicked);
+                connect(deleteButton, &QPushButton::clicked, this, &GroupsWidget::on_deleteBtn_clicked);
 
-
-                // Buttons styling
                 showButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px};");
                 deleteButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px;}");
                 editButton->setStyleSheet("QPushButton {padding: 2px 0; margin: 0; min-width: 1px;}");
 
-
-                // Combine table cell with widget containing our buttons
-
                 QHBoxLayout *layout = new QHBoxLayout(cellWidget);
                 layout->addWidget(showButton);
-                layout->addWidget(deleteButton);
                 layout->addWidget(editButton);
+                layout->addWidget(deleteButton);
 
                 layout->setContentsMargins(2,2,2,2);
                 layout->setSpacing(5);
-
 
                 ui->groupsTable->setCellWidget(row, 2, cellWidget);
 
