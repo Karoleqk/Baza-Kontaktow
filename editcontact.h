@@ -19,6 +19,7 @@ public:
     ~EditContact();
 
     bool loadContactData(int contactId);
+    void resetForm();
 
 signals:
     void contactUpdated();

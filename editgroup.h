@@ -24,6 +24,7 @@ public:
     int currentGroupId;
 
     bool loadGroupData(int groupId);
+    void resetForm();
 
 private slots:
     void on_saveBtn_clicked();
@@ -32,6 +33,10 @@ private slots:
 
 private:
     Ui::editGroup *ui;
+
+    void refreshContactsList();
+
+    QSet<int> checkedContactIds;
 };
 
 #endif // EDITGROUP_H

@@ -32,6 +32,8 @@ private slots:
 
 private:
     Ui::creategroup *ui;
+
+    QSet<int> checkedContactIds;
 };
 
 #endif // CREATEGROUP_H

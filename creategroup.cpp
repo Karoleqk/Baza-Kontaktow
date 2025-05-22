@@ -8,6 +8,19 @@ creategroup::creategroup(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(400, 500);
     setWindowTitle("Dodaj grupe");
+
+    loadData();
+
+    connect(ui->inputSearch, &QLineEdit::textChanged, this, &creategroup::loadData);
+
+    connect(ui->groupList, &QListWidget::itemChanged, this, [this](QListWidgetItem* item){
+        int id = item->data(Qt::UserRole).toInt();
+        if (item->checkState() == Qt::Checked)
+            checkedContactIds.insert(id);
+        else
+            checkedContactIds.remove(id);
+    });
+
 }
 
 creategroup::~creategroup()
@@ -26,8 +39,27 @@ void creategroup::loadData(){
         QSqlQuery query(db);
         int userId = currentUser->getId();
 
-        query.prepare("SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId");
+        QString searchText = ui->inputSearch->text().trimmed();
+        bool isSearching = !searchText.isEmpty();
+
+        QString sql = "SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId";
+
+        if(isSearching){
+            searchText = "%" + searchText + "%";
+            sql += " AND (first_name LIKE :search OR last_name LIKE :search)";
+        }
+
+        sql += " ORDER BY first_name, last_name";
+
+        query.prepare(sql);
         query.bindValue(":currentId", userId);
+
+        if(isSearching){
+            query.bindValue(":search", searchText);
+        }
+
+        QList<QListWidgetItem*> checkedItems;
+        QList<QListWidgetItem*> uncheckedItems;
 
         if(query.exec()){
             while(query.next()){
@@ -38,8 +70,22 @@ void creategroup::loadData(){
                 QString fullName = firstName + " " + lastName;
 
                 QListWidgetItem *item = new QListWidgetItem(fullName);
-                item->setCheckState(Qt::Unchecked);
+
+                if(checkedContactIds.contains(contactId)){
+                    item->setCheckState(Qt::Checked);
+                    checkedItems.append(item);
+                } else {
+                    item->setCheckState(Qt::Unchecked);
+                    uncheckedItems.append(item);
+                }
+
                 item->setData(Qt::UserRole, contactId);
+            }
+
+            for(QListWidgetItem* item : checkedItems){
+                ui->groupList->addItem(item);
+            }
+            for(QListWidgetItem* item : uncheckedItems){
                 ui->groupList->addItem(item);
             }
         } else {
@@ -150,6 +196,7 @@ void creategroup::on_addBtn_clicked()
 void creategroup::resetForm()
 {
     ui->groupNameInput->clear();
+    ui->inputSearch->clear();
 
     ui->groupList->clear();
 }
