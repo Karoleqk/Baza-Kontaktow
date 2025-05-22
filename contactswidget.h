@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QFileDialog>
 #include "createcontact.h"
 #include "editcontact.h"
 
@@ -28,10 +29,20 @@ private slots:
     void onDeleteButtonClicked();
 
 
+    void on_btnImport_clicked();
+
+    void on_btnExport_clicked();
+
 private:
     Ui::ContactsWidget *ui;
     CreateContact *ptrCreateContact;
     EditContact *ptrEditContact;
+
+    int exportToCSV(QFile& file);
+    int exportToJSON(QFile& file);
+    int importFromCSV(QFile& file, int& errorCount);
+    int importFromJSON(QFile& file, int& errorCount);
+    QStringList parseCSVLine(const QString& line);
 };
 
 #endif // CONTACTSWIDGET_H
