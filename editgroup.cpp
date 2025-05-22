@@ -8,9 +8,22 @@ editGroup::editGroup(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(400, 500);
     setWindowTitle("Edytuj grupe");
+
+    connect(ui->inputSearch, &QLineEdit::textChanged, this, &editGroup::refreshContactsList);
+
+    connect(ui->groupList, &QListWidget::itemChanged, this, [this](QListWidgetItem* item){
+        int id = item->data(Qt::UserRole).toInt();
+        if (item->checkState() == Qt::Checked)
+            checkedContactIds.insert(id);
+        else
+            checkedContactIds.remove(id);
+    });
 }
 
 bool editGroup::loadGroupData(int groupId){
+    currentGroupId = groupId;
+    checkedContactIds.clear();
+
     Database_Manager dbManager;
     QSqlDatabase db = dbManager.getDatabase();
 
@@ -28,47 +41,22 @@ bool editGroup::loadGroupData(int groupId){
             qDebug() << "Blad zapytania (getGroupName):" << getGroupName.lastError().text();
         }
 
-        QSqlQuery query(db);
-        int userId = currentUser->getId();
+        QSqlQuery groupContactsQuery(db);
+        groupContactsQuery.prepare("SELECT contact_id FROM groups_contacts WHERE group_id = :groupId");
+        groupContactsQuery.bindValue(":groupId", groupId);
 
-        query.prepare("SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId");
-        query.bindValue(":currentId", userId);
-
-        ui->groupList->clear();
-
-        if(query.exec()){
-            while(query.next()){
-                int contactId = query.value(0).toInt();
-                QString firstName = query.value(1).toString();
-                QString lastName = query.value(2).toString();
-
-                QString fullName = firstName + " " + lastName;
-
-                QListWidgetItem *item = new QListWidgetItem(fullName);
-
-                QSqlQuery getContacts(db);
-                getContacts.prepare("SELECT 1 FROM groups_contacts WHERE group_id = :groupId AND contact_id = :contactId");
-                getContacts.bindValue(":groupId", groupId);
-                getContacts.bindValue(":contactId", contactId);
-
-                if(getContacts.exec()){
-                    if(getContacts.next())
-                        item->setCheckState(Qt::Checked);
-                    else
-                        item->setCheckState(Qt::Unchecked);
-                } else {
-                    qDebug() << "Blad zapytania";
-                }
-
-                item->setData(Qt::UserRole, contactId);
-                ui->groupList->addItem(item);
+        if (groupContactsQuery.exec()) {
+            while (groupContactsQuery.next()) {
+                checkedContactIds.insert(groupContactsQuery.value(0).toInt());
             }
-            db.close();
         } else {
-            qDebug() << "Blad wykonania zapytania" << query.lastError().text();
+            qDebug() << "Blad zapytania (groupContacts):" << groupContactsQuery.lastError().text();
         }
-        this->currentGroupId = groupId;
+
         db.close();
+
+        refreshContactsList();
+
         return true;
     } else {
         qDebug() << "Nie mozna otworzyc bazy danych";
@@ -82,6 +70,75 @@ editGroup::~editGroup()
     delete ui;
 }
 
+void editGroup::refreshContactsList()
+{
+    Database_Manager dbManager;
+    QSqlDatabase db = dbManager.getDatabase();
+
+    ui->groupList->clear();
+
+    if(db.open()){
+        QSqlQuery query(db);
+        int userId = currentUser->getId();
+
+        QString searchText = ui->inputSearch->text().trimmed();
+        bool isSearching = !searchText.isEmpty();
+
+        QString sql = "SELECT ID, first_name, last_name FROM contacts WHERE user_id = :currentId";
+
+        if (isSearching) {
+            searchText = "%" + searchText + "%";
+            sql += " AND (first_name LIKE :search OR last_name LIKE :search)";
+        }
+
+        sql += " ORDER BY first_name, last_name";
+
+        query.prepare(sql);
+        query.bindValue(":currentId", userId);
+
+        if (isSearching) {
+            query.bindValue(":search", searchText);
+        }
+
+        QList<QListWidgetItem*> checkedItems;
+        QList<QListWidgetItem*> uncheckedItems;
+
+        if(query.exec()){
+            while(query.next()){
+                int contactId = query.value(0).toInt();
+                QString firstName = query.value(1).toString();
+                QString lastName = query.value(2).toString();
+
+                QString fullName = firstName + " " + lastName;
+
+                QListWidgetItem *item = new QListWidgetItem(fullName);
+
+                if(checkedContactIds.contains(contactId)){
+                    item->setCheckState(Qt::Checked);
+                    checkedItems.append(item);
+                } else {
+                    item->setCheckState(Qt::Unchecked);
+                    uncheckedItems.append(item);
+                }
+
+                item->setData(Qt::UserRole, contactId);
+            }
+
+            for(QListWidgetItem* item : checkedItems){
+                ui->groupList->addItem(item);
+            }
+            for(QListWidgetItem* item : uncheckedItems){
+                ui->groupList->addItem(item);
+            }
+        } else {
+            qDebug() << "Blad wykonania zapytania" << query.lastError().text();
+        }
+
+        db.close();
+    } else {
+        qDebug() << "Nie mozna otworzyc bazy danych";
+    }
+}
 
 void editGroup::on_saveBtn_clicked()
 {
@@ -170,3 +227,7 @@ void editGroup::on_closeBtn_clicked()
     this->hide();
 }
 
+void editGroup::resetForm()
+{
+    ui->inputSearch->clear();
+}

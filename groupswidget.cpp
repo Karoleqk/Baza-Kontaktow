@@ -243,6 +243,7 @@ void GroupsWidget::on_editBtn_clicked(){
         int groupId = button->property("groupId").toInt();
 
         if(editGrpPtr->loadGroupData(groupId)){
+            editGrpPtr->resetForm();
             editGrpPtr->show();
         } else {
             QMessageBox::critical(this, "Blad", "Nie mozna zaladowac grupy", QMessageBox::No);
@@ -333,7 +334,5 @@ void GroupsWidget::on_showBtn_clicked(){
         } else {
             qDebug() << "Blad otwarcia bazy danych";
         }
-
-
     }
 }

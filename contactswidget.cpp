@@ -241,6 +241,7 @@ void ContactsWidget::onEditButtonClicked()
         int contactId = button->property("contactId").toInt();
 
         if (ptrEditContact->loadContactData(contactId)) {
+            ptrEditContact->resetForm();
             ptrEditContact->setModal(true);
             ptrEditContact->show();
         } else {

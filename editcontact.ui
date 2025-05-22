@@ -354,6 +354,12 @@ QListWidget::item:selected:hover {
       <property name="spacing">
        <number>8</number>
       </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
       <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">

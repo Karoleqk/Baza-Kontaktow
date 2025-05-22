@@ -268,6 +268,12 @@ void EditContact::on_btnAddEmail_clicked()
     if (email.isEmpty())
         return;
 
+    static const QRegularExpression emailRegex(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$)");
+    if (!emailRegex.match(email).hasMatch()) {
+        QMessageBox::warning(this, "Nieprawidłowy email", "Wprowadź poprawny adres e-mail.");
+        return;
+    }
+
     for (int i = 0; i < ui->emailsList->count(); ++i) {
         QWidget *w = ui->emailsList->itemWidget(ui->emailsList->item(i));
         if (auto label = w->findChild<QLabel*>()) {
@@ -316,6 +322,12 @@ void EditContact::on_btnAddPhone_clicked()
     if (phone.isEmpty())
         return;
 
+    static const QRegularExpression phoneRegex(R"(^\+?[0-9\s\-()]{6,20}$)");
+    if (!phoneRegex.match(phone).hasMatch()) {
+        QMessageBox::warning(this, "Nieprawidłowy numer", "Wprowadź poprawny numer telefonu.");
+        return;
+    }
+
     for (int i = 0; i < ui->phonesList->count(); ++i) {
         QWidget *w = ui->phonesList->itemWidget(ui->phonesList->item(i));
         if (auto label = w->findChild<QLabel*>()) {
@@ -329,6 +341,7 @@ void EditContact::on_btnAddPhone_clicked()
     addPhoneItem(phone);
     ui->inputPhone->clear();
 }
+
 
 void EditContact::addPhoneItem(const QString &phone)
 {
@@ -358,3 +371,8 @@ void EditContact::addPhoneItem(const QString &phone)
     });
 }
 
+void EditContact::resetForm()
+{
+    ui->inputEmail->clear();
+    ui->inputPhone->clear();
+}

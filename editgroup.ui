@@ -127,7 +127,7 @@ QCheckBox::indicator:checked:hover {
 	border-color: #0056b3;
 }</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
@@ -156,11 +156,25 @@ QCheckBox::indicator:checked:hover {
     </layout>
    </item>
    <item>
-    <widget class="QListWidget" name="groupList">
-     <property name="selectionMode">
-      <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="topMargin">
+      <number>8</number>
      </property>
-    </widget>
+     <item>
+      <widget class="QLineEdit" name="inputSearch">
+       <property name="placeholderText">
+        <string>Wyszukaj kontakt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="groupList">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
