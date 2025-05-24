@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>creategroup</class>
+ <widget class="QWidget" name="creategroup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>440</width>
+    <height>483</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	color: black;
+}
+
+#label {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+QLineEdit{
+	border: 1px solid #C4C4C4;
+	background-color: white;
+	border-radius: 6px;
+    padding: 4px;
+}
+
+QLineEdit:focus {
+	border-color: #1C2028;
+}
+
+QWidget {
+	background-color: #F9F9F9;
+}
+
+QPushButton {
+	background-color: #007BFF; 
+	color: white;
+	padding: 8px 20px;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+}
+
+QPushButton:hover {
+	background-color: #42A5F5;
+}
+
+#closeBtn {
+	background: transparent;
+	color: black;
+	border: 1px solid #007BFF;
+	text-decoration: none;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#closeBtn:hover {
+	background-color: #F5F5F5;
+}
+
+QListWidget {
+	background-color: #ffffff;
+	border: 1px solid #d0d0d0;
+	border-radius: 4px;
+	font-size: 12px;
+}
+
+QListWidget::item {
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+QListWidget::item:alternate {
+    background-color: #f9f9f9;
+}
+
+QListWidget::item:hover {
+    background-color: #f0f7ff;
+    color: #202020;
+}
+QListWidget::item:selected {
+    background-color: #e7f0fd;
+    color: #202020;
+    border: 1px solid #a0c4ff;
+    border-radius: 4px;
+}
+
+QListWidget::item:selected:hover {
+    background-color: #d7e5f7;
+    color: #202020;
+    border: 1px solid #7aaaff;
+}
+
+QCheckBox {
+    spacing: 10px;
+    color: #202020;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+	height: 18px;
+	border-radius: 4px;
+	border: 2px solid #007BFF;
+	background: transparent;
+}
+
+QCheckBox::indicator:hover {
+	border-color: #0056b3;
+}
+
+QCheckBox::indicator:checked {
+	background-color: #007BFF;
+	border: 2px solid #007BFF;
+}
+
+QCheckBox::indicator:checked:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Dodaj grupę</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Nazwa grupy</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="groupNameInput"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="topMargin">
+      <number>8</number>
+     </property>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="inputSearch">
+       <property name="placeholderText">
+        <string>Wyszukaj kontakt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="groupList">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeBtn">
+       <property name="text">
+        <string>Anuluj</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addBtn">
+       <property name="text">
+        <string>Dodaj</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

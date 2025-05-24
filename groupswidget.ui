@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>476</height>
+    <width>1022</width>
+    <height>730</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -44,7 +44,7 @@
 QPushButton {
 	background-color: #007BFF; 
 	color: white;
-	padding: 10px;
+	padding: 8px 12px;
 	border-radius: 4px;
 	text-align: center;
 	text-decoration: none;
@@ -54,19 +54,20 @@ QPushButton:hover {
 	background-color: #42A5F5;
 }
 
-#btnContacts, #btnGroups {
-	font-weight: bold;
-	padding: 12px 20px;	
-}
-
-#btnLogout {
+#btnImport, #btnExport {
 	background: transparent;
 	color: black;
 	border: 1px solid #007BFF;
+	text-decoration: none;
+	padding-top: 7px;
+	padding-bottom: 7px;
 }
 
-#btnLogout:hover {
-	background-color:  #007BFF;
+#btnImport:hover, #btnExport:hover {
+	background-color: #F5F5F5;
+}
+
+QAbstractButton {
 	color: white;
 }
 
@@ -154,19 +155,114 @@ QScrollBar::handle:vertical:hover {
     background: #b0b0b0;
 }</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>190</y>
-     <width>49</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Grupy</string>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="groupContainer" stretch="0,4">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>9</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Wszystkich grup: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelTotal">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="groupsTable">
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="bottomMargin">
+      <number>11</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Kontakty:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="groupsContactsTable">
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="topMargin">
+      <number>9</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnImport">
+       <property name="text">
+        <string>Importuj</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExport">
+       <property name="text">
+        <string>Eksportuj</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addGroupBtn">
+       <property name="text">
+        <string>Dodaj grupe</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::FolderNew"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

@@ -1,18 +1,25 @@
 #include "baza_kontaktow.h"
-#include "dashboard.h"
 
 #include <QApplication>
 #include <QFile>
 #include <QTextStream>
 #include <QString>
+#include <QStyleFactory>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    Baza_Kontaktow w;
-    // Dashboard w;
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
 
+    QPalette darkPalette;
+
+    darkPalette.setColor(QPalette::Text, Qt::white);
+
+    app.setPalette(darkPalette);
+
+    Baza_Kontaktow w;
     w.show();
+
     return app.exec();
 }

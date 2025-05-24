@@ -19,6 +19,7 @@ public:
     ~EditContact();
 
     bool loadContactData(int contactId);
+    void resetForm();
 
 signals:
     void contactUpdated();
@@ -28,9 +29,16 @@ private slots:
 
     void on_btnSave_clicked();
 
+    void on_btnAddEmail_clicked();
+
+    void on_btnAddPhone_clicked();
+
 private:
     Ui::EditContact *ui;
     int m_contactId;
+
+    void addEmailItem(const QString &email);
+    void addPhoneItem(const QString &phone);
 };
 
 #endif // EDITCONTACT_H

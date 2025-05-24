@@ -1,6 +1,8 @@
 #ifndef DATABASE_MANAGER_H
 #define DATABASE_MANAGER_H
 
+#include <QString>
+#include <QCoreApplication>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>
@@ -13,6 +15,7 @@ class Database_Manager
 {
 public:
     QString connectionName;
+    QString dbPath;
 
     Database_Manager();
     ~Database_Manager();

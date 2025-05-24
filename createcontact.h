@@ -17,6 +17,8 @@ public:
     explicit CreateContact(QWidget *parent = nullptr);
     ~CreateContact();
 
+    void resetForm();
+
 signals:
     void contactAdded();
 
@@ -25,8 +27,18 @@ private slots:
 
     void on_btnCreate_clicked();
 
+    void on_btnAddEmail_clicked();
+
+    void on_btnAddPhone_clicked();
+
 private:
     Ui::CreateContact *ui;
+
+    void addEmailItem(const QString &email);
+    void addPhoneItem(const QString &phone);
+
+    QStringList getAllEmails() const;
+    QStringList getAllPhones() const;
 };
 
 #endif // CREATECONTACT_H

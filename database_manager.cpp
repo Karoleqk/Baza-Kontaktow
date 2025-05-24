@@ -2,10 +2,11 @@
 
 Database_Manager::Database_Manager() {
     connectionName = "mainConnection";
+    dbPath = QCoreApplication::applicationDirPath() + "/../../baza danych/contacts.db";
 
     if(!QSqlDatabase::contains(connectionName)){
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
-        db.setDatabaseName("contacts.db");
+        db.setDatabaseName(dbPath);
     }
 }
 
@@ -20,7 +21,7 @@ QSqlDatabase Database_Manager::getDatabase(){
         return QSqlDatabase::database(connectionName);
     } else {
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
-        db.setDatabaseName("contacts.db");
+        db.setDatabaseName(dbPath);
         return db;
     }
 }
