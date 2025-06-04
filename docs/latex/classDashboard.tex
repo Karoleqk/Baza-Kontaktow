@@ -1,0 +1,143 @@
+\doxysection{Dashboard Class Reference}
+\hypertarget{classDashboard}{}\label{classDashboard}\index{Dashboard@{Dashboard}}
+
+
+Deklaracja klasy wyświetlającej główne okno po zalogowaniu użytkownika.  
+
+
+
+
+{\ttfamily \#include $<$dashboard.\+h$>$}
+
+
+
+Inheritance diagram for Dashboard\+:
+% FIG 0
+
+
+Collaboration diagram for Dashboard\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDashboard_a937d0e0c1b405a283f67a95eadea3e04}{Dashboard}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classDashboard}{Dashboard}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDashboard_a43a9becd0adb8641b81174de35842690}{\texorpdfstring{$\sim$}{\string~}\+Dashboard}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classDashboard}{Dashboard}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDashboard_a8d8ccfc4f4b39137b401a229191b2aca}{show\+Groups\+Page}} ()
+\begin{DoxyCompactList}\small\item\em show\+Groups\+Page \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDashboard_a046efb32f1c9826b0e44c43d86d3f572}{show\+Contacts\+Page}} ()
+\begin{DoxyCompactList}\small\item\em show\+Contacts\+Page \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDashboard_ab3ccf8f00ea6ebd2e3bffd3a01c24dbf}{on\+\_\+btn\+Logout\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Logout\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1Dashboard}{Ui\+::\+Dashboard}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDashboard_a79f1e17575e19f01554f201a9b971913}{ui}}
+\item 
+\mbox{\hyperlink{classContactsWidget}{Contacts\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDashboard_a58977f10b124262d8154cefffc0962e6}{contacts\+Widget}}
+\begin{DoxyCompactList}\small\item\em contacts\+Widget \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGroupsWidget}{Groups\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDashboard_ac11c52be08a212a2dd988bf8557f58e0}{groups\+Widget}}
+\begin{DoxyCompactList}\small\item\em groups\+Widget \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy wyświetlającej główne okno po zalogowaniu użytkownika. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDashboard_a937d0e0c1b405a283f67a95eadea3e04}\label{classDashboard_a937d0e0c1b405a283f67a95eadea3e04} 
+\index{Dashboard@{Dashboard}!Dashboard@{Dashboard}}
+\index{Dashboard@{Dashboard}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{Dashboard()}{Dashboard()}}
+{\footnotesize\ttfamily Dashboard\+::\+Dashboard (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classDashboard}{Dashboard}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Wdidgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Przy wywołaniu, wyświetla okno z kontaktami użytkownika \Hypertarget{classDashboard_a43a9becd0adb8641b81174de35842690}\label{classDashboard_a43a9becd0adb8641b81174de35842690} 
+\index{Dashboard@{Dashboard}!````~Dashboard@{\texorpdfstring{$\sim$}{\string~}Dashboard}}
+\index{````~Dashboard@{\texorpdfstring{$\sim$}{\string~}Dashboard}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Dashboard()}{\string~Dashboard()}}
+{\footnotesize\ttfamily Dashboard\+::\texorpdfstring{$\sim$}{\string~}\+Dashboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classDashboard}{Dashboard}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDashboard_ab3ccf8f00ea6ebd2e3bffd3a01c24dbf}\label{classDashboard_ab3ccf8f00ea6ebd2e3bffd3a01c24dbf} 
+\index{Dashboard@{Dashboard}!on\_btnLogout\_clicked@{on\_btnLogout\_clicked}}
+\index{on\_btnLogout\_clicked@{on\_btnLogout\_clicked}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{on\_btnLogout\_clicked}{on\_btnLogout\_clicked}}
+{\footnotesize\ttfamily void Dashboard\+::on\+\_\+btn\+Logout\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Logout\+\_\+clicked 
+
+Metoda wywoływana po wciśnięciu przycisku Wyloguj. Usuwa dane ze zmiennej globalnej current\+User oraz czyści jej miesjce w pamięci komputera, po czym zamyka okno \doxylink{classDashboard}{Dashboard} i przechodzi do okna logowania \doxylink{classBaza__Kontaktow}{Baza\+\_\+\+Kontaktow} \Hypertarget{classDashboard_a046efb32f1c9826b0e44c43d86d3f572}\label{classDashboard_a046efb32f1c9826b0e44c43d86d3f572} 
+\index{Dashboard@{Dashboard}!showContactsPage@{showContactsPage}}
+\index{showContactsPage@{showContactsPage}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{showContactsPage}{showContactsPage}}
+{\footnotesize\ttfamily void Dashboard\+::show\+Contacts\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+show\+Contacts\+Page 
+
+Metoda wyświetlająca wszystkie kontakty aktualnie zalogowanego użytkownika \Hypertarget{classDashboard_a8d8ccfc4f4b39137b401a229191b2aca}\label{classDashboard_a8d8ccfc4f4b39137b401a229191b2aca} 
+\index{Dashboard@{Dashboard}!showGroupsPage@{showGroupsPage}}
+\index{showGroupsPage@{showGroupsPage}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{showGroupsPage}{showGroupsPage}}
+{\footnotesize\ttfamily void Dashboard\+::show\+Groups\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+show\+Groups\+Page 
+
+Metoda wyświetlająca wszystkie grupy aktualnie zalogowanego użytkownika 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDashboard_a58977f10b124262d8154cefffc0962e6}\label{classDashboard_a58977f10b124262d8154cefffc0962e6} 
+\index{Dashboard@{Dashboard}!contactsWidget@{contactsWidget}}
+\index{contactsWidget@{contactsWidget}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{contactsWidget}{contactsWidget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classContactsWidget}{Contacts\+Widget}}\texorpdfstring{$\ast$}{*} Dashboard\+::contacts\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+contacts\+Widget 
+
+Widget, zawierający kontaktu użytkownika \Hypertarget{classDashboard_ac11c52be08a212a2dd988bf8557f58e0}\label{classDashboard_ac11c52be08a212a2dd988bf8557f58e0} 
+\index{Dashboard@{Dashboard}!groupsWidget@{groupsWidget}}
+\index{groupsWidget@{groupsWidget}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{groupsWidget}{groupsWidget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGroupsWidget}{Groups\+Widget}}\texorpdfstring{$\ast$}{*} Dashboard\+::groups\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+groups\+Widget 
+
+Widget, zawierający grupy użytkownika \Hypertarget{classDashboard_a79f1e17575e19f01554f201a9b971913}\label{classDashboard_a79f1e17575e19f01554f201a9b971913} 
+\index{Dashboard@{Dashboard}!ui@{ui}}
+\index{ui@{ui}!Dashboard@{Dashboard}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1Dashboard}{Ui\+::\+Dashboard}}\texorpdfstring{$\ast$}{*} Dashboard\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dashboard_8h}{dashboard.\+h}}\item 
+\mbox{\hyperlink{dashboard_8cpp}{dashboard.\+cpp}}\end{DoxyCompactItemize}

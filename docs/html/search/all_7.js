@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['getallemails_0',['getAllEmails',['../classCreateContact.html#a5ce541545804fccd4c3beb828481b456',1,'CreateContact']]],
+  ['getallphones_1',['getAllPhones',['../classCreateContact.html#ae7b6e4646ea89dc7c0f50c1c15579fd4',1,'CreateContact']]],
+  ['getdatabase_2',['getDatabase',['../classDatabase__Manager.html#a92fc4926c57a8abf059b0deb30732ddf',1,'Database_Manager']]],
+  ['getid_3',['getId',['../classUser.html#a1e393732cd9838ab29445d9153333046',1,'User']]],
+  ['getname_4',['getName',['../classUser.html#a08223b0b137e3fc264d94f2d746a4fc9',1,'User']]],
+  ['getpassword_5',['getPassword',['../classUser.html#a96d673c7c62ecdfdd4c509db8350262d',1,'User']]],
+  ['groupcontainer_6',['groupContainer',['../classUi__GroupsWidget.html#a9af18b66114ac7e85dfa9456d22a0e81',1,'Ui_GroupsWidget']]],
+  ['groupcreated_7',['groupCreated',['../classcreategroup.html#a02aa7538ac62a83644f80f63e405c78a',1,'creategroup']]],
+  ['groupedited_8',['groupEdited',['../classeditGroup.html#a10373eccb57e6f5b863970dd3dec7d9e',1,'editGroup']]],
+  ['grouplist_9',['grouplist',['../classUi__creategroup.html#ae5a973279175e22d1e190dbbb6ce3b07',1,'Ui_creategroup::groupList'],['../classUi__editGroup.html#a99440d687dc80ce05b84d96230e01c59',1,'Ui_editGroup::groupList']]],
+  ['groupnameinput_10',['groupnameinput',['../classUi__editGroup.html#aa59731f86f9532b648aaab4913af5e5b',1,'Ui_editGroup::groupNameInput'],['../classUi__creategroup.html#a1bafd1f8ec15d47ae4e1db4a2b4771a6',1,'Ui_creategroup::groupNameInput']]],
+  ['groupscontactstable_11',['groupsContactsTable',['../classUi__GroupsWidget.html#af9455431bf901fb5792a6f3acc5f8260',1,'Ui_GroupsWidget']]],
+  ['groupspage_12',['groupsPage',['../classUi__Dashboard.html#a0f8bb22266cc4e9f8e6474d4d047908b',1,'Ui_Dashboard']]],
+  ['groupstable_13',['groupsTable',['../classUi__GroupsWidget.html#a32ac8d8f5578a47495d16d9443355045',1,'Ui_GroupsWidget']]],
+  ['groupswidget_14',['groupswidget',['../classGroupsWidget.html#af4b426925ddb2be0779c32c353c323b0',1,'GroupsWidget::GroupsWidget()'],['../classDashboard.html#ac11c52be08a212a2dd988bf8557f58e0',1,'Dashboard::groupsWidget'],['../classUi_1_1GroupsWidget.html',1,'Ui::GroupsWidget'],['../classGroupsWidget.html',1,'GroupsWidget']]],
+  ['groupswidget_2ecpp_15',['groupswidget.cpp',['../groupswidget_8cpp.html',1,'']]],
+  ['groupswidget_2eh_16',['groupswidget.h',['../groupswidget_8h.html',1,'']]],
+  ['grpptr_17',['grpPtr',['../classGroupsWidget.html#a8fd8565cc0edb4299b1e5f4c318f5935',1,'GroupsWidget']]]
+];

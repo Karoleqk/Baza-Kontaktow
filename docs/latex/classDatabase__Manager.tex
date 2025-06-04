@@ -1,0 +1,113 @@
+\doxysection{Database\+\_\+\+Manager Class Reference}
+\hypertarget{classDatabase__Manager}{}\label{classDatabase__Manager}\index{Database\_Manager@{Database\_Manager}}
+
+
+Deklaracja klasy, która zajmuje się wszelkimi operacjami na bazie danych.  
+
+
+
+
+{\ttfamily \#include $<$database\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatabase__Manager_a0827c0ccdda77fbad73cbd2d20826ab4}{Database\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classDatabase__Manager}{Database\+\_\+\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatabase__Manager_a6d668eee8b2e83566577cd879df8bc7d}{\texorpdfstring{$\sim$}{\string~}\+Database\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classDatabase__Manager}{Database\+\_\+\+Manager}. \end{DoxyCompactList}\item 
+QSql\+Database \mbox{\hyperlink{classDatabase__Manager_a92fc4926c57a8abf059b0deb30732ddf}{get\+Database}} ()
+\begin{DoxyCompactList}\small\item\em get\+Database \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classDatabase__Manager_ad0de6911d4e650f2250882f132b4c1b9}{connection\+Name}}
+\begin{DoxyCompactList}\small\item\em connection\+Name \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDatabase__Manager_a6268d2d344a85da7b733e60a03d10030}{db\+Path}}
+\begin{DoxyCompactList}\small\item\em db\+Path \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QSql\+Database \mbox{\hyperlink{classDatabase__Manager_a56f275e5dde1be2c098b72cf4567b39a}{db}}
+\begin{DoxyCompactList}\small\item\em db \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, która zajmuje się wszelkimi operacjami na bazie danych. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDatabase__Manager_a0827c0ccdda77fbad73cbd2d20826ab4}\label{classDatabase__Manager_a0827c0ccdda77fbad73cbd2d20826ab4} 
+\index{Database\_Manager@{Database\_Manager}!Database\_Manager@{Database\_Manager}}
+\index{Database\_Manager@{Database\_Manager}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{Database\_Manager()}{Database\_Manager()}}
+{\footnotesize\ttfamily Database\+\_\+\+Manager\+::\+Database\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{classDatabase__Manager}{Database\+\_\+\+Manager}. 
+
+Przy wywołaniu, przypisuje nazwę bazy danych do zmiennej connection\+Name, ściężkę do bazy danych do zmiennej db\+Path, po czym łączy się z bazą danych \Hypertarget{classDatabase__Manager_a6d668eee8b2e83566577cd879df8bc7d}\label{classDatabase__Manager_a6d668eee8b2e83566577cd879df8bc7d} 
+\index{Database\_Manager@{Database\_Manager}!````~Database\_Manager@{\texorpdfstring{$\sim$}{\string~}Database\_Manager}}
+\index{````~Database\_Manager@{\texorpdfstring{$\sim$}{\string~}Database\_Manager}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Database\_Manager()}{\string~Database\_Manager()}}
+{\footnotesize\ttfamily Database\+\_\+\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Database\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classDatabase__Manager}{Database\+\_\+\+Manager}. 
+
+Zamyka połączenie z bazą danych 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDatabase__Manager_a92fc4926c57a8abf059b0deb30732ddf}\label{classDatabase__Manager_a92fc4926c57a8abf059b0deb30732ddf} 
+\index{Database\_Manager@{Database\_Manager}!getDatabase@{getDatabase}}
+\index{getDatabase@{getDatabase}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{getDatabase()}{getDatabase()}}
+{\footnotesize\ttfamily QSql\+Database Database\+\_\+\+Manager\+::get\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Database 
+
+\begin{DoxyReturn}{Returns}
+zwraca połączenie z bazą danych
+\end{DoxyReturn}
+Metoda, która sprawdza czy jest aktualnie połączenie z bazą danych. Jeśli tak, to zwraca to połączenie, jeśli nie to tworzy nowe i również je zwraca 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDatabase__Manager_ad0de6911d4e650f2250882f132b4c1b9}\label{classDatabase__Manager_ad0de6911d4e650f2250882f132b4c1b9} 
+\index{Database\_Manager@{Database\_Manager}!connectionName@{connectionName}}
+\index{connectionName@{connectionName}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{connectionName}{connectionName}}
+{\footnotesize\ttfamily QString Database\+\_\+\+Manager\+::connection\+Name}
+
+
+
+connection\+Name 
+
+Zmienna publiczna zawierająca nazwę bazy danych \Hypertarget{classDatabase__Manager_a56f275e5dde1be2c098b72cf4567b39a}\label{classDatabase__Manager_a56f275e5dde1be2c098b72cf4567b39a} 
+\index{Database\_Manager@{Database\_Manager}!db@{db}}
+\index{db@{db}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily QSql\+Database Database\+\_\+\+Manager\+::db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+db 
+
+Zmienna prywatna db przechowująca połączenie z bazą danych \Hypertarget{classDatabase__Manager_a6268d2d344a85da7b733e60a03d10030}\label{classDatabase__Manager_a6268d2d344a85da7b733e60a03d10030} 
+\index{Database\_Manager@{Database\_Manager}!dbPath@{dbPath}}
+\index{dbPath@{dbPath}!Database\_Manager@{Database\_Manager}}
+\doxysubsubsection{\texorpdfstring{dbPath}{dbPath}}
+{\footnotesize\ttfamily QString Database\+\_\+\+Manager\+::db\+Path}
+
+
+
+db\+Path 
+
+Zmienna publiczna zawierająca ściężkę do bazy danych 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database__manager_8h}{database\+\_\+manager.\+h}}\item 
+\mbox{\hyperlink{database__manager_8cpp}{database\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

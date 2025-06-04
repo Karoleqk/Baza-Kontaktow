@@ -1,0 +1,174 @@
+\doxysection{User Class Reference}
+\hypertarget{classUser}{}\label{classUser}\index{User@{User}}
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classUser}{User}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_afd2983930e39003d6d65a909bf36f8b7}{set\+Name}} (QString name)
+\begin{DoxyCompactList}\small\item\em set\+Name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a2fa7106fd6d96c663e34ebe82526d5ee}{set\+Password}} (QString password)
+\begin{DoxyCompactList}\small\item\em set\+Password \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUser_a792a213160c4fccf098fa6a8d8d8f01e}{set\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em set\+Id \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classUser_a08223b0b137e3fc264d94f2d746a4fc9}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em get\+Name \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classUser_a96d673c7c62ecdfdd4c509db8350262d}{get\+Password}} ()
+\begin{DoxyCompactList}\small\item\em get\+Password \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUser_a1e393732cd9838ab29445d9153333046}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em get\+Id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUser_a9ed6acb7072468bbd8a30256160ef113}{Id}}
+\begin{DoxyCompactList}\small\item\em Id. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classUser_aef2dc4347bb493ef22a4069c91c7396c}{Name}}
+\begin{DoxyCompactList}\small\item\em Name. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classUser_a25dc93a925a47f6bd3231002618d057d}{Password}}
+\begin{DoxyCompactList}\small\item\em Password. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, która tworzy zmienna globalną aktualnie zalogowanego użytkownika 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUser_a4a0137053e591fbb79d9057dd7d2283d}\label{classUser_a4a0137053e591fbb79d9057dd7d2283d} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{classUser}{User}. 
+
+Przypisuje domyślne wartości zmiennym Id, Name i Password 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUser_a1e393732cd9838ab29445d9153333046}\label{classUser_a1e393732cd9838ab29445d9153333046} 
+\index{User@{User}!getId@{getId}}
+\index{getId@{getId}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int User\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Id 
+
+\begin{DoxyReturn}{Returns}
+zwraca nam ID aktualnie zalogowanego użytkownika 
+\end{DoxyReturn}
+\Hypertarget{classUser_a08223b0b137e3fc264d94f2d746a4fc9}\label{classUser_a08223b0b137e3fc264d94f2d746a4fc9} 
+\index{User@{User}!getName@{getName}}
+\index{getName@{getName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily QString User\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Name 
+
+\begin{DoxyReturn}{Returns}
+zwraca nam Login aktualnie zalogowanego użytkownika 
+\end{DoxyReturn}
+\Hypertarget{classUser_a96d673c7c62ecdfdd4c509db8350262d}\label{classUser_a96d673c7c62ecdfdd4c509db8350262d} 
+\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily QString User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Password 
+
+\begin{DoxyReturn}{Returns}
+zwraca nam Hasło aktualnie zalogowanego użytkownika 
+\end{DoxyReturn}
+\Hypertarget{classUser_a792a213160c4fccf098fa6a8d8d8f01e}\label{classUser_a792a213160c4fccf098fa6a8d8d8f01e} 
+\index{User@{User}!setId@{setId}}
+\index{setId@{setId}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void User\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ ID, które przypiszemy do naszej globalnej zmiennej current\+User \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_afd2983930e39003d6d65a909bf36f8b7}\label{classUser_afd2983930e39003d6d65a909bf36f8b7} 
+\index{User@{User}!setName@{setName}}
+\index{setName@{setName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void User\+::set\+Name (\begin{DoxyParamCaption}\item[{QString}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ nazwa którą przypiszemy do naszej globalnej zmiennej current\+User \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUser_a2fa7106fd6d96c663e34ebe82526d5ee}\label{classUser_a2fa7106fd6d96c663e34ebe82526d5ee} 
+\index{User@{User}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily void User\+::set\+Password (\begin{DoxyParamCaption}\item[{QString}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Password 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & -\/ hasło, które przypiszemy do naszej globalnej zmiennej current\+User \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUser_a9ed6acb7072468bbd8a30256160ef113}\label{classUser_a9ed6acb7072468bbd8a30256160ef113} 
+\index{User@{User}!Id@{Id}}
+\index{Id@{Id}!User@{User}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int User\+::\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Id. 
+
+ID zalogowanego użytkownika \Hypertarget{classUser_aef2dc4347bb493ef22a4069c91c7396c}\label{classUser_aef2dc4347bb493ef22a4069c91c7396c} 
+\index{User@{User}!Name@{Name}}
+\index{Name@{Name}!User@{User}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily QString User\+::\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name. 
+
+Login zalogowanego użytkownika \Hypertarget{classUser_a25dc93a925a47f6bd3231002618d057d}\label{classUser_a25dc93a925a47f6bd3231002618d057d} 
+\index{User@{User}!Password@{Password}}
+\index{Password@{Password}!User@{User}}
+\doxysubsubsection{\texorpdfstring{Password}{Password}}
+{\footnotesize\ttfamily QString User\+::\+Password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Password. 
+
+Hasło zalogowanego użytkownika 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}

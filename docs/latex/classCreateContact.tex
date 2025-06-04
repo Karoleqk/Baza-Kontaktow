@@ -1,0 +1,209 @@
+\doxysection{Create\+Contact Class Reference}
+\hypertarget{classCreateContact}{}\label{classCreateContact}\index{CreateContact@{CreateContact}}
+
+
+Deklaracja klasy, pozwalającej na utworzenie nowego kontaktu.  
+
+
+
+
+{\ttfamily \#include $<$createcontact.\+h$>$}
+
+
+
+Inheritance diagram for Create\+Contact\+:
+% FIG 0
+
+
+Collaboration diagram for Create\+Contact\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCreateContact_a8531b71a67f2808c31f6ddd2604267d6}{contact\+Added}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCreateContact_a5a12eb64645229c667eb94e7b261f659}{Create\+Contact}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classCreateContact}{Create\+Contact}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCreateContact_abe7ce50f1dc2b00869f35d47f3a53a6d}{\texorpdfstring{$\sim$}{\string~}\+Create\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classCreateContact}{Create\+Contact}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreateContact_ab7d3a12ee58989b80dea88363ae22fa4}{reset\+Form}} ()
+\begin{DoxyCompactList}\small\item\em reset\+Form \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCreateContact_a28a09e6a68382b020e93656dc7ea6895}{on\+\_\+btn\+Cancel\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Cancel\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreateContact_a0e2ea2e3e5762b35a2a35cdd6b881bbc}{on\+\_\+btn\+Create\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Create\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreateContact_acad6312612a07fd959006fef90287136}{on\+\_\+btn\+Add\+Email\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Add\+Email\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreateContact_a877fefa711848c75e291cec323de1b8b}{on\+\_\+btn\+Add\+Phone\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Add\+Phone\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCreateContact_a6e9c959fd0379d01b4268897acd8d7e6}{add\+Email\+Item}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em add\+Email\+Item \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCreateContact_a1f9e88784270ca4667e860337a6dc310}{add\+Phone\+Item}} (const QString \&phone)
+\begin{DoxyCompactList}\small\item\em add\+Phone\+Item \end{DoxyCompactList}\item 
+QString\+List \mbox{\hyperlink{classCreateContact_a5ce541545804fccd4c3beb828481b456}{get\+All\+Emails}} () const
+\item 
+QString\+List \mbox{\hyperlink{classCreateContact_ae7b6e4646ea89dc7c0f50c1c15579fd4}{get\+All\+Phones}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1CreateContact}{Ui\+::\+Create\+Contact}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCreateContact_add6c1f9ad4e77294d4935b7b7bfcaa81}{ui}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, pozwalającej na utworzenie nowego kontaktu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCreateContact_a5a12eb64645229c667eb94e7b261f659}\label{classCreateContact_a5a12eb64645229c667eb94e7b261f659} 
+\index{CreateContact@{CreateContact}!CreateContact@{CreateContact}}
+\index{CreateContact@{CreateContact}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{CreateContact()}{CreateContact()}}
+{\footnotesize\ttfamily Create\+Contact\+::\+Create\+Contact (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classCreateContact}{Create\+Contact}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Wyświetla okno, pozwalające na dodanie kontaktu \Hypertarget{classCreateContact_abe7ce50f1dc2b00869f35d47f3a53a6d}\label{classCreateContact_abe7ce50f1dc2b00869f35d47f3a53a6d} 
+\index{CreateContact@{CreateContact}!````~CreateContact@{\texorpdfstring{$\sim$}{\string~}CreateContact}}
+\index{````~CreateContact@{\texorpdfstring{$\sim$}{\string~}CreateContact}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CreateContact()}{\string~CreateContact()}}
+{\footnotesize\ttfamily Create\+Contact\+::\texorpdfstring{$\sim$}{\string~}\+Create\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classCreateContact}{Create\+Contact}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCreateContact_a6e9c959fd0379d01b4268897acd8d7e6}\label{classCreateContact_a6e9c959fd0379d01b4268897acd8d7e6} 
+\index{CreateContact@{CreateContact}!addEmailItem@{addEmailItem}}
+\index{addEmailItem@{addEmailItem}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{addEmailItem()}{addEmailItem()}}
+{\footnotesize\ttfamily void Create\+Contact\+::add\+Email\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Email\+Item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & -\/ adres mailowy, który chcemy dodać\\
+\hline
+\end{DoxyParams}
+Metoda dodaje do danych kontaktu adres mailowy. Dzięki niej możemy dodać kilka adresów dla pojedynczego kontaktu \Hypertarget{classCreateContact_a1f9e88784270ca4667e860337a6dc310}\label{classCreateContact_a1f9e88784270ca4667e860337a6dc310} 
+\index{CreateContact@{CreateContact}!addPhoneItem@{addPhoneItem}}
+\index{addPhoneItem@{addPhoneItem}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{addPhoneItem()}{addPhoneItem()}}
+{\footnotesize\ttfamily void Create\+Contact\+::add\+Phone\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{phone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Phone\+Item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phone} & -\/ numer telefonu, który chcemy dodać\\
+\hline
+\end{DoxyParams}
+Metoda dodaje do danych kontaktu numer telefonu. Dzięki niej możemy dodać kilka numerów telefonów dla pojedynczego kontaktu \Hypertarget{classCreateContact_a8531b71a67f2808c31f6ddd2604267d6}\label{classCreateContact_a8531b71a67f2808c31f6ddd2604267d6} 
+\index{CreateContact@{CreateContact}!contactAdded@{contactAdded}}
+\index{contactAdded@{contactAdded}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{contactAdded}{contactAdded}}
+{\footnotesize\ttfamily void Create\+Contact\+::contact\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classCreateContact_a5ce541545804fccd4c3beb828481b456}\label{classCreateContact_a5ce541545804fccd4c3beb828481b456} 
+\index{CreateContact@{CreateContact}!getAllEmails@{getAllEmails}}
+\index{getAllEmails@{getAllEmails}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{getAllEmails()}{getAllEmails()}}
+{\footnotesize\ttfamily QString\+List Create\+Contact\+::get\+All\+Emails (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCreateContact_ae7b6e4646ea89dc7c0f50c1c15579fd4}\label{classCreateContact_ae7b6e4646ea89dc7c0f50c1c15579fd4} 
+\index{CreateContact@{CreateContact}!getAllPhones@{getAllPhones}}
+\index{getAllPhones@{getAllPhones}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{getAllPhones()}{getAllPhones()}}
+{\footnotesize\ttfamily QString\+List Create\+Contact\+::get\+All\+Phones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCreateContact_acad6312612a07fd959006fef90287136}\label{classCreateContact_acad6312612a07fd959006fef90287136} 
+\index{CreateContact@{CreateContact}!on\_btnAddEmail\_clicked@{on\_btnAddEmail\_clicked}}
+\index{on\_btnAddEmail\_clicked@{on\_btnAddEmail\_clicked}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnAddEmail\_clicked}{on\_btnAddEmail\_clicked}}
+{\footnotesize\ttfamily void Create\+Contact\+::on\+\_\+btn\+Add\+Email\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Add\+Email\+\_\+clicked 
+
+Metoda sprawdzająca poprawność wprowadzonego adresu mailowego. Jeśli jest poprawny, to wywołuje metodę prywatną \doxylink{classCreateContact_a6e9c959fd0379d01b4268897acd8d7e6}{add\+Email\+Item()}. \Hypertarget{classCreateContact_a877fefa711848c75e291cec323de1b8b}\label{classCreateContact_a877fefa711848c75e291cec323de1b8b} 
+\index{CreateContact@{CreateContact}!on\_btnAddPhone\_clicked@{on\_btnAddPhone\_clicked}}
+\index{on\_btnAddPhone\_clicked@{on\_btnAddPhone\_clicked}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnAddPhone\_clicked}{on\_btnAddPhone\_clicked}}
+{\footnotesize\ttfamily void Create\+Contact\+::on\+\_\+btn\+Add\+Phone\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Add\+Phone\+\_\+clicked 
+
+Metoda sprawdzająca poprawność wprowadzonego numeru telefonu. Jeśli jest poprany, to wywołuje metodę prywatną add\+Phone\+Item(). \Hypertarget{classCreateContact_a28a09e6a68382b020e93656dc7ea6895}\label{classCreateContact_a28a09e6a68382b020e93656dc7ea6895} 
+\index{CreateContact@{CreateContact}!on\_btnCancel\_clicked@{on\_btnCancel\_clicked}}
+\index{on\_btnCancel\_clicked@{on\_btnCancel\_clicked}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnCancel\_clicked}{on\_btnCancel\_clicked}}
+{\footnotesize\ttfamily void Create\+Contact\+::on\+\_\+btn\+Cancel\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Cancel\+\_\+clicked 
+
+Zamknięcie okna UI \Hypertarget{classCreateContact_a0e2ea2e3e5762b35a2a35cdd6b881bbc}\label{classCreateContact_a0e2ea2e3e5762b35a2a35cdd6b881bbc} 
+\index{CreateContact@{CreateContact}!on\_btnCreate\_clicked@{on\_btnCreate\_clicked}}
+\index{on\_btnCreate\_clicked@{on\_btnCreate\_clicked}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnCreate\_clicked}{on\_btnCreate\_clicked}}
+{\footnotesize\ttfamily void Create\+Contact\+::on\+\_\+btn\+Create\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Create\+\_\+clicked 
+
+Pobiera dane wprowadzone przez użytkownika, sprawdza ich poprawność, jeśli wartości są poprawne, to dodaje nowo utworzony kontakt do bazy danych, w przeciwnym wypadku, wyświetla odpowiedni komunikat. Po wszystkim odświeża tabele wyświetlającą wszystkie kontakty aktualnie zalogowanego użytkownika \Hypertarget{classCreateContact_ab7d3a12ee58989b80dea88363ae22fa4}\label{classCreateContact_ab7d3a12ee58989b80dea88363ae22fa4} 
+\index{CreateContact@{CreateContact}!resetForm@{resetForm}}
+\index{resetForm@{resetForm}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{resetForm()}{resetForm()}}
+{\footnotesize\ttfamily void Create\+Contact\+::reset\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset\+Form 
+
+Metoda czyszcząca wszystkie dane, jakie wprowadził użytkownika do formularza 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCreateContact_add6c1f9ad4e77294d4935b7b7bfcaa81}\label{classCreateContact_add6c1f9ad4e77294d4935b7b7bfcaa81} 
+\index{CreateContact@{CreateContact}!ui@{ui}}
+\index{ui@{ui}!CreateContact@{CreateContact}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1CreateContact}{Ui\+::\+Create\+Contact}}\texorpdfstring{$\ast$}{*} Create\+Contact\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{createcontact_8h}{createcontact.\+h}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Debug/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Debug_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__createcontact_8cpp}{moc\+\_\+createcontact.\+cpp}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Release/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Release_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__createcontact_8cpp}{moc\+\_\+createcontact.\+cpp}}\item 
+\mbox{\hyperlink{createcontact_8cpp}{createcontact.\+cpp}}\end{DoxyCompactItemize}

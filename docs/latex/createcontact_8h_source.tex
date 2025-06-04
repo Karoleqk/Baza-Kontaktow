@@ -1,0 +1,51 @@
+\doxysection{createcontact.\+h}
+\hypertarget{createcontact_8h_source}{}\label{createcontact_8h_source}\mbox{\hyperlink{createcontact_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CREATECONTACT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CREATECONTACT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{database__manager_8h}{database\_manager.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCreateContact}{CreateContact}};}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCreateContact}{CreateContact}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classCreateContact}{CreateContact}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classCreateContact_abe7ce50f1dc2b00869f35d47f3a53a6d}{\string~CreateContact}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_ab7d3a12ee58989b80dea88363ae22fa4}{resetForm}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ signals:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a8531b71a67f2808c31f6ddd2604267d6}{contactAdded}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a28a09e6a68382b020e93656dc7ea6895}{on\_btnCancel\_clicked}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a0e2ea2e3e5762b35a2a35cdd6b881bbc}{on\_btnCreate\_clicked}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_acad6312612a07fd959006fef90287136}{on\_btnAddEmail\_clicked}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a877fefa711848c75e291cec323de1b8b}{on\_btnAddPhone\_clicked}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classUi_1_1CreateContact}{Ui::CreateContact}}\ *\mbox{\hyperlink{classCreateContact_add6c1f9ad4e77294d4935b7b7bfcaa81}{ui}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a6e9c959fd0379d01b4268897acd8d7e6}{addEmailItem}}(\textcolor{keyword}{const}\ QString\ \&email);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCreateContact_a1f9e88784270ca4667e860337a6dc310}{addPhoneItem}}(\textcolor{keyword}{const}\ QString\ \&phone);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ QStringList\ \mbox{\hyperlink{classCreateContact_a5ce541545804fccd4c3beb828481b456}{getAllEmails}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ QStringList\ \mbox{\hyperlink{classCreateContact_ae7b6e4646ea89dc7c0f50c1c15579fd4}{getAllPhones}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CREATECONTACT\_H}}
+
+\end{DoxyCode}

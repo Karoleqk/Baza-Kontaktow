@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['on_5faddbtn_5fclicked_0',['on_addBtn_clicked',['../classcreategroup.html#a06fec7a1e91a550ab2c728a363169d89',1,'creategroup']]],
+  ['on_5faddgroupbtn_5fclicked_1',['on_addGroupBtn_clicked',['../classGroupsWidget.html#a338b56ef60e075e0d8c330777b3a8f46',1,'GroupsWidget']]],
+  ['on_5fbtnaddemail_5fclicked_2',['on_btnaddemail_clicked',['../classCreateContact.html#acad6312612a07fd959006fef90287136',1,'CreateContact::on_btnAddEmail_clicked()'],['../classEditContact.html#afa7b123a45c5ac254000145b90badfd1',1,'EditContact::on_btnAddEmail_clicked()']]],
+  ['on_5fbtnaddphone_5fclicked_3',['on_btnaddphone_clicked',['../classCreateContact.html#a877fefa711848c75e291cec323de1b8b',1,'CreateContact::on_btnAddPhone_clicked()'],['../classEditContact.html#a8ac6b5ec206877db013269a746eb8579',1,'EditContact::on_btnAddPhone_clicked()']]],
+  ['on_5fbtncancel_5f2_5fclicked_4',['on_btnCancel_2_clicked',['../classEditContact.html#a7b8deb0f2fe8d882922c3e52072c1bf3',1,'EditContact']]],
+  ['on_5fbtncancel_5fclicked_5',['on_btnCancel_clicked',['../classCreateContact.html#a28a09e6a68382b020e93656dc7ea6895',1,'CreateContact']]],
+  ['on_5fbtncreate_5fclicked_6',['on_btnCreate_clicked',['../classCreateContact.html#a0e2ea2e3e5762b35a2a35cdd6b881bbc',1,'CreateContact']]],
+  ['on_5fbtncreatecontact_5fclicked_7',['on_btnCreateContact_clicked',['../classContactsWidget.html#a87efe04c02d76f1a3a4c11e023f37468',1,'ContactsWidget']]],
+  ['on_5fbtnexport_5fclicked_8',['on_btnexport_clicked',['../classContactsWidget.html#a44176f5c3074629823d3ea60ac8df60e',1,'ContactsWidget::on_btnExport_clicked()'],['../classGroupsWidget.html#aad884a5d2b7edc70e46d2e7bb979cf0c',1,'GroupsWidget::on_btnExport_clicked()']]],
+  ['on_5fbtnimport_5fclicked_9',['on_btnimport_clicked',['../classContactsWidget.html#a9159f05adb1b59bc21c78c8f431af750',1,'ContactsWidget::on_btnImport_clicked()'],['../classGroupsWidget.html#aefd7f5a041e849fa21c612fd26c924ae',1,'GroupsWidget::on_btnImport_clicked()']]],
+  ['on_5fbtnlogout_5fclicked_10',['on_btnLogout_clicked',['../classDashboard.html#ab3ccf8f00ea6ebd2e3bffd3a01c24dbf',1,'Dashboard']]],
+  ['on_5fbtnsave_5fclicked_11',['on_btnSave_clicked',['../classEditContact.html#a368503af9ad5b7bda13d9a6058e21293',1,'EditContact']]],
+  ['on_5fclosebtn_5fclicked_12',['on_closebtn_clicked',['../classcreategroup.html#ad21d7f64891c161f6cdb0db839b74ba5',1,'creategroup::on_closeBtn_clicked()'],['../classeditGroup.html#ab7a0475378b7304718ac8c7618f80174',1,'editGroup::on_closeBtn_clicked()']]],
+  ['on_5fdeletebtn_5fclicked_13',['on_deleteBtn_clicked',['../classGroupsWidget.html#ae0d0e4757b5d8442b538c42c9fb349b4',1,'GroupsWidget']]],
+  ['on_5feditbtn_5fclicked_14',['on_editBtn_clicked',['../classGroupsWidget.html#a084b75831a980fe7ee6238bd5e0472be',1,'GroupsWidget']]],
+  ['on_5floginbtn_5fclicked_15',['on_loginbtn_clicked',['../classBaza__Kontaktow.html#a60c70fc15dc0f6edc01b17fd91867d36',1,'Baza_Kontaktow::on_loginBtn_clicked()'],['../classRegistration.html#ac04b88eec9cfe14f96be171e9af35884',1,'Registration::on_loginBtn_clicked()']]],
+  ['on_5fregisterbtn_5fclicked_16',['on_registerbtn_clicked',['../classBaza__Kontaktow.html#a1a2fd511bbf53ebc2cae6eab32ef987d',1,'Baza_Kontaktow::on_registerBtn_clicked()'],['../classRegistration.html#ad44d31e555e2d7f305128f0dbf65b116',1,'Registration::on_registerBtn_clicked()']]],
+  ['on_5fsavebtn_5fclicked_17',['on_saveBtn_clicked',['../classeditGroup.html#a1f4608450a2d8b2e44dafd103700bb1e',1,'editGroup']]],
+  ['on_5fshowbtn_5fclicked_18',['on_showBtn_clicked',['../classGroupsWidget.html#a60f19f1cb28769874decb7a61cdd2587',1,'GroupsWidget']]],
+  ['ondeletebuttonclicked_19',['onDeleteButtonClicked',['../classContactsWidget.html#a19caf519ed2b9dd74f3b0c5d3967905d',1,'ContactsWidget']]],
+  ['oneditbuttonclicked_20',['onEditButtonClicked',['../classContactsWidget.html#a4b47ff8df95e618f8dc4fa4e40ea9139',1,'ContactsWidget']]]
+];

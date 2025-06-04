@@ -1,0 +1,297 @@
+\doxysection{Groups\+Widget Class Reference}
+\hypertarget{classGroupsWidget}{}\label{classGroupsWidget}\index{GroupsWidget@{GroupsWidget}}
+
+
+Deklaracja klasy, która wyświetla grupy utworzone przez użytkownika.  
+
+
+
+
+{\ttfamily \#include $<$groupswidget.\+h$>$}
+
+
+
+Inheritance diagram for Groups\+Widget\+:
+% FIG 0
+
+
+Collaboration diagram for Groups\+Widget\+:
+% FIG 1
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a45347401e379bcbdd30d1ddaa4364dd0}{reload\+Groups}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGroupsWidget_af4b426925ddb2be0779c32c353c323b0}{Groups\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classGroupsWidget}{Groups\+Widget}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9}{\texorpdfstring{$\sim$}{\string~}\+Groups\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classGroupsWidget}{Groups\+Widget}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a338b56ef60e075e0d8c330777b3a8f46}{on\+\_\+add\+Group\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+add\+Group\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a084b75831a980fe7ee6238bd5e0472be}{on\+\_\+edit\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+edit\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_ae0d0e4757b5d8442b538c42c9fb349b4}{on\+\_\+delete\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+delete\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a60f19f1cb28769874decb7a61cdd2587}{on\+\_\+show\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+show\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_aefd7f5a041e849fa21c612fd26c924ae}{on\+\_\+btn\+Import\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Import\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_aad884a5d2b7edc70e46d2e7bb979cf0c}{on\+\_\+btn\+Export\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Export\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classGroupsWidget_a4c9cc9b5f1984d02a32eb17138629f98}{export\+To\+CSV}} (QFile \&file)
+\begin{DoxyCompactList}\small\item\em export\+To\+CSV \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGroupsWidget_a4de7e5e6c3ba5f823bed704074fcef98}{export\+To\+JSON}} (QFile \&file)
+\begin{DoxyCompactList}\small\item\em export\+To\+JSON \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGroupsWidget_a78b723a96e268548971b0fa8bf980e22}{import\+Groups\+From\+CSV}} (QFile \&file, int \&error\+Count)
+\begin{DoxyCompactList}\small\item\em import\+Groups\+From\+CSV \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGroupsWidget_a436c9ad210cec993d94f51b1e388211f}{import\+Groups\+From\+JSON}} (QFile \&file, int \&error\+Count)
+\begin{DoxyCompactList}\small\item\em import\+Groups\+From\+JSON \end{DoxyCompactList}\item 
+QString\+List \mbox{\hyperlink{classGroupsWidget_ace1959238e2c86584b6b8446d24ffc4d}{parse\+CSVLine}} (const QString \&line)
+\begin{DoxyCompactList}\small\item\em parse\+CSVLine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1GroupsWidget}{Ui\+::\+Groups\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb}{ui}}
+\item 
+\mbox{\hyperlink{classcreategroup}{creategroup}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGroupsWidget_a8fd8565cc0edb4299b1e5f4c318f5935}{grp\+Ptr}}
+\begin{DoxyCompactList}\small\item\em grp\+Ptr \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeditGroup}{edit\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGroupsWidget_a740e3a67a83855f25b752067f6c05426}{edit\+Grp\+Ptr}}
+\begin{DoxyCompactList}\small\item\em edit\+Grp\+Ptr \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, która wyświetla grupy utworzone przez użytkownika. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGroupsWidget_af4b426925ddb2be0779c32c353c323b0}\label{classGroupsWidget_af4b426925ddb2be0779c32c353c323b0} 
+\index{GroupsWidget@{GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\index{GroupsWidget@{GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{GroupsWidget()}{GroupsWidget()}}
+{\footnotesize\ttfamily Groups\+Widget\+::\+Groups\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classGroupsWidget}{Groups\+Widget}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Przy wywołaniu pobiera dany z bazy danych odnośnie grup, które użytkownik posiada i tworzy dwie tabelki. Jedna do wyświetlania grup, druga do wyświetlania kontaktów, które w danej grupie się znajdują \Hypertarget{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9}\label{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9} 
+\index{GroupsWidget@{GroupsWidget}!````~GroupsWidget@{\texorpdfstring{$\sim$}{\string~}GroupsWidget}}
+\index{````~GroupsWidget@{\texorpdfstring{$\sim$}{\string~}GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GroupsWidget()}{\string~GroupsWidget()}}
+{\footnotesize\ttfamily Groups\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Groups\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classGroupsWidget}{Groups\+Widget}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGroupsWidget_a4c9cc9b5f1984d02a32eb17138629f98}\label{classGroupsWidget_a4c9cc9b5f1984d02a32eb17138629f98} 
+\index{GroupsWidget@{GroupsWidget}!exportToCSV@{exportToCSV}}
+\index{exportToCSV@{exportToCSV}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{exportToCSV()}{exportToCSV()}}
+{\footnotesize\ttfamily int Groups\+Widget\+::export\+To\+CSV (\begin{DoxyParamCaption}\item[{QFile \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+export\+To\+CSV 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plik,do} & którego eksportujemy grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 1, jeśli operacja się powiedzie. W przeciwnym wypadku zwraca -\/1
+\end{DoxyReturn}
+Deklaracja prywatnej metody typu int, która eksportuje grupy do pliku CSV \Hypertarget{classGroupsWidget_a4de7e5e6c3ba5f823bed704074fcef98}\label{classGroupsWidget_a4de7e5e6c3ba5f823bed704074fcef98} 
+\index{GroupsWidget@{GroupsWidget}!exportToJSON@{exportToJSON}}
+\index{exportToJSON@{exportToJSON}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{exportToJSON()}{exportToJSON()}}
+{\footnotesize\ttfamily int Groups\+Widget\+::export\+To\+JSON (\begin{DoxyParamCaption}\item[{QFile \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+export\+To\+JSON 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plik,do} & którego eksportujemy grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 1, jeśli operacja się powiedzie. W przeciwnym wypadku zwraca -\/1
+\end{DoxyReturn}
+Deklaracja prywatnej metody typu int, która eksportuje grupy do pliku JSON \Hypertarget{classGroupsWidget_a78b723a96e268548971b0fa8bf980e22}\label{classGroupsWidget_a78b723a96e268548971b0fa8bf980e22} 
+\index{GroupsWidget@{GroupsWidget}!importGroupsFromCSV@{importGroupsFromCSV}}
+\index{importGroupsFromCSV@{importGroupsFromCSV}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{importGroupsFromCSV()}{importGroupsFromCSV()}}
+{\footnotesize\ttfamily int Groups\+Widget\+::import\+Groups\+From\+CSV (\begin{DoxyParamCaption}\item[{QFile \&}]{file,  }\item[{int \&}]{error\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+import\+Groups\+From\+CSV 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ plik, z którego importujemy \\
+\hline
+{\em error\+Count} & -\/ licznik błędów (pusta linia) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 0, gdy kończy swoje działanie 
+\end{DoxyReturn}
+\Hypertarget{classGroupsWidget_a436c9ad210cec993d94f51b1e388211f}\label{classGroupsWidget_a436c9ad210cec993d94f51b1e388211f} 
+\index{GroupsWidget@{GroupsWidget}!importGroupsFromJSON@{importGroupsFromJSON}}
+\index{importGroupsFromJSON@{importGroupsFromJSON}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{importGroupsFromJSON()}{importGroupsFromJSON()}}
+{\footnotesize\ttfamily int Groups\+Widget\+::import\+Groups\+From\+JSON (\begin{DoxyParamCaption}\item[{QFile \&}]{file,  }\item[{int \&}]{error\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+import\+Groups\+From\+JSON 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ plik, z którego importujemy \\
+\hline
+{\em error\+Count} & -\/ licznik błędów (pusta linia) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 0, gdy kończy swoje działanie 
+\end{DoxyReturn}
+\Hypertarget{classGroupsWidget_a338b56ef60e075e0d8c330777b3a8f46}\label{classGroupsWidget_a338b56ef60e075e0d8c330777b3a8f46} 
+\index{GroupsWidget@{GroupsWidget}!on\_addGroupBtn\_clicked@{on\_addGroupBtn\_clicked}}
+\index{on\_addGroupBtn\_clicked@{on\_addGroupBtn\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_addGroupBtn\_clicked}{on\_addGroupBtn\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+add\+Group\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+add\+Group\+Btn\+\_\+clicked 
+
+Otwiera okno do utworzenia grupy, klasy creategroup \Hypertarget{classGroupsWidget_aad884a5d2b7edc70e46d2e7bb979cf0c}\label{classGroupsWidget_aad884a5d2b7edc70e46d2e7bb979cf0c} 
+\index{GroupsWidget@{GroupsWidget}!on\_btnExport\_clicked@{on\_btnExport\_clicked}}
+\index{on\_btnExport\_clicked@{on\_btnExport\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_btnExport\_clicked}{on\_btnExport\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+btn\+Export\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Export\+\_\+clicked 
+
+Eksportuje plik z grupami, dając do wyboru format CSV, lub JSON \Hypertarget{classGroupsWidget_aefd7f5a041e849fa21c612fd26c924ae}\label{classGroupsWidget_aefd7f5a041e849fa21c612fd26c924ae} 
+\index{GroupsWidget@{GroupsWidget}!on\_btnImport\_clicked@{on\_btnImport\_clicked}}
+\index{on\_btnImport\_clicked@{on\_btnImport\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_btnImport\_clicked}{on\_btnImport\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+btn\+Import\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Import\+\_\+clicked 
+
+Importuje plik z grupami, dając do wyboru format CSV, lub JSON \Hypertarget{classGroupsWidget_ae0d0e4757b5d8442b538c42c9fb349b4}\label{classGroupsWidget_ae0d0e4757b5d8442b538c42c9fb349b4} 
+\index{GroupsWidget@{GroupsWidget}!on\_deleteBtn\_clicked@{on\_deleteBtn\_clicked}}
+\index{on\_deleteBtn\_clicked@{on\_deleteBtn\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_deleteBtn\_clicked}{on\_deleteBtn\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+delete\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+delete\+Btn\+\_\+clicked 
+
+Po wciśnięciu przycisku do usunięcia grupy, pobiera ID wybranej grupy do usunięcia, po czym wykonuje zapytanie odnośnie usunięcia jej z bazy danych. Na koniec odświeża tabelę z grupami \Hypertarget{classGroupsWidget_a084b75831a980fe7ee6238bd5e0472be}\label{classGroupsWidget_a084b75831a980fe7ee6238bd5e0472be} 
+\index{GroupsWidget@{GroupsWidget}!on\_editBtn\_clicked@{on\_editBtn\_clicked}}
+\index{on\_editBtn\_clicked@{on\_editBtn\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_editBtn\_clicked}{on\_editBtn\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+edit\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+edit\+Btn\+\_\+clicked 
+
+Pobiera ID wybranej grupy, oraz wyświetla okno do jej edycji, klasy \doxylink{classeditGroup}{edit\+Group} \Hypertarget{classGroupsWidget_a60f19f1cb28769874decb7a61cdd2587}\label{classGroupsWidget_a60f19f1cb28769874decb7a61cdd2587} 
+\index{GroupsWidget@{GroupsWidget}!on\_showBtn\_clicked@{on\_showBtn\_clicked}}
+\index{on\_showBtn\_clicked@{on\_showBtn\_clicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_showBtn\_clicked}{on\_showBtn\_clicked}}
+{\footnotesize\ttfamily void Groups\+Widget\+::on\+\_\+show\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+show\+Btn\+\_\+clicked 
+
+Wyswietla wszystkie kontakty, jakie znajdują się w grupie, którą chcemy wyświetlić \Hypertarget{classGroupsWidget_ace1959238e2c86584b6b8446d24ffc4d}\label{classGroupsWidget_ace1959238e2c86584b6b8446d24ffc4d} 
+\index{GroupsWidget@{GroupsWidget}!parseCSVLine@{parseCSVLine}}
+\index{parseCSVLine@{parseCSVLine}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{parseCSVLine()}{parseCSVLine()}}
+{\footnotesize\ttfamily QString\+List Groups\+Widget\+::parse\+CSVLine (\begin{DoxyParamCaption}\item[{const QString \&}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parse\+CSVLine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & -\/ linia pobrana z pliku CSV \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca sparsowaną linijkę z pliku CSV 
+\end{DoxyReturn}
+\Hypertarget{classGroupsWidget_a45347401e379bcbdd30d1ddaa4364dd0}\label{classGroupsWidget_a45347401e379bcbdd30d1ddaa4364dd0} 
+\index{GroupsWidget@{GroupsWidget}!reloadGroups@{reloadGroups}}
+\index{reloadGroups@{reloadGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{reloadGroups}{reloadGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::reload\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGroupsWidget_a740e3a67a83855f25b752067f6c05426}\label{classGroupsWidget_a740e3a67a83855f25b752067f6c05426} 
+\index{GroupsWidget@{GroupsWidget}!editGrpPtr@{editGrpPtr}}
+\index{editGrpPtr@{editGrpPtr}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{editGrpPtr}{editGrpPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classeditGroup}{edit\+Group}}\texorpdfstring{$\ast$}{*} Groups\+Widget\+::edit\+Grp\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+edit\+Grp\+Ptr 
+
+Zmienna wskaźnikowa prywatna, wskazująca na obiekt klasy \doxylink{classeditGroup}{edit\+Group} \Hypertarget{classGroupsWidget_a8fd8565cc0edb4299b1e5f4c318f5935}\label{classGroupsWidget_a8fd8565cc0edb4299b1e5f4c318f5935} 
+\index{GroupsWidget@{GroupsWidget}!grpPtr@{grpPtr}}
+\index{grpPtr@{grpPtr}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{grpPtr}{grpPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcreategroup}{creategroup}}\texorpdfstring{$\ast$}{*} Groups\+Widget\+::grp\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+grp\+Ptr 
+
+Zmienna wskaźnikowa prywatna, wskazująca na obiekt klasy creategroup \Hypertarget{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb}\label{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb} 
+\index{GroupsWidget@{GroupsWidget}!ui@{ui}}
+\index{ui@{ui}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1GroupsWidget}{Ui\+::\+Groups\+Widget}}\texorpdfstring{$\ast$}{*} Groups\+Widget\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{groupswidget_8h}{groupswidget.\+h}}\item 
+\mbox{\hyperlink{groupswidget_8cpp}{groupswidget.\+cpp}}\end{DoxyCompactItemize}

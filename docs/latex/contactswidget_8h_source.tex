@@ -1,0 +1,62 @@
+\doxysection{contactswidget.\+h}
+\hypertarget{contactswidget_8h_source}{}\label{contactswidget_8h_source}\mbox{\hyperlink{contactswidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONTACTSWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONTACTSWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{createcontact_8h}{createcontact.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{editcontact_8h}{editcontact.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classContactsWidget}{ContactsWidget}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classContactsWidget}{ContactsWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classContactsWidget}{ContactsWidget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classContactsWidget_a408c8f1121209658b236e9abe0c9785f}{\string~ContactsWidget}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_aefe7ee824f6d4b40280cd8b4ab86d89b}{refreshContactsTable}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_a87efe04c02d76f1a3a4c11e023f37468}{on\_btnCreateContact\_clicked}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_a4b47ff8df95e618f8dc4fa4e40ea9139}{onEditButtonClicked}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_a19caf519ed2b9dd74f3b0c5d3967905d}{onDeleteButtonClicked}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_a9159f05adb1b59bc21c78c8f431af750}{on\_btnImport\_clicked}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classContactsWidget_a44176f5c3074629823d3ea60ac8df60e}{on\_btnExport\_clicked}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classUi_1_1ContactsWidget}{Ui::ContactsWidget}}\ *\mbox{\hyperlink{classContactsWidget_a840ee5ea0cd44b16d5bd10016331b924}{ui}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classCreateContact}{CreateContact}}\ *\mbox{\hyperlink{classContactsWidget_a9f0f1fcf7f9032b30a16390527e9a6f3}{ptrCreateContact}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classEditContact}{EditContact}}\ *\mbox{\hyperlink{classContactsWidget_ac95a22b8d51710adb92abd7bedca6d4e}{ptrEditContact}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classContactsWidget_ab6835b13415fd139334f122acf241568}{exportToCSV}}(QFile\&\ file);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classContactsWidget_a3cb52431aaf827f008a8091921def511}{exportToJSON}}(QFile\&\ file);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classContactsWidget_aa06225ad9fbc0ab67595f4fd1c335f3d}{importFromCSV}}(QFile\&\ file,\ \textcolor{keywordtype}{int}\&\ errorCount);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classContactsWidget_ac10f5ef412f5078fd8634cce4dbfeaf5}{importFromJSON}}(QFile\&\ file,\ \textcolor{keywordtype}{int}\&\ errorCount);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \ \ \ \ QStringList\ \mbox{\hyperlink{classContactsWidget_aee59adf2e3e0bf22eb086345cb0b2888}{parseCSVLine}}(\textcolor{keyword}{const}\ QString\&\ line);}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONTACTSWIDGET\_H}}
+
+\end{DoxyCode}

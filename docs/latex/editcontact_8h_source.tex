@@ -1,0 +1,54 @@
+\doxysection{editcontact.\+h}
+\hypertarget{editcontact_8h_source}{}\label{editcontact_8h_source}\mbox{\hyperlink{editcontact_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EDITCONTACT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EDITCONTACT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{database__manager_8h}{database\_manager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEditContact}{EditContact}};}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEditContact}{EditContact}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classEditContact}{EditContact}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classEditContact_af776967073516fd6417f96af4993d51b}{\string~EditContact}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEditContact_aadd801722d6bd88e586203115cb1d8e6}{loadContactData}}(\textcolor{keywordtype}{int}\ contactId);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_aab30044c7792257e3a01541d7c7d8413}{resetForm}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ signals:}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a05c29ddfd1ccced21722138ea0294185}{contactUpdated}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a7b8deb0f2fe8d882922c3e52072c1bf3}{on\_btnCancel\_2\_clicked}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a368503af9ad5b7bda13d9a6058e21293}{on\_btnSave\_clicked}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_afa7b123a45c5ac254000145b90badfd1}{on\_btnAddEmail\_clicked}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a8ac6b5ec206877db013269a746eb8579}{on\_btnAddPhone\_clicked}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classUi_1_1EditContact}{Ui::EditContact}}\ *\mbox{\hyperlink{classEditContact_a4b4ea9a4b1a263699ade23988f995b70}{ui}};}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEditContact_a9ee4c346a6db83d55f64121b238b0e93}{m\_contactId}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a61283b8e478657de4e167b36ca9dc916}{addEmailItem}}(\textcolor{keyword}{const}\ QString\ \&email);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEditContact_a54569dc7452c7ba4ae4faec9641d4790}{addPhoneItem}}(\textcolor{keyword}{const}\ QString\ \&phone);}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EDITCONTACT\_H}}
+
+\end{DoxyCode}
