@@ -1,6 +1,7 @@
 #include "baza_kontaktow.h"
 #include "./ui_baza_kontaktow.h"
 
+
 Baza_Kontaktow::Baza_Kontaktow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Baza_Kontaktow)

@@ -1,0 +1,40 @@
+\doxysection{hash.\+h File Reference}
+\hypertarget{hash_8h}{}\label{hash_8h}\index{hash.h@{hash.h}}
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QCryptographic\+Hash$>$}\newline
+Include dependency graph for hash.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classhash}{hash}}
+\begin{DoxyCompactList}\small\item\em Deklaracja klasy do hashowania haseł \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{hash_8h_a19407ab782e486bffa72fd3dd5e36f97}{hash\+Password}} (QString password)
+\begin{DoxyCompactList}\small\item\em hash\+Password \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hash_8h_a19407ab782e486bffa72fd3dd5e36f97}\label{hash_8h_a19407ab782e486bffa72fd3dd5e36f97} 
+\index{hash.h@{hash.h}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hashPassword()}{hashPassword()}}
+{\footnotesize\ttfamily QString hash\+Password (\begin{DoxyParamCaption}\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+hash\+Password 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & -\/ hasło które chcemy zahashować \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca zahashowane hasło
+\end{DoxyReturn}
+Metoda zwraca nam hasło, w formacie Sha256 

@@ -1,0 +1,286 @@
+\doxysection{Contacts\+Widget Class Reference}
+\hypertarget{classContactsWidget}{}\label{classContactsWidget}\index{ContactsWidget@{ContactsWidget}}
+
+
+Deklaracja klasy, wyświetlającej kontakty zalogowanego użytkownika.  
+
+
+
+
+{\ttfamily \#include $<$contactswidget.\+h$>$}
+
+
+
+Inheritance diagram for Contacts\+Widget\+:
+% FIG 0
+
+
+Collaboration diagram for Contacts\+Widget\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classContactsWidget_ab1533db6a50f95754467ade7be00ec20}{Contacts\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classContactsWidget}{Contacts\+Widget}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classContactsWidget_a408c8f1121209658b236e9abe0c9785f}{\texorpdfstring{$\sim$}{\string~}\+Contacts\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classContactsWidget}{Contacts\+Widget}, zamyka okno UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContactsWidget_aefe7ee824f6d4b40280cd8b4ab86d89b}{refresh\+Contacts\+Table}} ()
+\begin{DoxyCompactList}\small\item\em refresh\+Contacts\+Table \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classContactsWidget_a87efe04c02d76f1a3a4c11e023f37468}{on\+\_\+btn\+Create\+Contact\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Create\+Contact\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContactsWidget_a4b47ff8df95e618f8dc4fa4e40ea9139}{on\+Edit\+Button\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+Edit\+Button\+Clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContactsWidget_a19caf519ed2b9dd74f3b0c5d3967905d}{on\+Delete\+Button\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+Delete\+Button\+Clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContactsWidget_a9159f05adb1b59bc21c78c8f431af750}{on\+\_\+btn\+Import\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Import\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContactsWidget_a44176f5c3074629823d3ea60ac8df60e}{on\+\_\+btn\+Export\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Export\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classContactsWidget_ab6835b13415fd139334f122acf241568}{export\+To\+CSV}} (QFile \&file)
+\begin{DoxyCompactList}\small\item\em export\+To\+CSV \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classContactsWidget_a3cb52431aaf827f008a8091921def511}{export\+To\+JSON}} (QFile \&file)
+\begin{DoxyCompactList}\small\item\em export\+To\+JSON \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classContactsWidget_aa06225ad9fbc0ab67595f4fd1c335f3d}{import\+From\+CSV}} (QFile \&file, int \&error\+Count)
+\begin{DoxyCompactList}\small\item\em import\+From\+CSV \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classContactsWidget_ac10f5ef412f5078fd8634cce4dbfeaf5}{import\+From\+JSON}} (QFile \&file, int \&error\+Count)
+\begin{DoxyCompactList}\small\item\em import\+From\+JSON \end{DoxyCompactList}\item 
+QString\+List \mbox{\hyperlink{classContactsWidget_aee59adf2e3e0bf22eb086345cb0b2888}{parse\+CSVLine}} (const QString \&line)
+\begin{DoxyCompactList}\small\item\em parse\+CSVLine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1ContactsWidget}{Ui\+::\+Contacts\+Widget}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classContactsWidget_a840ee5ea0cd44b16d5bd10016331b924}{ui}}
+\item 
+\mbox{\hyperlink{classCreateContact}{Create\+Contact}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classContactsWidget_a9f0f1fcf7f9032b30a16390527e9a6f3}{ptr\+Create\+Contact}}
+\begin{DoxyCompactList}\small\item\em ptr\+Create\+Contact \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEditContact}{Edit\+Contact}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classContactsWidget_ac95a22b8d51710adb92abd7bedca6d4e}{ptr\+Edit\+Contact}}
+\begin{DoxyCompactList}\small\item\em ptr\+Edit\+Contact \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, wyświetlającej kontakty zalogowanego użytkownika. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classContactsWidget_ab1533db6a50f95754467ade7be00ec20}\label{classContactsWidget_ab1533db6a50f95754467ade7be00ec20} 
+\index{ContactsWidget@{ContactsWidget}!ContactsWidget@{ContactsWidget}}
+\index{ContactsWidget@{ContactsWidget}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{ContactsWidget()}{ContactsWidget()}}
+{\footnotesize\ttfamily Contacts\+Widget\+::\+Contacts\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classContactsWidget}{Contacts\+Widget}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Wskaznik} & na rodzica Widgetu domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+W konstruktorze wyświetlane jest okno UI, które pokazuje wszystkie kontaktu aktualnie zalogowanego użytkownika. Tworzy połączenie przycisków dodających kontakt i edytujących kontakt, z funkcją, która odświeża dane w tabeli. Następnie tworzy tabelę z polami "{}\+ID"{}, "{}\+Imie"{}, "{}\+Nazwisko"{}, "{}\+Numer telefonu"{}, "{}\+Email"{}, "{}\+Adres"{}. \Hypertarget{classContactsWidget_a408c8f1121209658b236e9abe0c9785f}\label{classContactsWidget_a408c8f1121209658b236e9abe0c9785f} 
+\index{ContactsWidget@{ContactsWidget}!````~ContactsWidget@{\texorpdfstring{$\sim$}{\string~}ContactsWidget}}
+\index{````~ContactsWidget@{\texorpdfstring{$\sim$}{\string~}ContactsWidget}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ContactsWidget()}{\string~ContactsWidget()}}
+{\footnotesize\ttfamily Contacts\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Contacts\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classContactsWidget}{Contacts\+Widget}, zamyka okno UI. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classContactsWidget_ab6835b13415fd139334f122acf241568}\label{classContactsWidget_ab6835b13415fd139334f122acf241568} 
+\index{ContactsWidget@{ContactsWidget}!exportToCSV@{exportToCSV}}
+\index{exportToCSV@{exportToCSV}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{exportToCSV()}{exportToCSV()}}
+{\footnotesize\ttfamily int Contacts\+Widget\+::export\+To\+CSV (\begin{DoxyParamCaption}\item[{QFile \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+export\+To\+CSV 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plik,do} & którego eksportujemy kontakty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 1, jeśli operacja się powiedzie. W przeciwnym wypadku zwraca -\/1
+\end{DoxyReturn}
+Deklaracja prywatnej metody typu int, która eksportuje kontakty do pliku CSV \Hypertarget{classContactsWidget_a3cb52431aaf827f008a8091921def511}\label{classContactsWidget_a3cb52431aaf827f008a8091921def511} 
+\index{ContactsWidget@{ContactsWidget}!exportToJSON@{exportToJSON}}
+\index{exportToJSON@{exportToJSON}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{exportToJSON()}{exportToJSON()}}
+{\footnotesize\ttfamily int Contacts\+Widget\+::export\+To\+JSON (\begin{DoxyParamCaption}\item[{QFile \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+export\+To\+JSON 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plik,do} & którego eksportujemy kontakty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 1, jeśli operacja się powiedzie. W przeciwnym wypadku zwraca -\/1
+\end{DoxyReturn}
+Deklaracja prywatnej metody typu int, która eksportuje kontakty do pliku JSON \Hypertarget{classContactsWidget_aa06225ad9fbc0ab67595f4fd1c335f3d}\label{classContactsWidget_aa06225ad9fbc0ab67595f4fd1c335f3d} 
+\index{ContactsWidget@{ContactsWidget}!importFromCSV@{importFromCSV}}
+\index{importFromCSV@{importFromCSV}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{importFromCSV()}{importFromCSV()}}
+{\footnotesize\ttfamily int Contacts\+Widget\+::import\+From\+CSV (\begin{DoxyParamCaption}\item[{QFile \&}]{file,  }\item[{int \&}]{error\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+import\+From\+CSV 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ plik, z którego importujemy \\
+\hline
+{\em error\+Count} & -\/ licznik błędów (pusta linia) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 0, gdy kończy swoje działanie 
+\end{DoxyReturn}
+\Hypertarget{classContactsWidget_ac10f5ef412f5078fd8634cce4dbfeaf5}\label{classContactsWidget_ac10f5ef412f5078fd8634cce4dbfeaf5} 
+\index{ContactsWidget@{ContactsWidget}!importFromJSON@{importFromJSON}}
+\index{importFromJSON@{importFromJSON}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{importFromJSON()}{importFromJSON()}}
+{\footnotesize\ttfamily int Contacts\+Widget\+::import\+From\+JSON (\begin{DoxyParamCaption}\item[{QFile \&}]{file,  }\item[{int \&}]{error\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+import\+From\+JSON 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & -\/ plik, z którego importujemy \\
+\hline
+{\em error\+Count} & -\/ licznik błędów (pusta linia) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca 0, gdy kończy swoje działanie 
+\end{DoxyReturn}
+\Hypertarget{classContactsWidget_a87efe04c02d76f1a3a4c11e023f37468}\label{classContactsWidget_a87efe04c02d76f1a3a4c11e023f37468} 
+\index{ContactsWidget@{ContactsWidget}!on\_btnCreateContact\_clicked@{on\_btnCreateContact\_clicked}}
+\index{on\_btnCreateContact\_clicked@{on\_btnCreateContact\_clicked}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_btnCreateContact\_clicked}{on\_btnCreateContact\_clicked}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::on\+\_\+btn\+Create\+Contact\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Create\+Contact\+\_\+clicked 
+
+Wyświetla okno, pozwalające na dodanie nowego kontaktu \Hypertarget{classContactsWidget_a44176f5c3074629823d3ea60ac8df60e}\label{classContactsWidget_a44176f5c3074629823d3ea60ac8df60e} 
+\index{ContactsWidget@{ContactsWidget}!on\_btnExport\_clicked@{on\_btnExport\_clicked}}
+\index{on\_btnExport\_clicked@{on\_btnExport\_clicked}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_btnExport\_clicked}{on\_btnExport\_clicked}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::on\+\_\+btn\+Export\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Export\+\_\+clicked 
+
+Eksportuje plik z kontaktami, dając do wyboru format CSV, lub JSON \Hypertarget{classContactsWidget_a9159f05adb1b59bc21c78c8f431af750}\label{classContactsWidget_a9159f05adb1b59bc21c78c8f431af750} 
+\index{ContactsWidget@{ContactsWidget}!on\_btnImport\_clicked@{on\_btnImport\_clicked}}
+\index{on\_btnImport\_clicked@{on\_btnImport\_clicked}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{on\_btnImport\_clicked}{on\_btnImport\_clicked}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::on\+\_\+btn\+Import\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Import\+\_\+clicked 
+
+Importuje plik z kontaktami, dając do wyboru format CSV, lub JSON \Hypertarget{classContactsWidget_a19caf519ed2b9dd74f3b0c5d3967905d}\label{classContactsWidget_a19caf519ed2b9dd74f3b0c5d3967905d} 
+\index{ContactsWidget@{ContactsWidget}!onDeleteButtonClicked@{onDeleteButtonClicked}}
+\index{onDeleteButtonClicked@{onDeleteButtonClicked}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{onDeleteButtonClicked}{onDeleteButtonClicked}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::on\+Delete\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+Delete\+Button\+Clicked 
+
+Usuwa z bazy danych wybrany kontakt, po czym odświeża zawartość tablicy kontaktów \Hypertarget{classContactsWidget_a4b47ff8df95e618f8dc4fa4e40ea9139}\label{classContactsWidget_a4b47ff8df95e618f8dc4fa4e40ea9139} 
+\index{ContactsWidget@{ContactsWidget}!onEditButtonClicked@{onEditButtonClicked}}
+\index{onEditButtonClicked@{onEditButtonClicked}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{onEditButtonClicked}{onEditButtonClicked}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::on\+Edit\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+Edit\+Button\+Clicked 
+
+Wyświetla okno, pozwalające na edytowanie istniejącego już kontaktu \Hypertarget{classContactsWidget_aee59adf2e3e0bf22eb086345cb0b2888}\label{classContactsWidget_aee59adf2e3e0bf22eb086345cb0b2888} 
+\index{ContactsWidget@{ContactsWidget}!parseCSVLine@{parseCSVLine}}
+\index{parseCSVLine@{parseCSVLine}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{parseCSVLine()}{parseCSVLine()}}
+{\footnotesize\ttfamily QString\+List Contacts\+Widget\+::parse\+CSVLine (\begin{DoxyParamCaption}\item[{const QString \&}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parse\+CSVLine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & -\/ linia pobrana z pliku CSV \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca sparsowaną linijkę z pliku CSV 
+\end{DoxyReturn}
+\Hypertarget{classContactsWidget_aefe7ee824f6d4b40280cd8b4ab86d89b}\label{classContactsWidget_aefe7ee824f6d4b40280cd8b4ab86d89b} 
+\index{ContactsWidget@{ContactsWidget}!refreshContactsTable@{refreshContactsTable}}
+\index{refreshContactsTable@{refreshContactsTable}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{refreshContactsTable()}{refreshContactsTable()}}
+{\footnotesize\ttfamily void Contacts\+Widget\+::refresh\+Contacts\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+refresh\+Contacts\+Table 
+
+Odświeża dane w tabeli wyświetlającej kontakty aktualnie zalogowanego użytkownika 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classContactsWidget_a9f0f1fcf7f9032b30a16390527e9a6f3}\label{classContactsWidget_a9f0f1fcf7f9032b30a16390527e9a6f3} 
+\index{ContactsWidget@{ContactsWidget}!ptrCreateContact@{ptrCreateContact}}
+\index{ptrCreateContact@{ptrCreateContact}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{ptrCreateContact}{ptrCreateContact}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCreateContact}{Create\+Contact}}\texorpdfstring{$\ast$}{*} Contacts\+Widget\+::ptr\+Create\+Contact\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ptr\+Create\+Contact 
+
+Deklaracja zmiennej prywatnej wskaźnikowej klasy \doxylink{classContactsWidget}{Contacts\+Widget}, wskazującej na obiekt klasy \doxylink{classCreateContact}{Create\+Contact} \Hypertarget{classContactsWidget_ac95a22b8d51710adb92abd7bedca6d4e}\label{classContactsWidget_ac95a22b8d51710adb92abd7bedca6d4e} 
+\index{ContactsWidget@{ContactsWidget}!ptrEditContact@{ptrEditContact}}
+\index{ptrEditContact@{ptrEditContact}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{ptrEditContact}{ptrEditContact}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEditContact}{Edit\+Contact}}\texorpdfstring{$\ast$}{*} Contacts\+Widget\+::ptr\+Edit\+Contact\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ptr\+Edit\+Contact 
+
+Deklaracja zmiennej prywatnej wskaźnikowej klasy \doxylink{classContactsWidget}{Contacts\+Widget}, wskazującej na obiekt klasy \doxylink{classEditContact}{Edit\+Contact} \Hypertarget{classContactsWidget_a840ee5ea0cd44b16d5bd10016331b924}\label{classContactsWidget_a840ee5ea0cd44b16d5bd10016331b924} 
+\index{ContactsWidget@{ContactsWidget}!ui@{ui}}
+\index{ui@{ui}!ContactsWidget@{ContactsWidget}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1ContactsWidget}{Ui\+::\+Contacts\+Widget}}\texorpdfstring{$\ast$}{*} Contacts\+Widget\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{contactswidget_8h}{contactswidget.\+h}}\item 
+\mbox{\hyperlink{contactswidget_8cpp}{contactswidget.\+cpp}}\end{DoxyCompactItemize}

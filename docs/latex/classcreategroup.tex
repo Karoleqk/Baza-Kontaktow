@@ -1,0 +1,152 @@
+\doxysection{creategroup Class Reference}
+\hypertarget{classcreategroup}{}\label{classcreategroup}\index{creategroup@{creategroup}}
+
+
+Deklaracja klasy, pozwalającej na utworzenie grupy kontaktów.  
+
+
+
+
+{\ttfamily \#include $<$creategroup.\+h$>$}
+
+
+
+Inheritance diagram for creategroup\+:
+% FIG 0
+
+
+Collaboration diagram for creategroup\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcreategroup_a02aa7538ac62a83644f80f63e405c78a}{group\+Created}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcreategroup_a6cb8110cd98e06e6a901441f7c30154c}{creategroup}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy creategroup. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcreategroup_a88b3ebcb3c014c316e0a1f3aeb1e2f4b}{\texorpdfstring{$\sim$}{\string~}creategroup}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy creategroup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcreategroup_ab467b149b20a5090f7948fb61252d7b9}{load\+Data}} ()
+\begin{DoxyCompactList}\small\item\em load\+Data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcreategroup_a2c32108c2858ce8e54111bd1ff422d5a}{reset\+Form}} ()
+\begin{DoxyCompactList}\small\item\em reset\+Form \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcreategroup_ad21d7f64891c161f6cdb0db839b74ba5}{on\+\_\+close\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+close\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcreategroup_a06fec7a1e91a550ab2c728a363169d89}{on\+\_\+add\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+add\+Btn\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1creategroup}{Ui\+::creategroup}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcreategroup_a1ee55db96d609ba522d0258d7462865b}{ui}}
+\item 
+QSet$<$ int $>$ \mbox{\hyperlink{classcreategroup_af06ec578d953969084db380000e67415}{checked\+Contact\+Ids}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, pozwalającej na utworzenie grupy kontaktów. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcreategroup_a6cb8110cd98e06e6a901441f7c30154c}\label{classcreategroup_a6cb8110cd98e06e6a901441f7c30154c} 
+\index{creategroup@{creategroup}!creategroup@{creategroup}}
+\index{creategroup@{creategroup}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{creategroup()}{creategroup()}}
+{\footnotesize\ttfamily creategroup\+::creategroup (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy creategroup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Przy wywołaniu, wyświetlane jest okno utworzenia grupy, oraz pobierane są dane wszystkich kontaktów należących do aktualnie zalogowanego użytkownika, oraz wyświetlenie ich w formie listy do wyboru za pomocą metody \doxylink{classcreategroup_ab467b149b20a5090f7948fb61252d7b9}{load\+Data()}. \Hypertarget{classcreategroup_a88b3ebcb3c014c316e0a1f3aeb1e2f4b}\label{classcreategroup_a88b3ebcb3c014c316e0a1f3aeb1e2f4b} 
+\index{creategroup@{creategroup}!````~creategroup@{\texorpdfstring{$\sim$}{\string~}creategroup}}
+\index{````~creategroup@{\texorpdfstring{$\sim$}{\string~}creategroup}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}creategroup()}{\string~creategroup()}}
+{\footnotesize\ttfamily creategroup\+::\texorpdfstring{$\sim$}{\string~}creategroup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy creategroup. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcreategroup_a02aa7538ac62a83644f80f63e405c78a}\label{classcreategroup_a02aa7538ac62a83644f80f63e405c78a} 
+\index{creategroup@{creategroup}!groupCreated@{groupCreated}}
+\index{groupCreated@{groupCreated}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{groupCreated}{groupCreated}}
+{\footnotesize\ttfamily void creategroup\+::group\+Created (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classcreategroup_ab467b149b20a5090f7948fb61252d7b9}\label{classcreategroup_ab467b149b20a5090f7948fb61252d7b9} 
+\index{creategroup@{creategroup}!loadData@{loadData}}
+\index{loadData@{loadData}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{loadData()}{loadData()}}
+{\footnotesize\ttfamily void creategroup\+::load\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load\+Data 
+
+Metoda, która wyświetla wszystkie kontakty użytkownika w formie listy do wyboru. \Hypertarget{classcreategroup_a06fec7a1e91a550ab2c728a363169d89}\label{classcreategroup_a06fec7a1e91a550ab2c728a363169d89} 
+\index{creategroup@{creategroup}!on\_addBtn\_clicked@{on\_addBtn\_clicked}}
+\index{on\_addBtn\_clicked@{on\_addBtn\_clicked}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{on\_addBtn\_clicked}{on\_addBtn\_clicked}}
+{\footnotesize\ttfamily void creategroup\+::on\+\_\+add\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+add\+Btn\+\_\+clicked 
+
+Metoda wywoływana po wciśnięciu przycisku Dodaj. Sprawdza poprawność nazwy grupy, następnie sprawdza, które kontakty zaznaczył użytkownik, wybiera te kontakty i wykonuje zapytanie do bazy danych, dodając wszystkie zaznaczone elementy. \Hypertarget{classcreategroup_ad21d7f64891c161f6cdb0db839b74ba5}\label{classcreategroup_ad21d7f64891c161f6cdb0db839b74ba5} 
+\index{creategroup@{creategroup}!on\_closeBtn\_clicked@{on\_closeBtn\_clicked}}
+\index{on\_closeBtn\_clicked@{on\_closeBtn\_clicked}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{on\_closeBtn\_clicked}{on\_closeBtn\_clicked}}
+{\footnotesize\ttfamily void creategroup\+::on\+\_\+close\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+close\+Btn\+\_\+clicked 
+
+Zamyka okno tworzenia grupy \Hypertarget{classcreategroup_a2c32108c2858ce8e54111bd1ff422d5a}\label{classcreategroup_a2c32108c2858ce8e54111bd1ff422d5a} 
+\index{creategroup@{creategroup}!resetForm@{resetForm}}
+\index{resetForm@{resetForm}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{resetForm()}{resetForm()}}
+{\footnotesize\ttfamily void creategroup\+::reset\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset\+Form 
+
+Metoda resetująca formularz tworzenia grupy 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcreategroup_af06ec578d953969084db380000e67415}\label{classcreategroup_af06ec578d953969084db380000e67415} 
+\index{creategroup@{creategroup}!checkedContactIds@{checkedContactIds}}
+\index{checkedContactIds@{checkedContactIds}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{checkedContactIds}{checkedContactIds}}
+{\footnotesize\ttfamily QSet$<$int$>$ creategroup\+::checked\+Contact\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcreategroup_a1ee55db96d609ba522d0258d7462865b}\label{classcreategroup_a1ee55db96d609ba522d0258d7462865b} 
+\index{creategroup@{creategroup}!ui@{ui}}
+\index{ui@{ui}!creategroup@{creategroup}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1creategroup}{Ui\+::creategroup}}\texorpdfstring{$\ast$}{*} creategroup\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{creategroup_8h}{creategroup.\+h}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Debug/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Debug_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__creategroup_8cpp}{moc\+\_\+creategroup.\+cpp}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Release/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Release_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__creategroup_8cpp}{moc\+\_\+creategroup.\+cpp}}\item 
+\mbox{\hyperlink{creategroup_8cpp}{creategroup.\+cpp}}\end{DoxyCompactItemize}

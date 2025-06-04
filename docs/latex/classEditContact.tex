@@ -1,0 +1,225 @@
+\doxysection{Edit\+Contact Class Reference}
+\hypertarget{classEditContact}{}\label{classEditContact}\index{EditContact@{EditContact}}
+
+
+Deklaracja klasy, pozwalającej na edytowanie istniejących kontaktów.  
+
+
+
+
+{\ttfamily \#include $<$editcontact.\+h$>$}
+
+
+
+Inheritance diagram for Edit\+Contact\+:
+% FIG 0
+
+
+Collaboration diagram for Edit\+Contact\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditContact_a05c29ddfd1ccced21722138ea0294185}{contact\+Updated}} ()
+\begin{DoxyCompactList}\small\item\em contact\+Updated \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEditContact_a4ff98775fc03fce884ad3b29238bea06}{Edit\+Contact}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classEditContact}{Edit\+Contact}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEditContact_af776967073516fd6417f96af4993d51b}{\texorpdfstring{$\sim$}{\string~}\+Edit\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classEditContact}{Edit\+Contact}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEditContact_aadd801722d6bd88e586203115cb1d8e6}{load\+Contact\+Data}} (int contact\+Id)
+\begin{DoxyCompactList}\small\item\em load\+Contact\+Data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditContact_aab30044c7792257e3a01541d7c7d8413}{reset\+Form}} ()
+\begin{DoxyCompactList}\small\item\em reset\+Form \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditContact_a7b8deb0f2fe8d882922c3e52072c1bf3}{on\+\_\+btn\+Cancel\+\_\+2\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Cancel\+\_\+2\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditContact_a368503af9ad5b7bda13d9a6058e21293}{on\+\_\+btn\+Save\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Save\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditContact_afa7b123a45c5ac254000145b90badfd1}{on\+\_\+btn\+Add\+Email\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Add\+Email\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditContact_a8ac6b5ec206877db013269a746eb8579}{on\+\_\+btn\+Add\+Phone\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+btn\+Add\+Phone\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditContact_a61283b8e478657de4e167b36ca9dc916}{add\+Email\+Item}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em add\+Email\+Item \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditContact_a54569dc7452c7ba4ae4faec9641d4790}{add\+Phone\+Item}} (const QString \&phone)
+\begin{DoxyCompactList}\small\item\em add\+Phone\+Item \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1EditContact}{Ui\+::\+Edit\+Contact}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEditContact_a4b4ea9a4b1a263699ade23988f995b70}{ui}}
+\item 
+int \mbox{\hyperlink{classEditContact_a9ee4c346a6db83d55f64121b238b0e93}{m\+\_\+contact\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, pozwalającej na edytowanie istniejących kontaktów. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEditContact_a4ff98775fc03fce884ad3b29238bea06}\label{classEditContact_a4ff98775fc03fce884ad3b29238bea06} 
+\index{EditContact@{EditContact}!EditContact@{EditContact}}
+\index{EditContact@{EditContact}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{EditContact()}{EditContact()}}
+{\footnotesize\ttfamily Edit\+Contact\+::\+Edit\+Contact (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classEditContact}{Edit\+Contact}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Otwiera okno do edycji kontaktu \Hypertarget{classEditContact_af776967073516fd6417f96af4993d51b}\label{classEditContact_af776967073516fd6417f96af4993d51b} 
+\index{EditContact@{EditContact}!````~EditContact@{\texorpdfstring{$\sim$}{\string~}EditContact}}
+\index{````~EditContact@{\texorpdfstring{$\sim$}{\string~}EditContact}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EditContact()}{\string~EditContact()}}
+{\footnotesize\ttfamily Edit\+Contact\+::\texorpdfstring{$\sim$}{\string~}\+Edit\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classEditContact}{Edit\+Contact}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEditContact_a61283b8e478657de4e167b36ca9dc916}\label{classEditContact_a61283b8e478657de4e167b36ca9dc916} 
+\index{EditContact@{EditContact}!addEmailItem@{addEmailItem}}
+\index{addEmailItem@{addEmailItem}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{addEmailItem()}{addEmailItem()}}
+{\footnotesize\ttfamily void Edit\+Contact\+::add\+Email\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Email\+Item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & -\/ adres mailowy, który chcemy dodać\\
+\hline
+\end{DoxyParams}
+Metoda dodaje do danych kontaktu adres mailowy. Dzięki niej możemy dodać kilka adresów dla pojedynczego kontaktu \Hypertarget{classEditContact_a54569dc7452c7ba4ae4faec9641d4790}\label{classEditContact_a54569dc7452c7ba4ae4faec9641d4790} 
+\index{EditContact@{EditContact}!addPhoneItem@{addPhoneItem}}
+\index{addPhoneItem@{addPhoneItem}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{addPhoneItem()}{addPhoneItem()}}
+{\footnotesize\ttfamily void Edit\+Contact\+::add\+Phone\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{phone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Phone\+Item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phone} & -\/ numer telefonu, który chcemy dodać\\
+\hline
+\end{DoxyParams}
+Metoda dodaje do danych kontaktu numer telefonu. Dzięki niej możemy dodać kilka numerów telefonów dla pojedynczego kontaktu \Hypertarget{classEditContact_a05c29ddfd1ccced21722138ea0294185}\label{classEditContact_a05c29ddfd1ccced21722138ea0294185} 
+\index{EditContact@{EditContact}!contactUpdated@{contactUpdated}}
+\index{contactUpdated@{contactUpdated}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{contactUpdated}{contactUpdated}}
+{\footnotesize\ttfamily void Edit\+Contact\+::contact\+Updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+contact\+Updated 
+
+Sygnał, dzięki któremu możemy sprawdzić, czy kontakt został zaktualizowany \Hypertarget{classEditContact_aadd801722d6bd88e586203115cb1d8e6}\label{classEditContact_aadd801722d6bd88e586203115cb1d8e6} 
+\index{EditContact@{EditContact}!loadContactData@{loadContactData}}
+\index{loadContactData@{loadContactData}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{loadContactData()}{loadContactData()}}
+{\footnotesize\ttfamily bool Edit\+Contact\+::load\+Contact\+Data (\begin{DoxyParamCaption}\item[{int}]{contact\+Id }\end{DoxyParamCaption})}
+
+
+
+load\+Contact\+Data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact\+Id} & -\/ id kontaktu, który chcemy zedytować \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Metoda zwraca true, jeśli operacja się powiedzie. W przeciwnym wypadku zwraca false
+\end{DoxyReturn}
+Metoda wyświetla wszystkie dane kontaktu do formularza, w którym możemy je zedytować \Hypertarget{classEditContact_afa7b123a45c5ac254000145b90badfd1}\label{classEditContact_afa7b123a45c5ac254000145b90badfd1} 
+\index{EditContact@{EditContact}!on\_btnAddEmail\_clicked@{on\_btnAddEmail\_clicked}}
+\index{on\_btnAddEmail\_clicked@{on\_btnAddEmail\_clicked}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnAddEmail\_clicked}{on\_btnAddEmail\_clicked}}
+{\footnotesize\ttfamily void Edit\+Contact\+::on\+\_\+btn\+Add\+Email\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Add\+Email\+\_\+clicked 
+
+Metoda pozwalająca na dodanie kolejnego adresu mailowego do kontaktu, lub zedytowania już istniejącego \Hypertarget{classEditContact_a8ac6b5ec206877db013269a746eb8579}\label{classEditContact_a8ac6b5ec206877db013269a746eb8579} 
+\index{EditContact@{EditContact}!on\_btnAddPhone\_clicked@{on\_btnAddPhone\_clicked}}
+\index{on\_btnAddPhone\_clicked@{on\_btnAddPhone\_clicked}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnAddPhone\_clicked}{on\_btnAddPhone\_clicked}}
+{\footnotesize\ttfamily void Edit\+Contact\+::on\+\_\+btn\+Add\+Phone\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Add\+Phone\+\_\+clicked 
+
+Metoda pozwalająca na dodanie kolejnego numeru telefonu do kontaktu, lub zedytowanie już istniejącego \Hypertarget{classEditContact_a7b8deb0f2fe8d882922c3e52072c1bf3}\label{classEditContact_a7b8deb0f2fe8d882922c3e52072c1bf3} 
+\index{EditContact@{EditContact}!on\_btnCancel\_2\_clicked@{on\_btnCancel\_2\_clicked}}
+\index{on\_btnCancel\_2\_clicked@{on\_btnCancel\_2\_clicked}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnCancel\_2\_clicked}{on\_btnCancel\_2\_clicked}}
+{\footnotesize\ttfamily void Edit\+Contact\+::on\+\_\+btn\+Cancel\+\_\+2\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Cancel\+\_\+2\+\_\+clicked 
+
+Zamyka okno do edycji kontaktu \Hypertarget{classEditContact_a368503af9ad5b7bda13d9a6058e21293}\label{classEditContact_a368503af9ad5b7bda13d9a6058e21293} 
+\index{EditContact@{EditContact}!on\_btnSave\_clicked@{on\_btnSave\_clicked}}
+\index{on\_btnSave\_clicked@{on\_btnSave\_clicked}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{on\_btnSave\_clicked}{on\_btnSave\_clicked}}
+{\footnotesize\ttfamily void Edit\+Contact\+::on\+\_\+btn\+Save\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+btn\+Save\+\_\+clicked 
+
+Zapisuje zedytowane dane o kontakcie, po czym wykonuje zapytanie do bazy danych z nowymi wartościami \Hypertarget{classEditContact_aab30044c7792257e3a01541d7c7d8413}\label{classEditContact_aab30044c7792257e3a01541d7c7d8413} 
+\index{EditContact@{EditContact}!resetForm@{resetForm}}
+\index{resetForm@{resetForm}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{resetForm()}{resetForm()}}
+{\footnotesize\ttfamily void Edit\+Contact\+::reset\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset\+Form 
+
+Metoda resetująca formularz edycji 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEditContact_a9ee4c346a6db83d55f64121b238b0e93}\label{classEditContact_a9ee4c346a6db83d55f64121b238b0e93} 
+\index{EditContact@{EditContact}!m\_contactId@{m\_contactId}}
+\index{m\_contactId@{m\_contactId}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{m\_contactId}{m\_contactId}}
+{\footnotesize\ttfamily int Edit\+Contact\+::m\+\_\+contact\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classEditContact_a4b4ea9a4b1a263699ade23988f995b70}\label{classEditContact_a4b4ea9a4b1a263699ade23988f995b70} 
+\index{EditContact@{EditContact}!ui@{ui}}
+\index{ui@{ui}!EditContact@{EditContact}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1EditContact}{Ui\+::\+Edit\+Contact}}\texorpdfstring{$\ast$}{*} Edit\+Contact\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{editcontact_8h}{editcontact.\+h}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Debug/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Debug_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__editcontact_8cpp}{moc\+\_\+editcontact.\+cpp}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Release/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Release_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__editcontact_8cpp}{moc\+\_\+editcontact.\+cpp}}\item 
+\mbox{\hyperlink{editcontact_8cpp}{editcontact.\+cpp}}\end{DoxyCompactItemize}

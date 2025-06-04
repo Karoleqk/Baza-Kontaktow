@@ -1,0 +1,38 @@
+\doxysection{database\+\_\+manager.\+h}
+\hypertarget{database__manager_8h_source}{}\label{database__manager_8h_source}\mbox{\hyperlink{database__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASE\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASE\_MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QSqlDriver>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QSqlError>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QSqlQuery>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QSqlTableModel>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabase__Manager}{Database\_Manager}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{classDatabase__Manager_ad0de6911d4e650f2250882f132b4c1b9}{connectionName}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ QString\ \mbox{\hyperlink{classDatabase__Manager_a6268d2d344a85da7b733e60a03d10030}{dbPath}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classDatabase__Manager_a0827c0ccdda77fbad73cbd2d20826ab4}{Database\_Manager}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classDatabase__Manager_a6d668eee8b2e83566577cd879df8bc7d}{\string~Database\_Manager}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ QSqlDatabase\ \mbox{\hyperlink{classDatabase__Manager_a92fc4926c57a8abf059b0deb30732ddf}{getDatabase}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ QSqlDatabase\ \mbox{\hyperlink{classDatabase__Manager_a56f275e5dde1be2c098b72cf4567b39a}{db}};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASE\_MANAGER\_H}}
+
+\end{DoxyCode}

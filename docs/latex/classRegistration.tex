@@ -1,0 +1,107 @@
+\doxysection{Registration Class Reference}
+\hypertarget{classRegistration}{}\label{classRegistration}\index{Registration@{Registration}}
+
+
+Deklaracja klasy, dzięki której użytkownik może się zarejestrować  
+
+
+
+
+{\ttfamily \#include $<$registration.\+h$>$}
+
+
+
+Inheritance diagram for Registration\+:
+% FIG 0
+
+
+Collaboration diagram for Registration\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRegistration_a2caa0ec4819473d5a6a84190414f24b9}{Registration}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classRegistration}{Registration}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRegistration_af0515fb621bcf46276090b7b26f88fc4}{\texorpdfstring{$\sim$}{\string~}\+Registration}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classRegistration}{Registration}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRegistration_ac04b88eec9cfe14f96be171e9af35884}{on\+\_\+login\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+login\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistration_ad44d31e555e2d7f305128f0dbf65b116}{on\+\_\+register\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+register\+Btn\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1Registration}{Ui\+::\+Registration}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRegistration_aa655784756cb5d2d33fb11e713273d72}{ui}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy, dzięki której użytkownik może się zarejestrować 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRegistration_a2caa0ec4819473d5a6a84190414f24b9}\label{classRegistration_a2caa0ec4819473d5a6a84190414f24b9} 
+\index{Registration@{Registration}!Registration@{Registration}}
+\index{Registration@{Registration}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{Registration()}{Registration()}}
+{\footnotesize\ttfamily Registration\+::\+Registration (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classRegistration}{Registration}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Otwiera okno z możliwościa zarejestrowania się \Hypertarget{classRegistration_af0515fb621bcf46276090b7b26f88fc4}\label{classRegistration_af0515fb621bcf46276090b7b26f88fc4} 
+\index{Registration@{Registration}!````~Registration@{\texorpdfstring{$\sim$}{\string~}Registration}}
+\index{````~Registration@{\texorpdfstring{$\sim$}{\string~}Registration}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Registration()}{\string~Registration()}}
+{\footnotesize\ttfamily Registration\+::\texorpdfstring{$\sim$}{\string~}\+Registration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classRegistration}{Registration}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRegistration_ac04b88eec9cfe14f96be171e9af35884}\label{classRegistration_ac04b88eec9cfe14f96be171e9af35884} 
+\index{Registration@{Registration}!on\_loginBtn\_clicked@{on\_loginBtn\_clicked}}
+\index{on\_loginBtn\_clicked@{on\_loginBtn\_clicked}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{on\_loginBtn\_clicked}{on\_loginBtn\_clicked}}
+{\footnotesize\ttfamily void Registration\+::on\+\_\+login\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+login\+Btn\+\_\+clicked 
+
+Zamyka okno rejestracji i otwiera okno do zalogowania się \Hypertarget{classRegistration_ad44d31e555e2d7f305128f0dbf65b116}\label{classRegistration_ad44d31e555e2d7f305128f0dbf65b116} 
+\index{Registration@{Registration}!on\_registerBtn\_clicked@{on\_registerBtn\_clicked}}
+\index{on\_registerBtn\_clicked@{on\_registerBtn\_clicked}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{on\_registerBtn\_clicked}{on\_registerBtn\_clicked}}
+{\footnotesize\ttfamily void Registration\+::on\+\_\+register\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+register\+Btn\+\_\+clicked 
+
+Po wciśnięciu przycisku zarejestruj, sprawdza poprawność danych. Jeśli dane są poprawne (hasła się zgadzają oraz wybrana nazwa nie jest zajęta), to wykonuje zapytanie do bazy danych dodające nowego użytkownika 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRegistration_aa655784756cb5d2d33fb11e713273d72}\label{classRegistration_aa655784756cb5d2d33fb11e713273d72} 
+\index{Registration@{Registration}!ui@{ui}}
+\index{ui@{ui}!Registration@{Registration}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1Registration}{Ui\+::\+Registration}}\texorpdfstring{$\ast$}{*} Registration\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{registration_8h}{registration.\+h}}\item 
+\mbox{\hyperlink{registration_8cpp}{registration.\+cpp}}\end{DoxyCompactItemize}

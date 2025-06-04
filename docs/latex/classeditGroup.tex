@@ -1,0 +1,198 @@
+\doxysection{edit\+Group Class Reference}
+\hypertarget{classeditGroup}{}\label{classeditGroup}\index{editGroup@{editGroup}}
+
+
+Deklaracja klasy pozwalającej na zedytowanie istniejących grup.  
+
+
+
+
+{\ttfamily \#include $<$editgroup.\+h$>$}
+
+
+
+Inheritance diagram for edit\+Group\+:
+% FIG 0
+
+
+Collaboration diagram for edit\+Group\+:
+% FIG 1
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classeditGroup_a10373eccb57e6f5b863970dd3dec7d9e}{group\+Edited}} ()
+\begin{DoxyCompactList}\small\item\em group\+Edited \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeditGroup_a96ac37dfdfd84302d77279f0f04b101d}{edit\+Group}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classeditGroup}{edit\+Group}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeditGroup_a387c3ead5ce8fbb441442de6a139a9f7}{\texorpdfstring{$\sim$}{\string~}edit\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classeditGroup}{edit\+Group}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classeditGroup_ac45a7d083ad94e7f50f5c3e386e4837e}{load\+Group\+Data}} (int group\+Id)
+\begin{DoxyCompactList}\small\item\em load\+Group\+Data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeditGroup_ac941777b8bf8e5fd99a083c10e5dce7c}{reset\+Form}} ()
+\begin{DoxyCompactList}\small\item\em reset\+Form \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classeditGroup_a95265bd28f59af10be233757901f0ec3}{current\+Group\+Id}}
+\begin{DoxyCompactList}\small\item\em current\+Group\+Id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classeditGroup_a1f4608450a2d8b2e44dafd103700bb1e}{on\+\_\+save\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+save\+Btn\+\_\+clicked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeditGroup_ab7a0475378b7304718ac8c7618f80174}{on\+\_\+close\+Btn\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em on\+\_\+close\+Btn\+\_\+clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classeditGroup_af8509679d2ee32d694d92a481f50112a}{refresh\+Contacts\+List}} ()
+\begin{DoxyCompactList}\small\item\em refresh\+Contacts\+List \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUi_1_1editGroup}{Ui\+::edit\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classeditGroup_aa33c1ebb9a9af17fdf588f1b8bbcfe3e}{ui}}
+\item 
+QSet$<$ int $>$ \mbox{\hyperlink{classeditGroup_a1d8ec204c4f48f44078eb6fa9c03aace}{checked\+Contact\+Ids}}
+\begin{DoxyCompactList}\small\item\em checked\+Contact\+Ids \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deklaracja klasy pozwalającej na zedytowanie istniejących grup. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeditGroup_a96ac37dfdfd84302d77279f0f04b101d}\label{classeditGroup_a96ac37dfdfd84302d77279f0f04b101d} 
+\index{editGroup@{editGroup}!editGroup@{editGroup}}
+\index{editGroup@{editGroup}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{editGroup()}{editGroup()}}
+{\footnotesize\ttfamily edit\+Group\+::edit\+Group (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classeditGroup}{edit\+Group}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ wskaźnik na rodzica Widgetu, domyślnie ustawiony na NULL\\
+\hline
+\end{DoxyParams}
+Otwiera okno do edycji grupy, pobiera z bazy danych wartości, którę należą do grupy, którą chcemy zedytować po czym oknie do edycji, wyświetla nazwę grupy oraz listę kontaktów, które do niej należą \Hypertarget{classeditGroup_a387c3ead5ce8fbb441442de6a139a9f7}\label{classeditGroup_a387c3ead5ce8fbb441442de6a139a9f7} 
+\index{editGroup@{editGroup}!````~editGroup@{\texorpdfstring{$\sim$}{\string~}editGroup}}
+\index{````~editGroup@{\texorpdfstring{$\sim$}{\string~}editGroup}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}editGroup()}{\string~editGroup()}}
+{\footnotesize\ttfamily edit\+Group\+::\texorpdfstring{$\sim$}{\string~}edit\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{classeditGroup}{edit\+Group}. 
+
+Zamyka okno UI 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeditGroup_a10373eccb57e6f5b863970dd3dec7d9e}\label{classeditGroup_a10373eccb57e6f5b863970dd3dec7d9e} 
+\index{editGroup@{editGroup}!groupEdited@{groupEdited}}
+\index{groupEdited@{groupEdited}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{groupEdited}{groupEdited}}
+{\footnotesize\ttfamily void edit\+Group\+::group\+Edited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+group\+Edited 
+
+Sygnał, dzięki któremu sprawdzamy czy grupa została zedytowana \Hypertarget{classeditGroup_ac45a7d083ad94e7f50f5c3e386e4837e}\label{classeditGroup_ac45a7d083ad94e7f50f5c3e386e4837e} 
+\index{editGroup@{editGroup}!loadGroupData@{loadGroupData}}
+\index{loadGroupData@{loadGroupData}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{loadGroupData()}{loadGroupData()}}
+{\footnotesize\ttfamily bool edit\+Group\+::load\+Group\+Data (\begin{DoxyParamCaption}\item[{int}]{group\+Id }\end{DoxyParamCaption})}
+
+
+
+load\+Group\+Data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Id} & -\/ ID grupy, której dane chcemy zedytować \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca true, jeśli operacja się powiedzie, w przeciwnym wypadku zwraca false
+\end{DoxyReturn}
+Metoda pobiera dane o grupie o wskazanym ID i wyświetla je w oknie do edycji \Hypertarget{classeditGroup_ab7a0475378b7304718ac8c7618f80174}\label{classeditGroup_ab7a0475378b7304718ac8c7618f80174} 
+\index{editGroup@{editGroup}!on\_closeBtn\_clicked@{on\_closeBtn\_clicked}}
+\index{on\_closeBtn\_clicked@{on\_closeBtn\_clicked}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{on\_closeBtn\_clicked}{on\_closeBtn\_clicked}}
+{\footnotesize\ttfamily void edit\+Group\+::on\+\_\+close\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+close\+Btn\+\_\+clicked 
+
+Zamyka okno do edycji grupy \Hypertarget{classeditGroup_a1f4608450a2d8b2e44dafd103700bb1e}\label{classeditGroup_a1f4608450a2d8b2e44dafd103700bb1e} 
+\index{editGroup@{editGroup}!on\_saveBtn\_clicked@{on\_saveBtn\_clicked}}
+\index{on\_saveBtn\_clicked@{on\_saveBtn\_clicked}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{on\_saveBtn\_clicked}{on\_saveBtn\_clicked}}
+{\footnotesize\ttfamily void edit\+Group\+::on\+\_\+save\+Btn\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+on\+\_\+save\+Btn\+\_\+clicked 
+
+Zapisuje zmienione dane w grupie i aktualizuje je w bazie danych \Hypertarget{classeditGroup_af8509679d2ee32d694d92a481f50112a}\label{classeditGroup_af8509679d2ee32d694d92a481f50112a} 
+\index{editGroup@{editGroup}!refreshContactsList@{refreshContactsList}}
+\index{refreshContactsList@{refreshContactsList}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{refreshContactsList()}{refreshContactsList()}}
+{\footnotesize\ttfamily void edit\+Group\+::refresh\+Contacts\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+refresh\+Contacts\+List 
+
+Metoda odświeżająca kontakty w liście do wyboru, posortowana w ten sposób, że na górze najpierw pojawiają się kontakty znajdujące się już w grupie \Hypertarget{classeditGroup_ac941777b8bf8e5fd99a083c10e5dce7c}\label{classeditGroup_ac941777b8bf8e5fd99a083c10e5dce7c} 
+\index{editGroup@{editGroup}!resetForm@{resetForm}}
+\index{resetForm@{resetForm}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{resetForm()}{resetForm()}}
+{\footnotesize\ttfamily void edit\+Group\+::reset\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset\+Form 
+
+Resetuje formularz edycji grupy 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classeditGroup_a1d8ec204c4f48f44078eb6fa9c03aace}\label{classeditGroup_a1d8ec204c4f48f44078eb6fa9c03aace} 
+\index{editGroup@{editGroup}!checkedContactIds@{checkedContactIds}}
+\index{checkedContactIds@{checkedContactIds}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{checkedContactIds}{checkedContactIds}}
+{\footnotesize\ttfamily QSet$<$int$>$ edit\+Group\+::checked\+Contact\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checked\+Contact\+Ids 
+
+Zmienna przechowująca ID kontaktów, które należą do grupy \Hypertarget{classeditGroup_a95265bd28f59af10be233757901f0ec3}\label{classeditGroup_a95265bd28f59af10be233757901f0ec3} 
+\index{editGroup@{editGroup}!currentGroupId@{currentGroupId}}
+\index{currentGroupId@{currentGroupId}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{currentGroupId}{currentGroupId}}
+{\footnotesize\ttfamily int edit\+Group\+::current\+Group\+Id}
+
+
+
+current\+Group\+Id 
+
+Zmienna publiczna przechowująca ID grupy, którą chcemy zedytować \Hypertarget{classeditGroup_aa33c1ebb9a9af17fdf588f1b8bbcfe3e}\label{classeditGroup_aa33c1ebb9a9af17fdf588f1b8bbcfe3e} 
+\index{editGroup@{editGroup}!ui@{ui}}
+\index{ui@{ui}!editGroup@{editGroup}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUi_1_1editGroup}{Ui\+::edit\+Group}}\texorpdfstring{$\ast$}{*} edit\+Group\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{editgroup_8h}{editgroup.\+h}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Debug/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Debug_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__editgroup_8cpp}{moc\+\_\+editgroup.\+cpp}}\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0-\/\+Release/\+Baza\+\_\+\+Kontaktow\+\_\+autogen/\+EWIEGA46\+WW/\mbox{\hyperlink{Desktop__Qt__6__9__0-Release_2Baza__Kontaktow__autogen_2EWIEGA46WW_2moc__editgroup_8cpp}{moc\+\_\+editgroup.\+cpp}}\item 
+\mbox{\hyperlink{editgroup_8cpp}{editgroup.\+cpp}}\end{DoxyCompactItemize}
